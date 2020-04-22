@@ -3,7 +3,7 @@ package item
 import (
 	"strings"
 
-	"github.com/cfi2017/bl3-save-core/internal/assets"
+	"github.com/cfi2017/bl3-save-core/pkg/assets"
 )
 
 type DigitalMarineItem struct {

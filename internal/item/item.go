@@ -8,7 +8,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/cfi2017/bl3-save-core/internal/assets"
+	"github.com/cfi2017/bl3-save-core/pkg/assets"
 	"github.com/cfi2017/bl3-save-core/pkg/pb"
 )
 
