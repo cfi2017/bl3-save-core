@@ -1,6 +1,8 @@
 package item
 
 import (
+	"fmt"
+
 	"github.com/cfi2017/bl3-save-core/pkg/assets"
 )
 
@@ -48,7 +50,7 @@ func GetIndexFor(k string, v string) int {
 			return i
 		}
 	}
-	panic("no asset found while serializing")
+	panic(fmt.Sprintf("no asset found while serializing: %s", v))
 }
 
 func GetPart(key string, index uint64) string {
