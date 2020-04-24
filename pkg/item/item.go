@@ -14,15 +14,16 @@ import (
 )
 
 type Item struct {
-	Level        int                              `json:"level"`
-	Balance      string                           `json:"balance"`
-	Manufacturer string                           `json:"manufacturer"`
-	InvData      string                           `json:"inv_data"`
-	Parts        []string                         `json:"parts"`
-	Generics     []string                         `json:"generics"`
-	Overflow     string                           `json:"overflow"`
-	Version      uint64                           `json:"version"`
-	Wrapper      *pb.OakInventoryItemSaveGameData `json:"wrapper"`
+	Level             int                              `json:"level"`
+	Balance           string                           `json:"balance"`
+	Manufacturer      string                           `json:"manufacturer"`
+	InvData           string                           `json:"inv_data"`
+	Parts             []string                         `json:"parts"`
+	Generics          []string                         `json:"generics"`
+	Overflow          string                           `json:"overflow"`
+	Version           uint64                           `json:"version"`
+	Wrapper           *pb.OakInventoryItemSaveGameData `json:"wrapper"`
+	SkipIntrospection bool                             `json:"skipIntrospection"`
 }
 
 func DecryptSerial(data []byte) ([]byte, error) {
@@ -116,12 +117,17 @@ func Deserialize(data []byte) (i Item, err error) {
 
 	} else {
 		err = errors.New(fmt.Sprintf("unknown category %s, skipping part introspection", i.Balance))
+		i.SkipIntrospection = true
 	}
 
 	return
 }
 
 func Serialize(i Item, seed int32) ([]byte, error) {
+	// skip introspection if set, don't accidentally remove items
+	if i.Wrapper != nil && i.Wrapper.ItemSerialNumber != nil && i.SkipIntrospection {
+		return i.Wrapper.ItemSerialNumber, nil
+	}
 	w := item.NewWriter(i.Overflow)
 	var err error
 
