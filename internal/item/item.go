@@ -6,10 +6,6 @@ import (
 	"github.com/cfi2017/bl3-save-core/pkg/assets"
 )
 
-var (
-	debug bool
-)
-
 func BogoEncrypt(seed int32, data []byte) []byte {
 	if seed == 0 {
 		return data
@@ -44,13 +40,13 @@ func GetBits(k string, v uint64) int {
 	return assets.GetDB().GetData(k).GetBits(v)
 }
 
-func GetIndexFor(k string, v string) int {
+func GetIndexFor(k string, v string) (int, error) {
 	for i, asset := range assets.GetDB().GetData(k).Assets {
 		if asset == v {
-			return i
+			return i, nil
 		}
 	}
-	panic(fmt.Sprintf("no asset found while serializing: %s", v))
+	return 0, fmt.Errorf("no asset found while serializing: %s[%s]", k, v)
 }
 
 func GetPart(key string, index uint64) string {

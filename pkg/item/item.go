@@ -64,6 +64,10 @@ func EncryptSerial(data []byte, seed int32) ([]byte, error) {
 
 }
 
+/*
+GetSeedFromSerial returns the seed bytes for the given serial.
+Returns an error if the serial does not have the required length.
+*/
 func GetSeedFromSerial(data []byte) (int32, error) {
 	if len(data) < 5 {
 		return 0, errors.New("invalid serial length")
@@ -71,6 +75,10 @@ func GetSeedFromSerial(data []byte) (int32, error) {
 	return int32(binary.BigEndian.Uint32(data[1:])), nil
 }
 
+/*
+Deserialize decrypts and deserializes a serial number into an item.
+This requires a valid database to be set.
+*/
 func Deserialize(data []byte) (i Item, err error) {
 	data, err = DecryptSerial(data)
 	if err != nil {
@@ -123,6 +131,10 @@ func Deserialize(data []byte) (i Item, err error) {
 	return
 }
 
+/*
+Serialize serializes an item into a serial number with the given seed.
+This requires a valid database to be set.
+*/
 func Serialize(i Item, seed int32) ([]byte, error) {
 	// skip introspection if set, don't accidentally remove items
 	if i.Wrapper != nil && i.Wrapper.ItemSerialNumber != nil && i.SkipIntrospection {
@@ -136,8 +148,11 @@ func Serialize(i Item, seed int32) ([]byte, error) {
 
 	// write each generic, bottom to top
 	for index := len(i.Generics) - 1; index >= 0; index-- {
-		index := item.GetIndexFor("InventoryGenericPartData", i.Generics[index]) + 1
-		err := w.WriteInt(uint64(index), bits)
+		index, err := item.GetIndexFor("InventoryGenericPartData", i.Generics[index])
+		if err != nil {
+			return nil, err
+		}
+		err = w.WriteInt(uint64(index)+1, bits)
 		if err != nil {
 			log.Printf("tried to fit index %v into %v bits for %s", index, bits, i.Generics[index])
 			return nil, err
@@ -153,7 +168,11 @@ func Serialize(i Item, seed int32) ([]byte, error) {
 		bits = item.GetBits(k, i.Version)
 		// write each part, bottom to top
 		for index := len(i.Parts) - 1; index >= 0; index-- {
-			err := w.WriteInt(uint64(item.GetIndexFor(k, i.Parts[index]))+1, bits)
+			partIndex, err := item.GetIndexFor(k, i.Parts[index])
+			if err != nil {
+				return nil, err
+			}
+			err = w.WriteInt(uint64(partIndex)+1, bits)
 			if err != nil {
 				return nil, err
 			}
@@ -170,21 +189,30 @@ func Serialize(i Item, seed int32) ([]byte, error) {
 		return nil, err
 	}
 
-	manIndex := item.GetIndexFor("ManufacturerData", i.Manufacturer) + 1
+	manIndex, err := item.GetIndexFor("ManufacturerData", i.Manufacturer)
+	if err != nil {
+		return nil, err
+	}
 	manBits := item.GetBits("ManufacturerData", i.Version)
-	err = w.WriteInt(uint64(manIndex), manBits)
+	err = w.WriteInt(uint64(manIndex)+1, manBits)
 	if err != nil {
 		return nil, err
 	}
-	invIndex := item.GetIndexFor("InventoryData", i.InvData) + 1
+	invIndex, err := item.GetIndexFor("InventoryData", i.InvData)
+	if err != nil {
+		return nil, err
+	}
 	invBits := item.GetBits("InventoryData", i.Version)
-	err = w.WriteInt(uint64(invIndex), invBits)
+	err = w.WriteInt(uint64(invIndex)+1, invBits)
 	if err != nil {
 		return nil, err
 	}
-	balanceIndex := item.GetIndexFor("InventoryBalanceData", i.Balance) + 1
+	balanceIndex, err := item.GetIndexFor("InventoryBalanceData", i.Balance)
+	if err != nil {
+		return nil, err
+	}
 	balanceBits := item.GetBits("InventoryBalanceData", i.Version)
-	err = w.WriteInt(uint64(balanceIndex), balanceBits)
+	err = w.WriteInt(uint64(balanceIndex)+1, balanceBits)
 	if err != nil {
 		return nil, err
 	}
