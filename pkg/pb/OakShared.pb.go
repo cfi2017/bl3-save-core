@@ -30,9 +30,9 @@ type Vec3 struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	X float32 `protobuf:"fixed32,1,opt,name=x,proto3" json:"x,omitempty"`
-	Y float32 `protobuf:"fixed32,2,opt,name=y,proto3" json:"y,omitempty"`
-	Z float32 `protobuf:"fixed32,3,opt,name=z,proto3" json:"z,omitempty"`
+	X float32 `protobuf:"fixed32,1,opt,name=x,proto3" json:"x"`
+	Y float32 `protobuf:"fixed32,2,opt,name=y,proto3" json:"y"`
+	Z float32 `protobuf:"fixed32,3,opt,name=z,proto3" json:"z"`
 }
 
 func (x *Vec3) Reset() {
@@ -93,8 +93,8 @@ type GameStatSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	StatValue int32  `protobuf:"varint,1,opt,name=stat_value,json=statValue,proto3" json:"stat_value,omitempty"`
-	StatPath  string `protobuf:"bytes,2,opt,name=stat_path,json=statPath,proto3" json:"stat_path,omitempty"`
+	StatValue int32  `protobuf:"varint,1,opt,name=stat_value,json=statValue,proto3" json:"stat_value"`
+	StatPath  string `protobuf:"bytes,2,opt,name=stat_path,json=statPath,proto3" json:"stat_path"`
 }
 
 func (x *GameStatSaveGameData) Reset() {
@@ -148,8 +148,8 @@ type InventoryCategorySaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	BaseCategoryDefinitionHash uint32 `protobuf:"varint,1,opt,name=base_category_definition_hash,json=baseCategoryDefinitionHash,proto3" json:"base_category_definition_hash,omitempty"`
-	Quantity                   int32  `protobuf:"varint,2,opt,name=quantity,proto3" json:"quantity,omitempty"`
+	BaseCategoryDefinitionHash uint32 `protobuf:"varint,1,opt,name=base_category_definition_hash,json=baseCategoryDefinitionHash,proto3" json:"base_category_definition_hash"`
+	Quantity                   int32  `protobuf:"varint,2,opt,name=quantity,proto3" json:"quantity"`
 }
 
 func (x *InventoryCategorySaveData) Reset() {
@@ -203,8 +203,8 @@ type OakSDUSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SduLevel    int32  `protobuf:"varint,1,opt,name=sdu_level,json=sduLevel,proto3" json:"sdu_level,omitempty"`
-	SduDataPath string `protobuf:"bytes,2,opt,name=sdu_data_path,json=sduDataPath,proto3" json:"sdu_data_path,omitempty"`
+	SduLevel    int32  `protobuf:"varint,1,opt,name=sdu_level,json=sduLevel,proto3" json:"sdu_level"`
+	SduDataPath string `protobuf:"bytes,2,opt,name=sdu_data_path,json=sduDataPath,proto3" json:"sdu_data_path"`
 }
 
 func (x *OakSDUSaveGameData) Reset() {
@@ -258,10 +258,10 @@ type RegisteredDownloadableEntitlement struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id         int32  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Consumed   uint32 `protobuf:"varint,2,opt,name=consumed,proto3" json:"consumed,omitempty"`
-	Registered bool   `protobuf:"varint,3,opt,name=registered,proto3" json:"registered,omitempty"`
-	Seen       bool   `protobuf:"varint,4,opt,name=seen,proto3" json:"seen,omitempty"`
+	Id         int32  `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
+	Consumed   uint32 `protobuf:"varint,2,opt,name=consumed,proto3" json:"consumed"`
+	Registered bool   `protobuf:"varint,3,opt,name=registered,proto3" json:"registered"`
+	Seen       bool   `protobuf:"varint,4,opt,name=seen,proto3" json:"seen"`
 }
 
 func (x *RegisteredDownloadableEntitlement) Reset() {
@@ -329,9 +329,9 @@ type RegisteredDownloadableEntitlements struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	EntitlementSourceAssetPath string                               `protobuf:"bytes,1,opt,name=entitlement_source_asset_path,json=entitlementSourceAssetPath,proto3" json:"entitlement_source_asset_path,omitempty"`
-	EntitlementIds             []int64                              `protobuf:"varint,2,rep,packed,name=entitlement_ids,json=entitlementIds,proto3" json:"entitlement_ids,omitempty"`
-	Entitlements               []*RegisteredDownloadableEntitlement `protobuf:"bytes,3,rep,name=entitlements,proto3" json:"entitlements,omitempty"`
+	EntitlementSourceAssetPath string                               `protobuf:"bytes,1,opt,name=entitlement_source_asset_path,json=entitlementSourceAssetPath,proto3" json:"entitlement_source_asset_path"`
+	EntitlementIds             []int64                              `protobuf:"varint,2,rep,packed,name=entitlement_ids,json=entitlementIds,proto3" json:"entitlement_ids"`
+	Entitlements               []*RegisteredDownloadableEntitlement `protobuf:"bytes,3,rep,name=entitlements,proto3" json:"entitlements"`
 }
 
 func (x *RegisteredDownloadableEntitlements) Reset() {
@@ -392,8 +392,8 @@ type ChallengeStatSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CurrentStatValue  int32  `protobuf:"varint,1,opt,name=current_stat_value,json=currentStatValue,proto3" json:"current_stat_value,omitempty"`
-	ChallengeStatPath string `protobuf:"bytes,2,opt,name=challenge_stat_path,json=challengeStatPath,proto3" json:"challenge_stat_path,omitempty"`
+	CurrentStatValue  int32  `protobuf:"varint,1,opt,name=current_stat_value,json=currentStatValue,proto3" json:"current_stat_value"`
+	ChallengeStatPath string `protobuf:"bytes,2,opt,name=challenge_stat_path,json=challengeStatPath,proto3" json:"challenge_stat_path"`
 }
 
 func (x *ChallengeStatSaveGameData) Reset() {
@@ -447,7 +447,7 @@ type OakChallengeRewardSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ChallengeRewardClaimed bool `protobuf:"varint,1,opt,name=challenge_reward_claimed,json=challengeRewardClaimed,proto3" json:"challenge_reward_claimed,omitempty"`
+	ChallengeRewardClaimed bool `protobuf:"varint,1,opt,name=challenge_reward_claimed,json=challengeRewardClaimed,proto3" json:"challenge_reward_claimed"`
 }
 
 func (x *OakChallengeRewardSaveGameData) Reset() {
@@ -494,14 +494,14 @@ type ChallengeSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CompletedCount         int32                             `protobuf:"varint,1,opt,name=completed_count,json=completedCount,proto3" json:"completed_count,omitempty"`
-	IsActive               bool                              `protobuf:"varint,2,opt,name=is_active,json=isActive,proto3" json:"is_active,omitempty"`
-	CurrentlyCompleted     bool                              `protobuf:"varint,3,opt,name=currently_completed,json=currentlyCompleted,proto3" json:"currently_completed,omitempty"`
-	CompletedProgressLevel int32                             `protobuf:"varint,4,opt,name=completed_progress_level,json=completedProgressLevel,proto3" json:"completed_progress_level,omitempty"`
-	ProgressCounter        int32                             `protobuf:"varint,5,opt,name=progress_counter,json=progressCounter,proto3" json:"progress_counter,omitempty"`
-	StatInstanceState      []*ChallengeStatSaveGameData      `protobuf:"bytes,6,rep,name=stat_instance_state,json=statInstanceState,proto3" json:"stat_instance_state,omitempty"`
-	ChallengeClassPath     string                            `protobuf:"bytes,7,opt,name=challenge_class_path,json=challengeClassPath,proto3" json:"challenge_class_path,omitempty"`
-	ChallengeRewardInfo    []*OakChallengeRewardSaveGameData `protobuf:"bytes,8,rep,name=challenge_reward_info,json=challengeRewardInfo,proto3" json:"challenge_reward_info,omitempty"`
+	CompletedCount         int32                             `protobuf:"varint,1,opt,name=completed_count,json=completedCount,proto3" json:"completed_count"`
+	IsActive               bool                              `protobuf:"varint,2,opt,name=is_active,json=isActive,proto3" json:"is_active"`
+	CurrentlyCompleted     bool                              `protobuf:"varint,3,opt,name=currently_completed,json=currentlyCompleted,proto3" json:"currently_completed"`
+	CompletedProgressLevel int32                             `protobuf:"varint,4,opt,name=completed_progress_level,json=completedProgressLevel,proto3" json:"completed_progress_level"`
+	ProgressCounter        int32                             `protobuf:"varint,5,opt,name=progress_counter,json=progressCounter,proto3" json:"progress_counter"`
+	StatInstanceState      []*ChallengeStatSaveGameData      `protobuf:"bytes,6,rep,name=stat_instance_state,json=statInstanceState,proto3" json:"stat_instance_state"`
+	ChallengeClassPath     string                            `protobuf:"bytes,7,opt,name=challenge_class_path,json=challengeClassPath,proto3" json:"challenge_class_path"`
+	ChallengeRewardInfo    []*OakChallengeRewardSaveGameData `protobuf:"bytes,8,rep,name=challenge_reward_info,json=challengeRewardInfo,proto3" json:"challenge_reward_info"`
 }
 
 func (x *ChallengeSaveGameData) Reset() {

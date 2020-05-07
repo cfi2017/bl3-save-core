@@ -85,8 +85,8 @@ type PlayerClassSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	PlayerClassPath string `protobuf:"bytes,1,opt,name=player_class_path,json=playerClassPath,proto3" json:"player_class_path,omitempty"`
-	DlcPackageId    uint32 `protobuf:"varint,2,opt,name=dlc_package_id,json=dlcPackageId,proto3" json:"dlc_package_id,omitempty"`
+	PlayerClassPath string `protobuf:"bytes,1,opt,name=player_class_path,json=playerClassPath,proto3" json:"player_class_path"`
+	DlcPackageId    uint32 `protobuf:"varint,2,opt,name=dlc_package_id,json=dlcPackageId,proto3" json:"dlc_package_id"`
 }
 
 func (x *PlayerClassSaveGameData) Reset() {
@@ -140,8 +140,8 @@ type ResourcePoolSavegameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Amount       float32 `protobuf:"fixed32,1,opt,name=amount,proto3" json:"amount,omitempty"`
-	ResourcePath string  `protobuf:"bytes,2,opt,name=resource_path,json=resourcePath,proto3" json:"resource_path,omitempty"`
+	Amount       float32 `protobuf:"fixed32,1,opt,name=amount,proto3" json:"amount"`
+	ResourcePath string  `protobuf:"bytes,2,opt,name=resource_path,json=resourcePath,proto3" json:"resource_path"`
 }
 
 func (x *ResourcePoolSavegameData) Reset() {
@@ -195,10 +195,10 @@ type RegionSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	GameStage      int32  `protobuf:"varint,1,opt,name=game_stage,json=gameStage,proto3" json:"game_stage,omitempty"`
-	PlayThroughIdx int32  `protobuf:"varint,2,opt,name=play_through_idx,json=playThroughIdx,proto3" json:"play_through_idx,omitempty"`
-	RegionPath     string `protobuf:"bytes,3,opt,name=region_path,json=regionPath,proto3" json:"region_path,omitempty"`
-	DlcPackageId   uint32 `protobuf:"varint,4,opt,name=dlc_package_id,json=dlcPackageId,proto3" json:"dlc_package_id,omitempty"`
+	GameStage      int32  `protobuf:"varint,1,opt,name=game_stage,json=gameStage,proto3" json:"game_stage"`
+	PlayThroughIdx int32  `protobuf:"varint,2,opt,name=play_through_idx,json=playThroughIdx,proto3" json:"play_through_idx"`
+	RegionPath     string `protobuf:"bytes,3,opt,name=region_path,json=regionPath,proto3" json:"region_path"`
+	DlcPackageId   uint32 `protobuf:"varint,4,opt,name=dlc_package_id,json=dlcPackageId,proto3" json:"dlc_package_id"`
 }
 
 func (x *RegionSaveGameData) Reset() {
@@ -266,14 +266,14 @@ type InventoryBalanceStateInitializationData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	GameStage             int32    `protobuf:"varint,1,opt,name=game_stage,json=gameStage,proto3" json:"game_stage,omitempty"`
-	InventoryData         string   `protobuf:"bytes,2,opt,name=inventory_data,json=inventoryData,proto3" json:"inventory_data,omitempty"`
-	InventoryBalanceData  string   `protobuf:"bytes,3,opt,name=inventory_balance_data,json=inventoryBalanceData,proto3" json:"inventory_balance_data,omitempty"`
-	ManufacturerData      string   `protobuf:"bytes,4,opt,name=manufacturer_data,json=manufacturerData,proto3" json:"manufacturer_data,omitempty"`
-	PartList              []string `protobuf:"bytes,5,rep,name=part_list,json=partList,proto3" json:"part_list,omitempty"`
-	GenericPartList       []string `protobuf:"bytes,6,rep,name=generic_part_list,json=genericPartList,proto3" json:"generic_part_list,omitempty"`
-	AdditionalData        []byte   `protobuf:"bytes,7,opt,name=additional_data,json=additionalData,proto3" json:"additional_data,omitempty"`
-	CustomizationPartList []string `protobuf:"bytes,8,rep,name=customization_part_list,json=customizationPartList,proto3" json:"customization_part_list,omitempty"`
+	GameStage             int32    `protobuf:"varint,1,opt,name=game_stage,json=gameStage,proto3" json:"game_stage"`
+	InventoryData         string   `protobuf:"bytes,2,opt,name=inventory_data,json=inventoryData,proto3" json:"inventory_data"`
+	InventoryBalanceData  string   `protobuf:"bytes,3,opt,name=inventory_balance_data,json=inventoryBalanceData,proto3" json:"inventory_balance_data"`
+	ManufacturerData      string   `protobuf:"bytes,4,opt,name=manufacturer_data,json=manufacturerData,proto3" json:"manufacturer_data"`
+	PartList              []string `protobuf:"bytes,5,rep,name=part_list,json=partList,proto3" json:"part_list"`
+	GenericPartList       []string `protobuf:"bytes,6,rep,name=generic_part_list,json=genericPartList,proto3" json:"generic_part_list"`
+	AdditionalData        []byte   `protobuf:"bytes,7,opt,name=additional_data,json=additionalData,proto3" json:"additional_data"`
+	CustomizationPartList []string `protobuf:"bytes,8,rep,name=customization_part_list,json=customizationPartList,proto3" json:"customization_part_list"`
 }
 
 func (x *InventoryBalanceStateInitializationData) Reset() {
@@ -369,11 +369,11 @@ type OakInventoryItemSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ItemSerialNumber    []byte                                   `protobuf:"bytes,1,opt,name=item_serial_number,json=itemSerialNumber,proto3" json:"item_serial_number,omitempty"`
-	PickupOrderIndex    int32                                    `protobuf:"varint,2,opt,name=pickup_order_index,json=pickupOrderIndex,proto3" json:"pickup_order_index,omitempty"`
-	Flags               int32                                    `protobuf:"varint,3,opt,name=flags,proto3" json:"flags,omitempty"`
-	WeaponSkinPath      string                                   `protobuf:"bytes,4,opt,name=weapon_skin_path,json=weaponSkinPath,proto3" json:"weapon_skin_path,omitempty"`
-	DevelopmentSaveData *InventoryBalanceStateInitializationData `protobuf:"bytes,5,opt,name=development_save_data,json=developmentSaveData,proto3" json:"development_save_data,omitempty"`
+	ItemSerialNumber    []byte                                   `protobuf:"bytes,1,opt,name=item_serial_number,json=itemSerialNumber,proto3" json:"item_serial_number"`
+	PickupOrderIndex    int32                                    `protobuf:"varint,2,opt,name=pickup_order_index,json=pickupOrderIndex,proto3" json:"pickup_order_index"`
+	Flags               int32                                    `protobuf:"varint,3,opt,name=flags,proto3" json:"flags"`
+	WeaponSkinPath      string                                   `protobuf:"bytes,4,opt,name=weapon_skin_path,json=weaponSkinPath,proto3" json:"weapon_skin_path"`
+	DevelopmentSaveData *InventoryBalanceStateInitializationData `protobuf:"bytes,5,opt,name=development_save_data,json=developmentSaveData,proto3" json:"development_save_data"`
 }
 
 func (x *OakInventoryItemSaveGameData) Reset() {
@@ -448,10 +448,10 @@ type EquippedInventorySaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	InventoryListIndex int32  `protobuf:"varint,1,opt,name=inventory_list_index,json=inventoryListIndex,proto3" json:"inventory_list_index,omitempty"`
-	Enabled            bool   `protobuf:"varint,2,opt,name=enabled,proto3" json:"enabled,omitempty"`
-	SlotDataPath       string `protobuf:"bytes,3,opt,name=slot_data_path,json=slotDataPath,proto3" json:"slot_data_path,omitempty"`
-	TrinketDataPath    string `protobuf:"bytes,4,opt,name=trinket_data_path,json=trinketDataPath,proto3" json:"trinket_data_path,omitempty"`
+	InventoryListIndex int32  `protobuf:"varint,1,opt,name=inventory_list_index,json=inventoryListIndex,proto3" json:"inventory_list_index"`
+	Enabled            bool   `protobuf:"varint,2,opt,name=enabled,proto3" json:"enabled"`
+	SlotDataPath       string `protobuf:"bytes,3,opt,name=slot_data_path,json=slotDataPath,proto3" json:"slot_data_path"`
+	TrinketDataPath    string `protobuf:"bytes,4,opt,name=trinket_data_path,json=trinketDataPath,proto3" json:"trinket_data_path"`
 }
 
 func (x *EquippedInventorySaveGameData) Reset() {
@@ -519,10 +519,10 @@ type OakAbilityTreeItemSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ItemAssetPath  string `protobuf:"bytes,1,opt,name=item_asset_path,json=itemAssetPath,proto3" json:"item_asset_path,omitempty"`
-	Points         int32  `protobuf:"varint,2,opt,name=points,proto3" json:"points,omitempty"`
-	MaxPoints      int32  `protobuf:"varint,3,opt,name=max_points,json=maxPoints,proto3" json:"max_points,omitempty"`
-	TreeIdentifier int32  `protobuf:"varint,4,opt,name=tree_identifier,json=treeIdentifier,proto3" json:"tree_identifier,omitempty"`
+	ItemAssetPath  string `protobuf:"bytes,1,opt,name=item_asset_path,json=itemAssetPath,proto3" json:"item_asset_path"`
+	Points         int32  `protobuf:"varint,2,opt,name=points,proto3" json:"points"`
+	MaxPoints      int32  `protobuf:"varint,3,opt,name=max_points,json=maxPoints,proto3" json:"max_points"`
+	TreeIdentifier int32  `protobuf:"varint,4,opt,name=tree_identifier,json=treeIdentifier,proto3" json:"tree_identifier"`
 }
 
 func (x *OakAbilityTreeItemSaveGameData) Reset() {
@@ -590,8 +590,8 @@ type OakAbilitySlotSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AbilityClassPath string `protobuf:"bytes,1,opt,name=ability_class_path,json=abilityClassPath,proto3" json:"ability_class_path,omitempty"`
-	SlotAssetPath    string `protobuf:"bytes,2,opt,name=slot_asset_path,json=slotAssetPath,proto3" json:"slot_asset_path,omitempty"`
+	AbilityClassPath string `protobuf:"bytes,1,opt,name=ability_class_path,json=abilityClassPath,proto3" json:"ability_class_path"`
+	SlotAssetPath    string `protobuf:"bytes,2,opt,name=slot_asset_path,json=slotAssetPath,proto3" json:"slot_asset_path"`
 }
 
 func (x *OakAbilitySlotSaveGameData) Reset() {
@@ -645,9 +645,9 @@ type OakActionAbilityAugmentSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ActionAbilityClassPath string `protobuf:"bytes,1,opt,name=action_ability_class_path,json=actionAbilityClassPath,proto3" json:"action_ability_class_path,omitempty"`
-	SlotAssetPath          string `protobuf:"bytes,2,opt,name=slot_asset_path,json=slotAssetPath,proto3" json:"slot_asset_path,omitempty"`
-	AugmentAssetPath       string `protobuf:"bytes,3,opt,name=augment_asset_path,json=augmentAssetPath,proto3" json:"augment_asset_path,omitempty"`
+	ActionAbilityClassPath string `protobuf:"bytes,1,opt,name=action_ability_class_path,json=actionAbilityClassPath,proto3" json:"action_ability_class_path"`
+	SlotAssetPath          string `protobuf:"bytes,2,opt,name=slot_asset_path,json=slotAssetPath,proto3" json:"slot_asset_path"`
+	AugmentAssetPath       string `protobuf:"bytes,3,opt,name=augment_asset_path,json=augmentAssetPath,proto3" json:"augment_asset_path"`
 }
 
 func (x *OakActionAbilityAugmentSaveGameData) Reset() {
@@ -708,10 +708,10 @@ type OakActionAbilityAugmentConfigurationSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AbilityClassPath string `protobuf:"bytes,1,opt,name=ability_class_path,json=abilityClassPath,proto3" json:"ability_class_path,omitempty"`
-	AugmentAssetPath string `protobuf:"bytes,2,opt,name=augment_asset_path,json=augmentAssetPath,proto3" json:"augment_asset_path,omitempty"`
-	ModSlotAssetPath string `protobuf:"bytes,3,opt,name=mod_slot_asset_path,json=modSlotAssetPath,proto3" json:"mod_slot_asset_path,omitempty"`
-	ModAssetPath     string `protobuf:"bytes,4,opt,name=mod_asset_path,json=modAssetPath,proto3" json:"mod_asset_path,omitempty"`
+	AbilityClassPath string `protobuf:"bytes,1,opt,name=ability_class_path,json=abilityClassPath,proto3" json:"ability_class_path"`
+	AugmentAssetPath string `protobuf:"bytes,2,opt,name=augment_asset_path,json=augmentAssetPath,proto3" json:"augment_asset_path"`
+	ModSlotAssetPath string `protobuf:"bytes,3,opt,name=mod_slot_asset_path,json=modSlotAssetPath,proto3" json:"mod_slot_asset_path"`
+	ModAssetPath     string `protobuf:"bytes,4,opt,name=mod_asset_path,json=modAssetPath,proto3" json:"mod_asset_path"`
 }
 
 func (x *OakActionAbilityAugmentConfigurationSaveGameData) Reset() {
@@ -779,12 +779,12 @@ type OakPlayerAbilitySaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AbilityPoints            int32                                               `protobuf:"varint,1,opt,name=ability_points,json=abilityPoints,proto3" json:"ability_points,omitempty"`
-	TreeItemList             []*OakAbilityTreeItemSaveGameData                   `protobuf:"bytes,2,rep,name=tree_item_list,json=treeItemList,proto3" json:"tree_item_list,omitempty"`
-	AbilitySlotList          []*OakAbilitySlotSaveGameData                       `protobuf:"bytes,3,rep,name=ability_slot_list,json=abilitySlotList,proto3" json:"ability_slot_list,omitempty"`
-	AugmentSlotList          []*OakActionAbilityAugmentSaveGameData              `protobuf:"bytes,4,rep,name=augment_slot_list,json=augmentSlotList,proto3" json:"augment_slot_list,omitempty"`
-	AugmentConfigurationList []*OakActionAbilityAugmentConfigurationSaveGameData `protobuf:"bytes,5,rep,name=augment_configuration_list,json=augmentConfigurationList,proto3" json:"augment_configuration_list,omitempty"`
-	TreeGrade                int32                                               `protobuf:"varint,6,opt,name=tree_grade,json=treeGrade,proto3" json:"tree_grade,omitempty"`
+	AbilityPoints            int32                                               `protobuf:"varint,1,opt,name=ability_points,json=abilityPoints,proto3" json:"ability_points"`
+	TreeItemList             []*OakAbilityTreeItemSaveGameData                   `protobuf:"bytes,2,rep,name=tree_item_list,json=treeItemList,proto3" json:"tree_item_list"`
+	AbilitySlotList          []*OakAbilitySlotSaveGameData                       `protobuf:"bytes,3,rep,name=ability_slot_list,json=abilitySlotList,proto3" json:"ability_slot_list"`
+	AugmentSlotList          []*OakActionAbilityAugmentSaveGameData              `protobuf:"bytes,4,rep,name=augment_slot_list,json=augmentSlotList,proto3" json:"augment_slot_list"`
+	AugmentConfigurationList []*OakActionAbilityAugmentConfigurationSaveGameData `protobuf:"bytes,5,rep,name=augment_configuration_list,json=augmentConfigurationList,proto3" json:"augment_configuration_list"`
+	TreeGrade                int32                                               `protobuf:"varint,6,opt,name=tree_grade,json=treeGrade,proto3" json:"tree_grade"`
 }
 
 func (x *OakPlayerAbilitySaveGameData) Reset() {
@@ -866,14 +866,14 @@ type MissionStatusPlayerSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Status                 MissionStatusPlayerSaveGameData_MissionState `protobuf:"varint,1,opt,name=status,proto3,enum=OakSave.MissionStatusPlayerSaveGameData_MissionState" json:"status,omitempty"`
-	HasBeenViewedInLog     bool                                         `protobuf:"varint,2,opt,name=has_been_viewed_in_log,json=hasBeenViewedInLog,proto3" json:"has_been_viewed_in_log,omitempty"`
-	ObjectivesProgress     []int32                                      `protobuf:"varint,3,rep,packed,name=objectives_progress,json=objectivesProgress,proto3" json:"objectives_progress,omitempty"`
-	MissionClassPath       string                                       `protobuf:"bytes,4,opt,name=mission_class_path,json=missionClassPath,proto3" json:"mission_class_path,omitempty"`
-	ActiveObjectiveSetPath string                                       `protobuf:"bytes,5,opt,name=active_objective_set_path,json=activeObjectiveSetPath,proto3" json:"active_objective_set_path,omitempty"`
-	DlcPackageId           uint32                                       `protobuf:"varint,6,opt,name=dlc_package_id,json=dlcPackageId,proto3" json:"dlc_package_id,omitempty"`
-	KickoffPlayed          bool                                         `protobuf:"varint,7,opt,name=kickoff_played,json=kickoffPlayed,proto3" json:"kickoff_played,omitempty"`
-	LeagueInstance         uint32                                       `protobuf:"varint,8,opt,name=league_instance,json=leagueInstance,proto3" json:"league_instance,omitempty"`
+	Status                 MissionStatusPlayerSaveGameData_MissionState `protobuf:"varint,1,opt,name=status,proto3,enum=OakSave.MissionStatusPlayerSaveGameData_MissionState" json:"status"`
+	HasBeenViewedInLog     bool                                         `protobuf:"varint,2,opt,name=has_been_viewed_in_log,json=hasBeenViewedInLog,proto3" json:"has_been_viewed_in_log"`
+	ObjectivesProgress     []int32                                      `protobuf:"varint,3,rep,packed,name=objectives_progress,json=objectivesProgress,proto3" json:"objectives_progress"`
+	MissionClassPath       string                                       `protobuf:"bytes,4,opt,name=mission_class_path,json=missionClassPath,proto3" json:"mission_class_path"`
+	ActiveObjectiveSetPath string                                       `protobuf:"bytes,5,opt,name=active_objective_set_path,json=activeObjectiveSetPath,proto3" json:"active_objective_set_path"`
+	DlcPackageId           uint32                                       `protobuf:"varint,6,opt,name=dlc_package_id,json=dlcPackageId,proto3" json:"dlc_package_id"`
+	KickoffPlayed          bool                                         `protobuf:"varint,7,opt,name=kickoff_played,json=kickoffPlayed,proto3" json:"kickoff_played"`
+	LeagueInstance         uint32                                       `protobuf:"varint,8,opt,name=league_instance,json=leagueInstance,proto3" json:"league_instance"`
 }
 
 func (x *MissionStatusPlayerSaveGameData) Reset() {
@@ -969,8 +969,8 @@ type MissionPlaythroughSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MissionList             []*MissionStatusPlayerSaveGameData `protobuf:"bytes,1,rep,name=mission_list,json=missionList,proto3" json:"mission_list,omitempty"`
-	TrackedMissionClassPath string                             `protobuf:"bytes,2,opt,name=tracked_mission_class_path,json=trackedMissionClassPath,proto3" json:"tracked_mission_class_path,omitempty"`
+	MissionList             []*MissionStatusPlayerSaveGameData `protobuf:"bytes,1,rep,name=mission_list,json=missionList,proto3" json:"mission_list"`
+	TrackedMissionClassPath string                             `protobuf:"bytes,2,opt,name=tracked_mission_class_path,json=trackedMissionClassPath,proto3" json:"tracked_mission_class_path"`
 }
 
 func (x *MissionPlaythroughSaveGameData) Reset() {
@@ -1024,8 +1024,8 @@ type ActiveFastTravelSaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ActiveTravelStationName string `protobuf:"bytes,1,opt,name=active_travel_station_name,json=activeTravelStationName,proto3" json:"active_travel_station_name,omitempty"`
-	Blacklisted             bool   `protobuf:"varint,2,opt,name=blacklisted,proto3" json:"blacklisted,omitempty"`
+	ActiveTravelStationName string `protobuf:"bytes,1,opt,name=active_travel_station_name,json=activeTravelStationName,proto3" json:"active_travel_station_name"`
+	Blacklisted             bool   `protobuf:"varint,2,opt,name=blacklisted,proto3" json:"blacklisted"`
 }
 
 func (x *ActiveFastTravelSaveData) Reset() {
@@ -1079,7 +1079,7 @@ type PlaythroughActiveFastTravelSaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ActiveTravelStations []*ActiveFastTravelSaveData `protobuf:"bytes,1,rep,name=active_travel_stations,json=activeTravelStations,proto3" json:"active_travel_stations,omitempty"`
+	ActiveTravelStations []*ActiveFastTravelSaveData `protobuf:"bytes,1,rep,name=active_travel_stations,json=activeTravelStations,proto3" json:"active_travel_stations"`
 }
 
 func (x *PlaythroughActiveFastTravelSaveData) Reset() {
@@ -1126,8 +1126,8 @@ type DiscoveredAreaInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DiscoveredAreaName     string `protobuf:"bytes,1,opt,name=discovered_area_name,json=discoveredAreaName,proto3" json:"discovered_area_name,omitempty"`
-	DiscoveredPlaythroughs uint32 `protobuf:"varint,2,opt,name=discovered_playthroughs,json=discoveredPlaythroughs,proto3" json:"discovered_playthroughs,omitempty"`
+	DiscoveredAreaName     string `protobuf:"bytes,1,opt,name=discovered_area_name,json=discoveredAreaName,proto3" json:"discovered_area_name"`
+	DiscoveredPlaythroughs uint32 `protobuf:"varint,2,opt,name=discovered_playthroughs,json=discoveredPlaythroughs,proto3" json:"discovered_playthroughs"`
 }
 
 func (x *DiscoveredAreaInfo) Reset() {
@@ -1181,9 +1181,9 @@ type DiscoveredLevelInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DiscoveredLevelName    string                `protobuf:"bytes,1,opt,name=discovered_level_name,json=discoveredLevelName,proto3" json:"discovered_level_name,omitempty"`
-	DiscoveredPlaythroughs uint32                `protobuf:"varint,3,opt,name=discovered_playthroughs,json=discoveredPlaythroughs,proto3" json:"discovered_playthroughs,omitempty"`
-	DiscoveredAreaInfo     []*DiscoveredAreaInfo `protobuf:"bytes,4,rep,name=discovered_area_info,json=discoveredAreaInfo,proto3" json:"discovered_area_info,omitempty"`
+	DiscoveredLevelName    string                `protobuf:"bytes,1,opt,name=discovered_level_name,json=discoveredLevelName,proto3" json:"discovered_level_name"`
+	DiscoveredPlaythroughs uint32                `protobuf:"varint,3,opt,name=discovered_playthroughs,json=discoveredPlaythroughs,proto3" json:"discovered_playthroughs"`
+	DiscoveredAreaInfo     []*DiscoveredAreaInfo `protobuf:"bytes,4,rep,name=discovered_area_info,json=discoveredAreaInfo,proto3" json:"discovered_area_info"`
 }
 
 func (x *DiscoveredLevelInfo) Reset() {
@@ -1244,8 +1244,8 @@ type DiscoveredPlanetInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DiscoveredPlanet string `protobuf:"bytes,1,opt,name=discovered_planet,json=discoveredPlanet,proto3" json:"discovered_planet,omitempty"`
-	IsNewPlanet      bool   `protobuf:"varint,2,opt,name=is_new_planet,json=isNewPlanet,proto3" json:"is_new_planet,omitempty"`
+	DiscoveredPlanet string `protobuf:"bytes,1,opt,name=discovered_planet,json=discoveredPlanet,proto3" json:"discovered_planet"`
+	IsNewPlanet      bool   `protobuf:"varint,2,opt,name=is_new_planet,json=isNewPlanet,proto3" json:"is_new_planet"`
 }
 
 func (x *DiscoveredPlanetInfo) Reset() {
@@ -1299,7 +1299,7 @@ type DiscoverySaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DiscoveredLevelInfo []*DiscoveredLevelInfo `protobuf:"bytes,1,rep,name=discovered_level_info,json=discoveredLevelInfo,proto3" json:"discovered_level_info,omitempty"`
+	DiscoveredLevelInfo []*DiscoveredLevelInfo `protobuf:"bytes,1,rep,name=discovered_level_info,json=discoveredLevelInfo,proto3" json:"discovered_level_info"`
 }
 
 func (x *DiscoverySaveData) Reset() {
@@ -1346,8 +1346,8 @@ type VehicleUnlockedSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AssetPath    string `protobuf:"bytes,1,opt,name=asset_path,json=assetPath,proto3" json:"asset_path,omitempty"`
-	JustUnlocked bool   `protobuf:"varint,2,opt,name=just_unlocked,json=justUnlocked,proto3" json:"just_unlocked,omitempty"`
+	AssetPath    string `protobuf:"bytes,1,opt,name=asset_path,json=assetPath,proto3" json:"asset_path"`
+	JustUnlocked bool   `protobuf:"varint,2,opt,name=just_unlocked,json=justUnlocked,proto3" json:"just_unlocked"`
 }
 
 func (x *VehicleUnlockedSaveGameData) Reset() {
@@ -1401,19 +1401,19 @@ type OakCARMenuVehicleConfigSaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LoadoutSaveName        string `protobuf:"bytes,1,opt,name=loadout_save_name,json=loadoutSaveName,proto3" json:"loadout_save_name,omitempty"`
-	BodyAssetPath          string `protobuf:"bytes,2,opt,name=body_asset_path,json=bodyAssetPath,proto3" json:"body_asset_path,omitempty"`
-	WheelAssetPath         string `protobuf:"bytes,3,opt,name=wheel_asset_path,json=wheelAssetPath,proto3" json:"wheel_asset_path,omitempty"`
-	ArmorAssetPath         string `protobuf:"bytes,4,opt,name=armor_asset_path,json=armorAssetPath,proto3" json:"armor_asset_path,omitempty"`
-	CoreModAssetPath       string `protobuf:"bytes,5,opt,name=core_mod_asset_path,json=coreModAssetPath,proto3" json:"core_mod_asset_path,omitempty"`
-	GunnerWeaponAssetPath  string `protobuf:"bytes,6,opt,name=gunner_weapon_asset_path,json=gunnerWeaponAssetPath,proto3" json:"gunner_weapon_asset_path,omitempty"`
-	DriverWeaponAssetPath  string `protobuf:"bytes,7,opt,name=driver_weapon_asset_path,json=driverWeaponAssetPath,proto3" json:"driver_weapon_asset_path,omitempty"`
-	OrnamentAssetPath      string `protobuf:"bytes,8,opt,name=ornament_asset_path,json=ornamentAssetPath,proto3" json:"ornament_asset_path,omitempty"`
-	MaterialDecalAssetPath string `protobuf:"bytes,9,opt,name=material_decal_asset_path,json=materialDecalAssetPath,proto3" json:"material_decal_asset_path,omitempty"`
-	MaterialAssetPath      string `protobuf:"bytes,10,opt,name=material_asset_path,json=materialAssetPath,proto3" json:"material_asset_path,omitempty"`
-	ColorIndex_1           int32  `protobuf:"varint,11,opt,name=color_index_1,json=colorIndex1,proto3" json:"color_index_1,omitempty"`
-	ColorIndex_2           int32  `protobuf:"varint,12,opt,name=color_index_2,json=colorIndex2,proto3" json:"color_index_2,omitempty"`
-	ColorIndex_3           int32  `protobuf:"varint,13,opt,name=color_index_3,json=colorIndex3,proto3" json:"color_index_3,omitempty"`
+	LoadoutSaveName        string `protobuf:"bytes,1,opt,name=loadout_save_name,json=loadoutSaveName,proto3" json:"loadout_save_name"`
+	BodyAssetPath          string `protobuf:"bytes,2,opt,name=body_asset_path,json=bodyAssetPath,proto3" json:"body_asset_path"`
+	WheelAssetPath         string `protobuf:"bytes,3,opt,name=wheel_asset_path,json=wheelAssetPath,proto3" json:"wheel_asset_path"`
+	ArmorAssetPath         string `protobuf:"bytes,4,opt,name=armor_asset_path,json=armorAssetPath,proto3" json:"armor_asset_path"`
+	CoreModAssetPath       string `protobuf:"bytes,5,opt,name=core_mod_asset_path,json=coreModAssetPath,proto3" json:"core_mod_asset_path"`
+	GunnerWeaponAssetPath  string `protobuf:"bytes,6,opt,name=gunner_weapon_asset_path,json=gunnerWeaponAssetPath,proto3" json:"gunner_weapon_asset_path"`
+	DriverWeaponAssetPath  string `protobuf:"bytes,7,opt,name=driver_weapon_asset_path,json=driverWeaponAssetPath,proto3" json:"driver_weapon_asset_path"`
+	OrnamentAssetPath      string `protobuf:"bytes,8,opt,name=ornament_asset_path,json=ornamentAssetPath,proto3" json:"ornament_asset_path"`
+	MaterialDecalAssetPath string `protobuf:"bytes,9,opt,name=material_decal_asset_path,json=materialDecalAssetPath,proto3" json:"material_decal_asset_path"`
+	MaterialAssetPath      string `protobuf:"bytes,10,opt,name=material_asset_path,json=materialAssetPath,proto3" json:"material_asset_path"`
+	ColorIndex_1           int32  `protobuf:"varint,11,opt,name=color_index_1,json=colorIndex1,proto3" json:"color_index_1"`
+	ColorIndex_2           int32  `protobuf:"varint,12,opt,name=color_index_2,json=colorIndex2,proto3" json:"color_index_2"`
+	ColorIndex_3           int32  `protobuf:"varint,13,opt,name=color_index_3,json=colorIndex3,proto3" json:"color_index_3"`
 }
 
 func (x *OakCARMenuVehicleConfigSaveData) Reset() {
@@ -1544,11 +1544,11 @@ type CustomPlayerColorSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ColorParameter       string `protobuf:"bytes,1,opt,name=color_parameter,json=colorParameter,proto3" json:"color_parameter,omitempty"`
-	AppliedColor         *Vec3  `protobuf:"bytes,2,opt,name=applied_color,json=appliedColor,proto3" json:"applied_color,omitempty"`
-	SplitColor           *Vec3  `protobuf:"bytes,3,opt,name=split_color,json=splitColor,proto3" json:"split_color,omitempty"`
-	UseDefaultColor      bool   `protobuf:"varint,4,opt,name=use_default_color,json=useDefaultColor,proto3" json:"use_default_color,omitempty"`
-	UseDefaultSplitColor bool   `protobuf:"varint,5,opt,name=use_default_split_color,json=useDefaultSplitColor,proto3" json:"use_default_split_color,omitempty"`
+	ColorParameter       string `protobuf:"bytes,1,opt,name=color_parameter,json=colorParameter,proto3" json:"color_parameter"`
+	AppliedColor         *Vec3  `protobuf:"bytes,2,opt,name=applied_color,json=appliedColor,proto3" json:"applied_color"`
+	SplitColor           *Vec3  `protobuf:"bytes,3,opt,name=split_color,json=splitColor,proto3" json:"split_color"`
+	UseDefaultColor      bool   `protobuf:"varint,4,opt,name=use_default_color,json=useDefaultColor,proto3" json:"use_default_color"`
+	UseDefaultSplitColor bool   `protobuf:"varint,5,opt,name=use_default_split_color,json=useDefaultSplitColor,proto3" json:"use_default_split_color"`
 }
 
 func (x *CustomPlayerColorSaveGameData) Reset() {
@@ -1623,8 +1623,8 @@ type GuardianRankSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	GuardianRank       int32 `protobuf:"varint,1,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank,omitempty"`
-	GuardianExperience int32 `protobuf:"varint,2,opt,name=guardian_experience,json=guardianExperience,proto3" json:"guardian_experience,omitempty"`
+	GuardianRank       int32 `protobuf:"varint,1,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank"`
+	GuardianExperience int32 `protobuf:"varint,2,opt,name=guardian_experience,json=guardianExperience,proto3" json:"guardian_experience"`
 }
 
 func (x *GuardianRankSaveGameData) Reset() {
@@ -1678,9 +1678,9 @@ type GuardianRankRewardCharacterSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NumTokens      int32  `protobuf:"varint,1,opt,name=num_tokens,json=numTokens,proto3" json:"num_tokens,omitempty"`
-	IsEnabled      bool   `protobuf:"varint,2,opt,name=is_enabled,json=isEnabled,proto3" json:"is_enabled,omitempty"`
-	RewardDataPath string `protobuf:"bytes,3,opt,name=reward_data_path,json=rewardDataPath,proto3" json:"reward_data_path,omitempty"`
+	NumTokens      int32  `protobuf:"varint,1,opt,name=num_tokens,json=numTokens,proto3" json:"num_tokens"`
+	IsEnabled      bool   `protobuf:"varint,2,opt,name=is_enabled,json=isEnabled,proto3" json:"is_enabled"`
+	RewardDataPath string `protobuf:"bytes,3,opt,name=reward_data_path,json=rewardDataPath,proto3" json:"reward_data_path"`
 }
 
 func (x *GuardianRankRewardCharacterSaveGameData) Reset() {
@@ -1741,8 +1741,8 @@ type GuardianRankPerkCharacterSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	IsEnabled    bool   `protobuf:"varint,1,opt,name=is_enabled,json=isEnabled,proto3" json:"is_enabled,omitempty"`
-	PerkDataPath string `protobuf:"bytes,2,opt,name=perk_data_path,json=perkDataPath,proto3" json:"perk_data_path,omitempty"`
+	IsEnabled    bool   `protobuf:"varint,1,opt,name=is_enabled,json=isEnabled,proto3" json:"is_enabled"`
+	PerkDataPath string `protobuf:"bytes,2,opt,name=perk_data_path,json=perkDataPath,proto3" json:"perk_data_path"`
 }
 
 func (x *GuardianRankPerkCharacterSaveGameData) Reset() {
@@ -1796,14 +1796,14 @@ type GuardianRankCharacterSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	GuardianAvailableTokens  int32                                      `protobuf:"varint,1,opt,name=guardian_available_tokens,json=guardianAvailableTokens,proto3" json:"guardian_available_tokens,omitempty"`
-	GuardianRank             int32                                      `protobuf:"varint,2,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank,omitempty"`
-	GuardianExperience       int32                                      `protobuf:"varint,3,opt,name=guardian_experience,json=guardianExperience,proto3" json:"guardian_experience,omitempty"`
-	RankRewards              []*GuardianRankRewardCharacterSaveGameData `protobuf:"bytes,4,rep,name=rank_rewards,json=rankRewards,proto3" json:"rank_rewards,omitempty"`
-	RankPerks                []*GuardianRankPerkCharacterSaveGameData   `protobuf:"bytes,5,rep,name=rank_perks,json=rankPerks,proto3" json:"rank_perks,omitempty"`
-	GuardianRewardRandomSeed int32                                      `protobuf:"varint,6,opt,name=guardian_reward_random_seed,json=guardianRewardRandomSeed,proto3" json:"guardian_reward_random_seed,omitempty"`
-	NewGuardianExperience    int64                                      `protobuf:"varint,7,opt,name=new_guardian_experience,json=newGuardianExperience,proto3" json:"new_guardian_experience,omitempty"`
-	IsRankSystemEnabled      bool                                       `protobuf:"varint,8,opt,name=is_rank_system_enabled,json=isRankSystemEnabled,proto3" json:"is_rank_system_enabled,omitempty"`
+	GuardianAvailableTokens  int32                                      `protobuf:"varint,1,opt,name=guardian_available_tokens,json=guardianAvailableTokens,proto3" json:"guardian_available_tokens"`
+	GuardianRank             int32                                      `protobuf:"varint,2,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank"`
+	GuardianExperience       int32                                      `protobuf:"varint,3,opt,name=guardian_experience,json=guardianExperience,proto3" json:"guardian_experience"`
+	RankRewards              []*GuardianRankRewardCharacterSaveGameData `protobuf:"bytes,4,rep,name=rank_rewards,json=rankRewards,proto3" json:"rank_rewards"`
+	RankPerks                []*GuardianRankPerkCharacterSaveGameData   `protobuf:"bytes,5,rep,name=rank_perks,json=rankPerks,proto3" json:"rank_perks"`
+	GuardianRewardRandomSeed int32                                      `protobuf:"varint,6,opt,name=guardian_reward_random_seed,json=guardianRewardRandomSeed,proto3" json:"guardian_reward_random_seed"`
+	NewGuardianExperience    int64                                      `protobuf:"varint,7,opt,name=new_guardian_experience,json=newGuardianExperience,proto3" json:"new_guardian_experience"`
+	IsRankSystemEnabled      bool                                       `protobuf:"varint,8,opt,name=is_rank_system_enabled,json=isRankSystemEnabled,proto3" json:"is_rank_system_enabled"`
 }
 
 func (x *GuardianRankCharacterSaveGameData) Reset() {
@@ -1899,8 +1899,8 @@ type CrewQuartersDecorationSaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DecorationIndex    int32  `protobuf:"varint,1,opt,name=decoration_index,json=decorationIndex,proto3" json:"decoration_index,omitempty"`
-	DecorationDataPath string `protobuf:"bytes,2,opt,name=decoration_data_path,json=decorationDataPath,proto3" json:"decoration_data_path,omitempty"`
+	DecorationIndex    int32  `protobuf:"varint,1,opt,name=decoration_index,json=decorationIndex,proto3" json:"decoration_index"`
+	DecorationDataPath string `protobuf:"bytes,2,opt,name=decoration_data_path,json=decorationDataPath,proto3" json:"decoration_data_path"`
 }
 
 func (x *CrewQuartersDecorationSaveData) Reset() {
@@ -1954,9 +1954,9 @@ type CrewQuartersSaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	PreferredRoomAssignment int32                             `protobuf:"varint,1,opt,name=preferred_room_assignment,json=preferredRoomAssignment,proto3" json:"preferred_room_assignment,omitempty"`
-	Decorations             []*CrewQuartersDecorationSaveData `protobuf:"bytes,2,rep,name=decorations,proto3" json:"decorations,omitempty"`
-	RoomDataPath            string                            `protobuf:"bytes,3,opt,name=room_data_path,json=roomDataPath,proto3" json:"room_data_path,omitempty"`
+	PreferredRoomAssignment int32                             `protobuf:"varint,1,opt,name=preferred_room_assignment,json=preferredRoomAssignment,proto3" json:"preferred_room_assignment"`
+	Decorations             []*CrewQuartersDecorationSaveData `protobuf:"bytes,2,rep,name=decorations,proto3" json:"decorations"`
+	RoomDataPath            string                            `protobuf:"bytes,3,opt,name=room_data_path,json=roomDataPath,proto3" json:"room_data_path"`
 }
 
 func (x *CrewQuartersSaveData) Reset() {
@@ -2017,9 +2017,9 @@ type CrewQuartersGunRackItemSaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	EncryptedSerialNumber []byte                                   `protobuf:"bytes,1,opt,name=encrypted_serial_number,json=encryptedSerialNumber,proto3" json:"encrypted_serial_number,omitempty"`
-	SlotAssetPath         string                                   `protobuf:"bytes,2,opt,name=slot_asset_path,json=slotAssetPath,proto3" json:"slot_asset_path,omitempty"`
-	DevelopmentSaveData   *InventoryBalanceStateInitializationData `protobuf:"bytes,3,opt,name=development_save_data,json=developmentSaveData,proto3" json:"development_save_data,omitempty"`
+	EncryptedSerialNumber []byte                                   `protobuf:"bytes,1,opt,name=encrypted_serial_number,json=encryptedSerialNumber,proto3" json:"encrypted_serial_number"`
+	SlotAssetPath         string                                   `protobuf:"bytes,2,opt,name=slot_asset_path,json=slotAssetPath,proto3" json:"slot_asset_path"`
+	DevelopmentSaveData   *InventoryBalanceStateInitializationData `protobuf:"bytes,3,opt,name=development_save_data,json=developmentSaveData,proto3" json:"development_save_data"`
 }
 
 func (x *CrewQuartersGunRackItemSaveData) Reset() {
@@ -2080,7 +2080,7 @@ type CrewQuartersGunRackSaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RackSaveData []*CrewQuartersGunRackItemSaveData `protobuf:"bytes,1,rep,name=rack_save_data,json=rackSaveData,proto3" json:"rack_save_data,omitempty"`
+	RackSaveData []*CrewQuartersGunRackItemSaveData `protobuf:"bytes,1,rep,name=rack_save_data,json=rackSaveData,proto3" json:"rack_save_data"`
 }
 
 func (x *CrewQuartersGunRackSaveData) Reset() {
@@ -2127,8 +2127,8 @@ type EchoLogSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	HasBeenSeenInLog bool   `protobuf:"varint,1,opt,name=has_been_seen_in_log,json=hasBeenSeenInLog,proto3" json:"has_been_seen_in_log,omitempty"`
-	EchoLogPath      string `protobuf:"bytes,2,opt,name=echo_log_path,json=echoLogPath,proto3" json:"echo_log_path,omitempty"`
+	HasBeenSeenInLog bool   `protobuf:"varint,1,opt,name=has_been_seen_in_log,json=hasBeenSeenInLog,proto3" json:"has_been_seen_in_log"`
+	EchoLogPath      string `protobuf:"bytes,2,opt,name=echo_log_path,json=echoLogPath,proto3" json:"echo_log_path"`
 }
 
 func (x *EchoLogSaveGameData) Reset() {
@@ -2182,8 +2182,8 @@ type MapIDData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ZoneNameId uint32 `protobuf:"varint,1,opt,name=zone_name_id,json=zoneNameId,proto3" json:"zone_name_id,omitempty"`
-	MapNameId  uint32 `protobuf:"varint,2,opt,name=map_name_id,json=mapNameId,proto3" json:"map_name_id,omitempty"`
+	ZoneNameId uint32 `protobuf:"varint,1,opt,name=zone_name_id,json=zoneNameId,proto3" json:"zone_name_id"`
+	MapNameId  uint32 `protobuf:"varint,2,opt,name=map_name_id,json=mapNameId,proto3" json:"map_name_id"`
 }
 
 func (x *MapIDData) Reset() {
@@ -2237,9 +2237,9 @@ type GameStateSaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LastTraveledMapId *MapIDData `protobuf:"bytes,1,opt,name=last_traveled_map_id,json=lastTraveledMapId,proto3" json:"last_traveled_map_id,omitempty"`
-	MayhemLevel       int32      `protobuf:"varint,2,opt,name=mayhem_level,json=mayhemLevel,proto3" json:"mayhem_level,omitempty"`
-	MayhemRandomSeed  int32      `protobuf:"varint,3,opt,name=mayhem_random_seed,json=mayhemRandomSeed,proto3" json:"mayhem_random_seed,omitempty"`
+	LastTraveledMapId *MapIDData `protobuf:"bytes,1,opt,name=last_traveled_map_id,json=lastTraveledMapId,proto3" json:"last_traveled_map_id"`
+	MayhemLevel       int32      `protobuf:"varint,2,opt,name=mayhem_level,json=mayhemLevel,proto3" json:"mayhem_level"`
+	MayhemRandomSeed  int32      `protobuf:"varint,3,opt,name=mayhem_random_seed,json=mayhemRandomSeed,proto3" json:"mayhem_random_seed"`
 }
 
 func (x *GameStateSaveData) Reset() {
@@ -2300,7 +2300,7 @@ type ChallengeCategoryProgressSaveData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CategoryProgress []byte `protobuf:"bytes,1,opt,name=category_progress,json=categoryProgress,proto3" json:"category_progress,omitempty"`
+	CategoryProgress []byte `protobuf:"bytes,1,opt,name=category_progress,json=categoryProgress,proto3" json:"category_progress"`
 }
 
 func (x *ChallengeCategoryProgressSaveData) Reset() {
@@ -2347,8 +2347,8 @@ type OakPlayerCharacterAugmentSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SlotAssetPath    string `protobuf:"bytes,1,opt,name=slot_asset_path,json=slotAssetPath,proto3" json:"slot_asset_path,omitempty"`
-	AugmentAssetPath string `protobuf:"bytes,2,opt,name=augment_asset_path,json=augmentAssetPath,proto3" json:"augment_asset_path,omitempty"`
+	SlotAssetPath    string `protobuf:"bytes,1,opt,name=slot_asset_path,json=slotAssetPath,proto3" json:"slot_asset_path"`
+	AugmentAssetPath string `protobuf:"bytes,2,opt,name=augment_asset_path,json=augmentAssetPath,proto3" json:"augment_asset_path"`
 }
 
 func (x *OakPlayerCharacterAugmentSaveGameData) Reset() {
@@ -2402,7 +2402,7 @@ type OakPlayerCharacterSlotSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AugmentSlotList []*OakPlayerCharacterAugmentSaveGameData `protobuf:"bytes,1,rep,name=augment_slot_list,json=augmentSlotList,proto3" json:"augment_slot_list,omitempty"`
+	AugmentSlotList []*OakPlayerCharacterAugmentSaveGameData `protobuf:"bytes,1,rep,name=augment_slot_list,json=augmentSlotList,proto3" json:"augment_slot_list"`
 }
 
 func (x *OakPlayerCharacterSlotSaveGameData) Reset() {
@@ -2449,14 +2449,14 @@ type UITrackingSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	HasSeenSkillMenuUnlock        bool     `protobuf:"varint,1,opt,name=has_seen_skill_menu_unlock,json=hasSeenSkillMenuUnlock,proto3" json:"has_seen_skill_menu_unlock,omitempty"`
-	HasSeenGuardianRankMenuUnlock bool     `protobuf:"varint,2,opt,name=has_seen_guardian_rank_menu_unlock,json=hasSeenGuardianRankMenuUnlock,proto3" json:"has_seen_guardian_rank_menu_unlock,omitempty"`
-	HasSeenEchoBootAmmoBar        bool     `protobuf:"varint,3,opt,name=has_seen_echo_boot_ammo_bar,json=hasSeenEchoBootAmmoBar,proto3" json:"has_seen_echo_boot_ammo_bar,omitempty"`
-	HasSeenEchoBootShieldBar      bool     `protobuf:"varint,4,opt,name=has_seen_echo_boot_shield_bar,json=hasSeenEchoBootShieldBar,proto3" json:"has_seen_echo_boot_shield_bar,omitempty"`
-	HasSeenEchoBootGrenades       bool     `protobuf:"varint,5,opt,name=has_seen_echo_boot_grenades,json=hasSeenEchoBootGrenades,proto3" json:"has_seen_echo_boot_grenades,omitempty"`
-	HighestThvmBreadcrumbSeen     int32    `protobuf:"varint,6,opt,name=highest_thvm_breadcrumb_seen,json=highestThvmBreadcrumbSeen,proto3" json:"highest_thvm_breadcrumb_seen,omitempty"`
-	InventorySlotUnlocksSeen      []string `protobuf:"bytes,7,rep,name=inventory_slot_unlocks_seen,json=inventorySlotUnlocksSeen,proto3" json:"inventory_slot_unlocks_seen,omitempty"`
-	SavedSpinOffset               int32    `protobuf:"varint,8,opt,name=saved_spin_offset,json=savedSpinOffset,proto3" json:"saved_spin_offset,omitempty"`
+	HasSeenSkillMenuUnlock        bool     `protobuf:"varint,1,opt,name=has_seen_skill_menu_unlock,json=hasSeenSkillMenuUnlock,proto3" json:"has_seen_skill_menu_unlock"`
+	HasSeenGuardianRankMenuUnlock bool     `protobuf:"varint,2,opt,name=has_seen_guardian_rank_menu_unlock,json=hasSeenGuardianRankMenuUnlock,proto3" json:"has_seen_guardian_rank_menu_unlock"`
+	HasSeenEchoBootAmmoBar        bool     `protobuf:"varint,3,opt,name=has_seen_echo_boot_ammo_bar,json=hasSeenEchoBootAmmoBar,proto3" json:"has_seen_echo_boot_ammo_bar"`
+	HasSeenEchoBootShieldBar      bool     `protobuf:"varint,4,opt,name=has_seen_echo_boot_shield_bar,json=hasSeenEchoBootShieldBar,proto3" json:"has_seen_echo_boot_shield_bar"`
+	HasSeenEchoBootGrenades       bool     `protobuf:"varint,5,opt,name=has_seen_echo_boot_grenades,json=hasSeenEchoBootGrenades,proto3" json:"has_seen_echo_boot_grenades"`
+	HighestThvmBreadcrumbSeen     int32    `protobuf:"varint,6,opt,name=highest_thvm_breadcrumb_seen,json=highestThvmBreadcrumbSeen,proto3" json:"highest_thvm_breadcrumb_seen"`
+	InventorySlotUnlocksSeen      []string `protobuf:"bytes,7,rep,name=inventory_slot_unlocks_seen,json=inventorySlotUnlocksSeen,proto3" json:"inventory_slot_unlocks_seen"`
+	SavedSpinOffset               int32    `protobuf:"varint,8,opt,name=saved_spin_offset,json=savedSpinOffset,proto3" json:"saved_spin_offset"`
 }
 
 func (x *UITrackingSaveGameData) Reset() {
@@ -2552,9 +2552,9 @@ type PlanetCycleInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	PlanetName     string  `protobuf:"bytes,1,opt,name=planet_name,json=planetName,proto3" json:"planet_name,omitempty"`
-	CycleLength    float32 `protobuf:"fixed32,2,opt,name=cycle_length,json=cycleLength,proto3" json:"cycle_length,omitempty"`
-	LastCachedTime float32 `protobuf:"fixed32,3,opt,name=last_cached_time,json=lastCachedTime,proto3" json:"last_cached_time,omitempty"`
+	PlanetName     string  `protobuf:"bytes,1,opt,name=planet_name,json=planetName,proto3" json:"planet_name"`
+	CycleLength    float32 `protobuf:"fixed32,2,opt,name=cycle_length,json=cycleLength,proto3" json:"cycle_length"`
+	LastCachedTime float32 `protobuf:"fixed32,3,opt,name=last_cached_time,json=lastCachedTime,proto3" json:"last_cached_time"`
 }
 
 func (x *PlanetCycleInfo) Reset() {
@@ -2615,8 +2615,8 @@ type TimeOfDaySaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	PlanetCycleInfo []*PlanetCycleInfo `protobuf:"bytes,1,rep,name=planet_cycle_info,json=planetCycleInfo,proto3" json:"planet_cycle_info,omitempty"`
-	PlanetCycle     string             `protobuf:"bytes,2,opt,name=planet_cycle,json=planetCycle,proto3" json:"planet_cycle,omitempty"`
+	PlanetCycleInfo []*PlanetCycleInfo `protobuf:"bytes,1,rep,name=planet_cycle_info,json=planetCycleInfo,proto3" json:"planet_cycle_info"`
+	PlanetCycle     string             `protobuf:"bytes,2,opt,name=planet_cycle,json=planetCycle,proto3" json:"planet_cycle"`
 }
 
 func (x *TimeOfDaySaveGameData) Reset() {
@@ -2670,8 +2670,8 @@ type LevelPersistence_Actor_SaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ActorName      string `protobuf:"bytes,1,opt,name=actor_name,json=actorName,proto3" json:"actor_name,omitempty"`
-	TimerRemaining int32  `protobuf:"varint,2,opt,name=timer_remaining,json=timerRemaining,proto3" json:"timer_remaining,omitempty"`
+	ActorName      string `protobuf:"bytes,1,opt,name=actor_name,json=actorName,proto3" json:"actor_name"`
+	TimerRemaining int32  `protobuf:"varint,2,opt,name=timer_remaining,json=timerRemaining,proto3" json:"timer_remaining"`
 }
 
 func (x *LevelPersistence_Actor_SaveGameData) Reset() {
@@ -2725,8 +2725,8 @@ type LevelPersistence_Level_SaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LevelName   string                                 `protobuf:"bytes,1,opt,name=level_name,json=levelName,proto3" json:"level_name,omitempty"`
-	SavedActors []*LevelPersistence_Actor_SaveGameData `protobuf:"bytes,2,rep,name=saved_actors,json=savedActors,proto3" json:"saved_actors,omitempty"`
+	LevelName   string                                 `protobuf:"bytes,1,opt,name=level_name,json=levelName,proto3" json:"level_name"`
+	SavedActors []*LevelPersistence_Actor_SaveGameData `protobuf:"bytes,2,rep,name=saved_actors,json=savedActors,proto3" json:"saved_actors"`
 }
 
 func (x *LevelPersistence_Level_SaveGameData) Reset() {
@@ -2780,13 +2780,13 @@ type GbxZoneMapFODSavedLevelData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LevelName           string  `protobuf:"bytes,1,opt,name=level_name,json=levelName,proto3" json:"level_name,omitempty"`
-	FodTextureSize      uint32  `protobuf:"varint,2,opt,name=fod_texture_size,json=fodTextureSize,proto3" json:"fod_texture_size,omitempty"`
-	NumChunks           uint32  `protobuf:"varint,3,opt,name=num_chunks,json=numChunks,proto3" json:"num_chunks,omitempty"`
-	DiscoveryPercentage float32 `protobuf:"fixed32,4,opt,name=discovery_percentage,json=discoveryPercentage,proto3" json:"discovery_percentage,omitempty"`
-	DataState           uint32  `protobuf:"varint,5,opt,name=data_state,json=dataState,proto3" json:"data_state,omitempty"`
-	DataRevision        uint32  `protobuf:"varint,6,opt,name=data_revision,json=dataRevision,proto3" json:"data_revision,omitempty"`
-	FodData             []byte  `protobuf:"bytes,7,opt,name=fod_data,json=fodData,proto3" json:"fod_data,omitempty"`
+	LevelName           string  `protobuf:"bytes,1,opt,name=level_name,json=levelName,proto3" json:"level_name"`
+	FodTextureSize      uint32  `protobuf:"varint,2,opt,name=fod_texture_size,json=fodTextureSize,proto3" json:"fod_texture_size"`
+	NumChunks           uint32  `protobuf:"varint,3,opt,name=num_chunks,json=numChunks,proto3" json:"num_chunks"`
+	DiscoveryPercentage float32 `protobuf:"fixed32,4,opt,name=discovery_percentage,json=discoveryPercentage,proto3" json:"discovery_percentage"`
+	DataState           uint32  `protobuf:"varint,5,opt,name=data_state,json=dataState,proto3" json:"data_state"`
+	DataRevision        uint32  `protobuf:"varint,6,opt,name=data_revision,json=dataRevision,proto3" json:"data_revision"`
+	FodData             []byte  `protobuf:"bytes,7,opt,name=fod_data,json=fodData,proto3" json:"fod_data"`
 }
 
 func (x *GbxZoneMapFODSavedLevelData) Reset() {
@@ -2875,7 +2875,7 @@ type GbxZoneMapFODSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LevelData []*GbxZoneMapFODSavedLevelData `protobuf:"bytes,1,rep,name=level_data,json=levelData,proto3" json:"level_data,omitempty"`
+	LevelData []*GbxZoneMapFODSavedLevelData `protobuf:"bytes,1,rep,name=level_data,json=levelData,proto3" json:"level_data"`
 }
 
 func (x *GbxZoneMapFODSaveGameData) Reset() {
@@ -2922,62 +2922,62 @@ type Character struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SaveGameId                                   uint32                                 `protobuf:"varint,1,opt,name=save_game_id,json=saveGameId,proto3" json:"save_game_id,omitempty"`
-	LastSaveTimestamp                            int64                                  `protobuf:"varint,2,opt,name=last_save_timestamp,json=lastSaveTimestamp,proto3" json:"last_save_timestamp,omitempty"`
-	TimePlayedSeconds                            uint32                                 `protobuf:"varint,3,opt,name=time_played_seconds,json=timePlayedSeconds,proto3" json:"time_played_seconds,omitempty"`
-	PlayerClassData                              *PlayerClassSaveGameData               `protobuf:"bytes,4,opt,name=player_class_data,json=playerClassData,proto3" json:"player_class_data,omitempty"`
-	ResourcePools                                []*ResourcePoolSavegameData            `protobuf:"bytes,5,rep,name=resource_pools,json=resourcePools,proto3" json:"resource_pools,omitempty"`
-	SavedRegions                                 []*RegionSaveGameData                  `protobuf:"bytes,6,rep,name=saved_regions,json=savedRegions,proto3" json:"saved_regions,omitempty"`
-	ExperiencePoints                             int32                                  `protobuf:"varint,7,opt,name=experience_points,json=experiencePoints,proto3" json:"experience_points,omitempty"`
-	GameStatsData                                []*GameStatSaveGameData                `protobuf:"bytes,8,rep,name=game_stats_data,json=gameStatsData,proto3" json:"game_stats_data,omitempty"`
-	InventoryCategoryList                        []*InventoryCategorySaveData           `protobuf:"bytes,9,rep,name=inventory_category_list,json=inventoryCategoryList,proto3" json:"inventory_category_list,omitempty"`
-	InventoryItems                               []*OakInventoryItemSaveGameData        `protobuf:"bytes,10,rep,name=inventory_items,json=inventoryItems,proto3" json:"inventory_items,omitempty"`
-	EquippedInventoryList                        []*EquippedInventorySaveGameData       `protobuf:"bytes,11,rep,name=equipped_inventory_list,json=equippedInventoryList,proto3" json:"equipped_inventory_list,omitempty"`
-	ActiveWeaponList                             []int32                                `protobuf:"varint,12,rep,packed,name=active_weapon_list,json=activeWeaponList,proto3" json:"active_weapon_list,omitempty"`
-	AbilityData                                  *OakPlayerAbilitySaveGameData          `protobuf:"bytes,13,opt,name=ability_data,json=abilityData,proto3" json:"ability_data,omitempty"`
-	LastPlayThroughIndex                         int32                                  `protobuf:"varint,14,opt,name=last_play_through_index,json=lastPlayThroughIndex,proto3" json:"last_play_through_index,omitempty"`
-	PlaythroughsCompleted                        int32                                  `protobuf:"varint,15,opt,name=playthroughs_completed,json=playthroughsCompleted,proto3" json:"playthroughs_completed,omitempty"`
-	ShowNewPlaythroughNotification               bool                                   `protobuf:"varint,16,opt,name=show_new_playthrough_notification,json=showNewPlaythroughNotification,proto3" json:"show_new_playthrough_notification,omitempty"`
-	MissionPlaythroughsData                      []*MissionPlaythroughSaveGameData      `protobuf:"bytes,17,rep,name=mission_playthroughs_data,json=missionPlaythroughsData,proto3" json:"mission_playthroughs_data,omitempty"`
-	ActiveTravelStations                         []string                               `protobuf:"bytes,21,rep,name=active_travel_stations,json=activeTravelStations,proto3" json:"active_travel_stations,omitempty"`
-	DiscoveryData                                *DiscoverySaveData                     `protobuf:"bytes,22,opt,name=discovery_data,json=discoveryData,proto3" json:"discovery_data,omitempty"`
-	LastActiveTravelStation                      string                                 `protobuf:"bytes,23,opt,name=last_active_travel_station,json=lastActiveTravelStation,proto3" json:"last_active_travel_station,omitempty"`
-	VehiclesUnlockedData                         []*VehicleUnlockedSaveGameData         `protobuf:"bytes,24,rep,name=vehicles_unlocked_data,json=vehiclesUnlockedData,proto3" json:"vehicles_unlocked_data,omitempty"`
-	VehiclePartsUnlocked                         []string                               `protobuf:"bytes,25,rep,name=vehicle_parts_unlocked,json=vehiclePartsUnlocked,proto3" json:"vehicle_parts_unlocked,omitempty"`
-	VehicleLoadouts                              []*OakCARMenuVehicleConfigSaveData     `protobuf:"bytes,26,rep,name=vehicle_loadouts,json=vehicleLoadouts,proto3" json:"vehicle_loadouts,omitempty"`
-	VehicleLastLoadoutIndex                      int32                                  `protobuf:"varint,27,opt,name=vehicle_last_loadout_index,json=vehicleLastLoadoutIndex,proto3" json:"vehicle_last_loadout_index,omitempty"`
-	ChallengeData                                []*ChallengeSaveGameData               `protobuf:"bytes,28,rep,name=challenge_data,json=challengeData,proto3" json:"challenge_data,omitempty"`
-	SduList                                      []*OakSDUSaveGameData                  `protobuf:"bytes,29,rep,name=sdu_list,json=sduList,proto3" json:"sdu_list,omitempty"`
-	SelectedCustomizations                       []string                               `protobuf:"bytes,30,rep,name=selected_customizations,json=selectedCustomizations,proto3" json:"selected_customizations,omitempty"`
-	EquippedEmoteCustomizations                  []int32                                `protobuf:"varint,31,rep,packed,name=equipped_emote_customizations,json=equippedEmoteCustomizations,proto3" json:"equipped_emote_customizations,omitempty"`
-	SelectedColorCustomizations                  []*CustomPlayerColorSaveGameData       `protobuf:"bytes,32,rep,name=selected_color_customizations,json=selectedColorCustomizations,proto3" json:"selected_color_customizations,omitempty"`
-	GuardianRank                                 *GuardianRankSaveGameData              `protobuf:"bytes,33,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank,omitempty"`
-	CrewQuartersRoom                             *CrewQuartersSaveData                  `protobuf:"bytes,34,opt,name=crew_quarters_room,json=crewQuartersRoom,proto3" json:"crew_quarters_room,omitempty"`
-	CrewQuartersGunRack                          *CrewQuartersGunRackSaveData           `protobuf:"bytes,35,opt,name=crew_quarters_gun_rack,json=crewQuartersGunRack,proto3" json:"crew_quarters_gun_rack,omitempty"`
-	UnlockedEchoLogs                             []*EchoLogSaveGameData                 `protobuf:"bytes,36,rep,name=unlocked_echo_logs,json=unlockedEchoLogs,proto3" json:"unlocked_echo_logs,omitempty"`
-	HasPlayedSpecialEchoLogInsertAlready         bool                                   `protobuf:"varint,37,opt,name=has_played_special_echo_log_insert_already,json=hasPlayedSpecialEchoLogInsertAlready,proto3" json:"has_played_special_echo_log_insert_already,omitempty"`
-	NicknameMappings                             []*Character_NicknameMappingsEntry     `protobuf:"bytes,38,rep,name=nickname_mappings,json=nicknameMappings,proto3" json:"nickname_mappings,omitempty"`
-	LastTraveledMapId                            *MapIDData                             `protobuf:"bytes,39,opt,name=last_traveled_map_id,json=lastTraveledMapId,proto3" json:"last_traveled_map_id,omitempty"`
-	ChallengeCategoryCompletionPcts              *ChallengeCategoryProgressSaveData     `protobuf:"bytes,40,opt,name=challenge_category_completion_pcts,json=challengeCategoryCompletionPcts,proto3" json:"challenge_category_completion_pcts,omitempty"`
-	CharacterSlotSaveGameData                    *OakPlayerCharacterSlotSaveGameData    `protobuf:"bytes,41,opt,name=character_slot_save_game_data,json=characterSlotSaveGameData,proto3" json:"character_slot_save_game_data,omitempty"`
-	UiTrackingSaveGameData                       *UITrackingSaveGameData                `protobuf:"bytes,42,opt,name=ui_tracking_save_game_data,json=uiTrackingSaveGameData,proto3" json:"ui_tracking_save_game_data,omitempty"`
-	PreferredCharacterName                       string                                 `protobuf:"bytes,43,opt,name=preferred_character_name,json=preferredCharacterName,proto3" json:"preferred_character_name,omitempty"`
-	NameCharacterLimit                           int32                                  `protobuf:"varint,44,opt,name=name_character_limit,json=nameCharacterLimit,proto3" json:"name_character_limit,omitempty"`
-	PreferredGroupMode                           uint32                                 `protobuf:"varint,45,opt,name=preferred_group_mode,json=preferredGroupMode,proto3" json:"preferred_group_mode,omitempty"`
-	TimeOfDaySaveGameData                        *TimeOfDaySaveGameData                 `protobuf:"bytes,46,opt,name=time_of_day_save_game_data,json=timeOfDaySaveGameData,proto3" json:"time_of_day_save_game_data,omitempty"`
-	LevelPersistenceData                         []*LevelPersistence_Level_SaveGameData `protobuf:"bytes,47,rep,name=level_persistence_data,json=levelPersistenceData,proto3" json:"level_persistence_data,omitempty"`
-	AccumulatedLevelPersistenceResetTimerSeconds uint32                                 `protobuf:"varint,48,opt,name=accumulated_level_persistence_reset_timer_seconds,json=accumulatedLevelPersistenceResetTimerSeconds,proto3" json:"accumulated_level_persistence_reset_timer_seconds,omitempty"`
-	MayhemLevel                                  uint32                                 `protobuf:"varint,49,opt,name=mayhem_level,json=mayhemLevel,proto3" json:"mayhem_level,omitempty"`
-	GbxZoneMapFodSaveGameData                    *GbxZoneMapFODSaveGameData             `protobuf:"bytes,50,opt,name=gbx_zone_map_fod_save_game_data,json=gbxZoneMapFodSaveGameData,proto3" json:"gbx_zone_map_fod_save_game_data,omitempty"`
-	ActiveOrBlacklistedTravelStations            []*ActiveFastTravelSaveData            `protobuf:"bytes,51,rep,name=active_or_blacklisted_travel_stations,json=activeOrBlacklistedTravelStations,proto3" json:"active_or_blacklisted_travel_stations,omitempty"`
-	LastActiveTravelStationForPlaythrough        []string                               `protobuf:"bytes,52,rep,name=last_active_travel_station_for_playthrough,json=lastActiveTravelStationForPlaythrough,proto3" json:"last_active_travel_station_for_playthrough,omitempty"`
-	GameStateSaveDataForPlaythrough              []*GameStateSaveData                   `protobuf:"bytes,53,rep,name=game_state_save_data_for_playthrough,json=gameStateSaveDataForPlaythrough,proto3" json:"game_state_save_data_for_playthrough,omitempty"`
-	RegisteredDownloadableEntitlements           []*RegisteredDownloadableEntitlements  `protobuf:"bytes,54,rep,name=registered_downloadable_entitlements,json=registeredDownloadableEntitlements,proto3" json:"registered_downloadable_entitlements,omitempty"`
-	ActiveTravelStationsForPlaythrough           []*PlaythroughActiveFastTravelSaveData `protobuf:"bytes,55,rep,name=active_travel_stations_for_playthrough,json=activeTravelStationsForPlaythrough,proto3" json:"active_travel_stations_for_playthrough,omitempty"`
-	SaveGameGuid                                 string                                 `protobuf:"bytes,56,opt,name=save_game_guid,json=saveGameGuid,proto3" json:"save_game_guid,omitempty"`
-	GuardianRankCharacterData                    *GuardianRankCharacterSaveGameData     `protobuf:"bytes,57,opt,name=guardian_rank_character_data,json=guardianRankCharacterData,proto3" json:"guardian_rank_character_data,omitempty"`
-	OptionalObjectiveRewardFixupApplied          bool                                   `protobuf:"varint,58,opt,name=optional_objective_reward_fixup_applied,json=optionalObjectiveRewardFixupApplied,proto3" json:"optional_objective_reward_fixup_applied,omitempty"`
-	VehiclePartRewardsFixupApplied               bool                                   `protobuf:"varint,59,opt,name=vehicle_part_rewards_fixup_applied,json=vehiclePartRewardsFixupApplied,proto3" json:"vehicle_part_rewards_fixup_applied,omitempty"`
+	SaveGameId                                   uint32                                 `protobuf:"varint,1,opt,name=save_game_id,json=saveGameId,proto3" json:"save_game_id"`
+	LastSaveTimestamp                            int64                                  `protobuf:"varint,2,opt,name=last_save_timestamp,json=lastSaveTimestamp,proto3" json:"last_save_timestamp"`
+	TimePlayedSeconds                            uint32                                 `protobuf:"varint,3,opt,name=time_played_seconds,json=timePlayedSeconds,proto3" json:"time_played_seconds"`
+	PlayerClassData                              *PlayerClassSaveGameData               `protobuf:"bytes,4,opt,name=player_class_data,json=playerClassData,proto3" json:"player_class_data"`
+	ResourcePools                                []*ResourcePoolSavegameData            `protobuf:"bytes,5,rep,name=resource_pools,json=resourcePools,proto3" json:"resource_pools"`
+	SavedRegions                                 []*RegionSaveGameData                  `protobuf:"bytes,6,rep,name=saved_regions,json=savedRegions,proto3" json:"saved_regions"`
+	ExperiencePoints                             int32                                  `protobuf:"varint,7,opt,name=experience_points,json=experiencePoints,proto3" json:"experience_points"`
+	GameStatsData                                []*GameStatSaveGameData                `protobuf:"bytes,8,rep,name=game_stats_data,json=gameStatsData,proto3" json:"game_stats_data"`
+	InventoryCategoryList                        []*InventoryCategorySaveData           `protobuf:"bytes,9,rep,name=inventory_category_list,json=inventoryCategoryList,proto3" json:"inventory_category_list"`
+	InventoryItems                               []*OakInventoryItemSaveGameData        `protobuf:"bytes,10,rep,name=inventory_items,json=inventoryItems,proto3" json:"inventory_items"`
+	EquippedInventoryList                        []*EquippedInventorySaveGameData       `protobuf:"bytes,11,rep,name=equipped_inventory_list,json=equippedInventoryList,proto3" json:"equipped_inventory_list"`
+	ActiveWeaponList                             []int32                                `protobuf:"varint,12,rep,packed,name=active_weapon_list,json=activeWeaponList,proto3" json:"active_weapon_list"`
+	AbilityData                                  *OakPlayerAbilitySaveGameData          `protobuf:"bytes,13,opt,name=ability_data,json=abilityData,proto3" json:"ability_data"`
+	LastPlayThroughIndex                         int32                                  `protobuf:"varint,14,opt,name=last_play_through_index,json=lastPlayThroughIndex,proto3" json:"last_play_through_index"`
+	PlaythroughsCompleted                        int32                                  `protobuf:"varint,15,opt,name=playthroughs_completed,json=playthroughsCompleted,proto3" json:"playthroughs_completed"`
+	ShowNewPlaythroughNotification               bool                                   `protobuf:"varint,16,opt,name=show_new_playthrough_notification,json=showNewPlaythroughNotification,proto3" json:"show_new_playthrough_notification"`
+	MissionPlaythroughsData                      []*MissionPlaythroughSaveGameData      `protobuf:"bytes,17,rep,name=mission_playthroughs_data,json=missionPlaythroughsData,proto3" json:"mission_playthroughs_data"`
+	ActiveTravelStations                         []string                               `protobuf:"bytes,21,rep,name=active_travel_stations,json=activeTravelStations,proto3" json:"active_travel_stations"`
+	DiscoveryData                                *DiscoverySaveData                     `protobuf:"bytes,22,opt,name=discovery_data,json=discoveryData,proto3" json:"discovery_data"`
+	LastActiveTravelStation                      string                                 `protobuf:"bytes,23,opt,name=last_active_travel_station,json=lastActiveTravelStation,proto3" json:"last_active_travel_station"`
+	VehiclesUnlockedData                         []*VehicleUnlockedSaveGameData         `protobuf:"bytes,24,rep,name=vehicles_unlocked_data,json=vehiclesUnlockedData,proto3" json:"vehicles_unlocked_data"`
+	VehiclePartsUnlocked                         []string                               `protobuf:"bytes,25,rep,name=vehicle_parts_unlocked,json=vehiclePartsUnlocked,proto3" json:"vehicle_parts_unlocked"`
+	VehicleLoadouts                              []*OakCARMenuVehicleConfigSaveData     `protobuf:"bytes,26,rep,name=vehicle_loadouts,json=vehicleLoadouts,proto3" json:"vehicle_loadouts"`
+	VehicleLastLoadoutIndex                      int32                                  `protobuf:"varint,27,opt,name=vehicle_last_loadout_index,json=vehicleLastLoadoutIndex,proto3" json:"vehicle_last_loadout_index"`
+	ChallengeData                                []*ChallengeSaveGameData               `protobuf:"bytes,28,rep,name=challenge_data,json=challengeData,proto3" json:"challenge_data"`
+	SduList                                      []*OakSDUSaveGameData                  `protobuf:"bytes,29,rep,name=sdu_list,json=sduList,proto3" json:"sdu_list"`
+	SelectedCustomizations                       []string                               `protobuf:"bytes,30,rep,name=selected_customizations,json=selectedCustomizations,proto3" json:"selected_customizations"`
+	EquippedEmoteCustomizations                  []int32                                `protobuf:"varint,31,rep,packed,name=equipped_emote_customizations,json=equippedEmoteCustomizations,proto3" json:"equipped_emote_customizations"`
+	SelectedColorCustomizations                  []*CustomPlayerColorSaveGameData       `protobuf:"bytes,32,rep,name=selected_color_customizations,json=selectedColorCustomizations,proto3" json:"selected_color_customizations"`
+	GuardianRank                                 *GuardianRankSaveGameData              `protobuf:"bytes,33,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank"`
+	CrewQuartersRoom                             *CrewQuartersSaveData                  `protobuf:"bytes,34,opt,name=crew_quarters_room,json=crewQuartersRoom,proto3" json:"crew_quarters_room"`
+	CrewQuartersGunRack                          *CrewQuartersGunRackSaveData           `protobuf:"bytes,35,opt,name=crew_quarters_gun_rack,json=crewQuartersGunRack,proto3" json:"crew_quarters_gun_rack"`
+	UnlockedEchoLogs                             []*EchoLogSaveGameData                 `protobuf:"bytes,36,rep,name=unlocked_echo_logs,json=unlockedEchoLogs,proto3" json:"unlocked_echo_logs"`
+	HasPlayedSpecialEchoLogInsertAlready         bool                                   `protobuf:"varint,37,opt,name=has_played_special_echo_log_insert_already,json=hasPlayedSpecialEchoLogInsertAlready,proto3" json:"has_played_special_echo_log_insert_already"`
+	NicknameMappings                             []*Character_NicknameMappingsEntry     `protobuf:"bytes,38,rep,name=nickname_mappings,json=nicknameMappings,proto3" json:"nickname_mappings"`
+	LastTraveledMapId                            *MapIDData                             `protobuf:"bytes,39,opt,name=last_traveled_map_id,json=lastTraveledMapId,proto3" json:"last_traveled_map_id"`
+	ChallengeCategoryCompletionPcts              *ChallengeCategoryProgressSaveData     `protobuf:"bytes,40,opt,name=challenge_category_completion_pcts,json=challengeCategoryCompletionPcts,proto3" json:"challenge_category_completion_pcts"`
+	CharacterSlotSaveGameData                    *OakPlayerCharacterSlotSaveGameData    `protobuf:"bytes,41,opt,name=character_slot_save_game_data,json=characterSlotSaveGameData,proto3" json:"character_slot_save_game_data"`
+	UiTrackingSaveGameData                       *UITrackingSaveGameData                `protobuf:"bytes,42,opt,name=ui_tracking_save_game_data,json=uiTrackingSaveGameData,proto3" json:"ui_tracking_save_game_data"`
+	PreferredCharacterName                       string                                 `protobuf:"bytes,43,opt,name=preferred_character_name,json=preferredCharacterName,proto3" json:"preferred_character_name"`
+	NameCharacterLimit                           int32                                  `protobuf:"varint,44,opt,name=name_character_limit,json=nameCharacterLimit,proto3" json:"name_character_limit"`
+	PreferredGroupMode                           uint32                                 `protobuf:"varint,45,opt,name=preferred_group_mode,json=preferredGroupMode,proto3" json:"preferred_group_mode"`
+	TimeOfDaySaveGameData                        *TimeOfDaySaveGameData                 `protobuf:"bytes,46,opt,name=time_of_day_save_game_data,json=timeOfDaySaveGameData,proto3" json:"time_of_day_save_game_data"`
+	LevelPersistenceData                         []*LevelPersistence_Level_SaveGameData `protobuf:"bytes,47,rep,name=level_persistence_data,json=levelPersistenceData,proto3" json:"level_persistence_data"`
+	AccumulatedLevelPersistenceResetTimerSeconds uint32                                 `protobuf:"varint,48,opt,name=accumulated_level_persistence_reset_timer_seconds,json=accumulatedLevelPersistenceResetTimerSeconds,proto3" json:"accumulated_level_persistence_reset_timer_seconds"`
+	MayhemLevel                                  uint32                                 `protobuf:"varint,49,opt,name=mayhem_level,json=mayhemLevel,proto3" json:"mayhem_level"`
+	GbxZoneMapFodSaveGameData                    *GbxZoneMapFODSaveGameData             `protobuf:"bytes,50,opt,name=gbx_zone_map_fod_save_game_data,json=gbxZoneMapFodSaveGameData,proto3" json:"gbx_zone_map_fod_save_game_data"`
+	ActiveOrBlacklistedTravelStations            []*ActiveFastTravelSaveData            `protobuf:"bytes,51,rep,name=active_or_blacklisted_travel_stations,json=activeOrBlacklistedTravelStations,proto3" json:"active_or_blacklisted_travel_stations"`
+	LastActiveTravelStationForPlaythrough        []string                               `protobuf:"bytes,52,rep,name=last_active_travel_station_for_playthrough,json=lastActiveTravelStationForPlaythrough,proto3" json:"last_active_travel_station_for_playthrough"`
+	GameStateSaveDataForPlaythrough              []*GameStateSaveData                   `protobuf:"bytes,53,rep,name=game_state_save_data_for_playthrough,json=gameStateSaveDataForPlaythrough,proto3" json:"game_state_save_data_for_playthrough"`
+	RegisteredDownloadableEntitlements           []*RegisteredDownloadableEntitlements  `protobuf:"bytes,54,rep,name=registered_downloadable_entitlements,json=registeredDownloadableEntitlements,proto3" json:"registered_downloadable_entitlements"`
+	ActiveTravelStationsForPlaythrough           []*PlaythroughActiveFastTravelSaveData `protobuf:"bytes,55,rep,name=active_travel_stations_for_playthrough,json=activeTravelStationsForPlaythrough,proto3" json:"active_travel_stations_for_playthrough"`
+	SaveGameGuid                                 string                                 `protobuf:"bytes,56,opt,name=save_game_guid,json=saveGameGuid,proto3" json:"save_game_guid"`
+	GuardianRankCharacterData                    *GuardianRankCharacterSaveGameData     `protobuf:"bytes,57,opt,name=guardian_rank_character_data,json=guardianRankCharacterData,proto3" json:"guardian_rank_character_data"`
+	OptionalObjectiveRewardFixupApplied          bool                                   `protobuf:"varint,58,opt,name=optional_objective_reward_fixup_applied,json=optionalObjectiveRewardFixupApplied,proto3" json:"optional_objective_reward_fixup_applied"`
+	VehiclePartRewardsFixupApplied               bool                                   `protobuf:"varint,59,opt,name=vehicle_part_rewards_fixup_applied,json=vehiclePartRewardsFixupApplied,proto3" json:"vehicle_part_rewards_fixup_applied"`
 }
 
 func (x *Character) Reset() {
@@ -3409,8 +3409,8 @@ type Character_NicknameMappingsEntry struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Key   string `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
-	Value string `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	Key   string `protobuf:"bytes,1,opt,name=key,proto3" json:"key"`
+	Value string `protobuf:"bytes,2,opt,name=value,proto3" json:"value"`
 }
 
 func (x *Character_NicknameMappingsEntry) Reset() {

@@ -30,8 +30,8 @@ type PlayerInputBinding_Button struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RebindDataPath string   `protobuf:"bytes,1,opt,name=rebind_data_path,json=rebindDataPath,proto3" json:"rebind_data_path,omitempty"`
-	KeyNames       []string `protobuf:"bytes,2,rep,name=key_names,json=keyNames,proto3" json:"key_names,omitempty"`
+	RebindDataPath string   `protobuf:"bytes,1,opt,name=rebind_data_path,json=rebindDataPath,proto3" json:"rebind_data_path"`
+	KeyNames       []string `protobuf:"bytes,2,rep,name=key_names,json=keyNames,proto3" json:"key_names"`
 }
 
 func (x *PlayerInputBinding_Button) Reset() {
@@ -85,8 +85,8 @@ type PlayerInputBinding_Axis_Key struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	KeyName  string `protobuf:"bytes,1,opt,name=key_name,json=keyName,proto3" json:"key_name,omitempty"`
-	Scale_3D *Vec3  `protobuf:"bytes,2,opt,name=scale_3d,json=scale3d,proto3" json:"scale_3d,omitempty"`
+	KeyName  string `protobuf:"bytes,1,opt,name=key_name,json=keyName,proto3" json:"key_name"`
+	Scale_3D *Vec3  `protobuf:"bytes,2,opt,name=scale_3d,json=scale3d,proto3" json:"scale_3d"`
 }
 
 func (x *PlayerInputBinding_Axis_Key) Reset() {
@@ -140,8 +140,8 @@ type PlayerInputBinding_Axis struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RebindDataPath string                         `protobuf:"bytes,1,opt,name=rebind_data_path,json=rebindDataPath,proto3" json:"rebind_data_path,omitempty"`
-	Keys           []*PlayerInputBinding_Axis_Key `protobuf:"bytes,2,rep,name=keys,proto3" json:"keys,omitempty"`
+	RebindDataPath string                         `protobuf:"bytes,1,opt,name=rebind_data_path,json=rebindDataPath,proto3" json:"rebind_data_path"`
+	Keys           []*PlayerInputBinding_Axis_Key `protobuf:"bytes,2,rep,name=keys,proto3" json:"keys"`
 }
 
 func (x *PlayerInputBinding_Axis) Reset() {
@@ -195,10 +195,10 @@ type PlayerInputBinding_Category struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CategoryDataPath string                       `protobuf:"bytes,1,opt,name=category_data_path,json=categoryDataPath,proto3" json:"category_data_path,omitempty"`
-	ContextDataPath  string                       `protobuf:"bytes,2,opt,name=context_data_path,json=contextDataPath,proto3" json:"context_data_path,omitempty"`
-	ButtonBindings   []*PlayerInputBinding_Button `protobuf:"bytes,3,rep,name=button_bindings,json=buttonBindings,proto3" json:"button_bindings,omitempty"`
-	AxisBindings     []*PlayerInputBinding_Axis   `protobuf:"bytes,4,rep,name=axis_bindings,json=axisBindings,proto3" json:"axis_bindings,omitempty"`
+	CategoryDataPath string                       `protobuf:"bytes,1,opt,name=category_data_path,json=categoryDataPath,proto3" json:"category_data_path"`
+	ContextDataPath  string                       `protobuf:"bytes,2,opt,name=context_data_path,json=contextDataPath,proto3" json:"context_data_path"`
+	ButtonBindings   []*PlayerInputBinding_Button `protobuf:"bytes,3,rep,name=button_bindings,json=buttonBindings,proto3" json:"button_bindings"`
+	AxisBindings     []*PlayerInputBinding_Axis   `protobuf:"bytes,4,rep,name=axis_bindings,json=axisBindings,proto3" json:"axis_bindings"`
 }
 
 func (x *PlayerInputBinding_Category) Reset() {
@@ -266,7 +266,7 @@ type PlayerInputBindings struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Categories []*PlayerInputBinding_Category `protobuf:"bytes,1,rep,name=categories,proto3" json:"categories,omitempty"`
+	Categories []*PlayerInputBinding_Category `protobuf:"bytes,1,rep,name=categories,proto3" json:"categories"`
 }
 
 func (x *PlayerInputBindings) Reset() {
@@ -313,8 +313,8 @@ type OakProfileLastInventoryFilterInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SlotTypeId      string `protobuf:"bytes,1,opt,name=slot_type_id,json=slotTypeId,proto3" json:"slot_type_id,omitempty"`
-	LastFilterIndex int32  `protobuf:"varint,2,opt,name=last_filter_index,json=lastFilterIndex,proto3" json:"last_filter_index,omitempty"`
+	SlotTypeId      string `protobuf:"bytes,1,opt,name=slot_type_id,json=slotTypeId,proto3" json:"slot_type_id"`
+	LastFilterIndex int32  `protobuf:"varint,2,opt,name=last_filter_index,json=lastFilterIndex,proto3" json:"last_filter_index"`
 }
 
 func (x *OakProfileLastInventoryFilterInfo) Reset() {
@@ -368,9 +368,9 @@ type OakProfileMenuTutorialInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SeenTutorials                  []string `protobuf:"bytes,1,rep,name=seen_tutorials,json=seenTutorials,proto3" json:"seen_tutorials,omitempty"`
-	TutorialsDisabled              bool     `protobuf:"varint,2,opt,name=tutorials_disabled,json=tutorialsDisabled,proto3" json:"tutorials_disabled,omitempty"`
-	TutorialsAllowedInNonGameModes bool     `protobuf:"varint,3,opt,name=tutorials_allowed_in_non_game_modes,json=tutorialsAllowedInNonGameModes,proto3" json:"tutorials_allowed_in_non_game_modes,omitempty"`
+	SeenTutorials                  []string `protobuf:"bytes,1,rep,name=seen_tutorials,json=seenTutorials,proto3" json:"seen_tutorials"`
+	TutorialsDisabled              bool     `protobuf:"varint,2,opt,name=tutorials_disabled,json=tutorialsDisabled,proto3" json:"tutorials_disabled"`
+	TutorialsAllowedInNonGameModes bool     `protobuf:"varint,3,opt,name=tutorials_allowed_in_non_game_modes,json=tutorialsAllowedInNonGameModes,proto3" json:"tutorials_allowed_in_non_game_modes"`
 }
 
 func (x *OakProfileMenuTutorialInfo) Reset() {
@@ -431,8 +431,8 @@ type OakFriendEncounterData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NumEncounters     uint32 `protobuf:"varint,1,opt,name=num_encounters,json=numEncounters,proto3" json:"num_encounters,omitempty"`
-	TimeLastEncounter int64  `protobuf:"varint,2,opt,name=time_last_encounter,json=timeLastEncounter,proto3" json:"time_last_encounter,omitempty"`
+	NumEncounters     uint32 `protobuf:"varint,1,opt,name=num_encounters,json=numEncounters,proto3" json:"num_encounters"`
+	TimeLastEncounter int64  `protobuf:"varint,2,opt,name=time_last_encounter,json=timeLastEncounter,proto3" json:"time_last_encounter"`
 }
 
 func (x *OakFriendEncounterData) Reset() {
@@ -486,16 +486,16 @@ type OakMailItem struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MailItemType      uint32 `protobuf:"varint,1,opt,name=mail_item_type,json=mailItemType,proto3" json:"mail_item_type,omitempty"`
-	SenderDisplayName string `protobuf:"bytes,2,opt,name=sender_display_name,json=senderDisplayName,proto3" json:"sender_display_name,omitempty"`
-	Subject           string `protobuf:"bytes,3,opt,name=subject,proto3" json:"subject,omitempty"`
-	Body              string `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
-	GearSerialNumber  string `protobuf:"bytes,5,opt,name=gear_serial_number,json=gearSerialNumber,proto3" json:"gear_serial_number,omitempty"`
-	MailGuid          string `protobuf:"bytes,6,opt,name=mail_guid,json=mailGuid,proto3" json:"mail_guid,omitempty"`
-	DateSent          int64  `protobuf:"varint,7,opt,name=date_sent,json=dateSent,proto3" json:"date_sent,omitempty"`
-	ExpirationDate    int64  `protobuf:"varint,8,opt,name=expiration_date,json=expirationDate,proto3" json:"expiration_date,omitempty"`
-	FromPlayerId      string `protobuf:"bytes,9,opt,name=from_player_id,json=fromPlayerId,proto3" json:"from_player_id,omitempty"`
-	HasBeenRead       bool   `protobuf:"varint,10,opt,name=has_been_read,json=hasBeenRead,proto3" json:"has_been_read,omitempty"`
+	MailItemType      uint32 `protobuf:"varint,1,opt,name=mail_item_type,json=mailItemType,proto3" json:"mail_item_type"`
+	SenderDisplayName string `protobuf:"bytes,2,opt,name=sender_display_name,json=senderDisplayName,proto3" json:"sender_display_name"`
+	Subject           string `protobuf:"bytes,3,opt,name=subject,proto3" json:"subject"`
+	Body              string `protobuf:"bytes,4,opt,name=body,proto3" json:"body"`
+	GearSerialNumber  string `protobuf:"bytes,5,opt,name=gear_serial_number,json=gearSerialNumber,proto3" json:"gear_serial_number"`
+	MailGuid          string `protobuf:"bytes,6,opt,name=mail_guid,json=mailGuid,proto3" json:"mail_guid"`
+	DateSent          int64  `protobuf:"varint,7,opt,name=date_sent,json=dateSent,proto3" json:"date_sent"`
+	ExpirationDate    int64  `protobuf:"varint,8,opt,name=expiration_date,json=expirationDate,proto3" json:"expiration_date"`
+	FromPlayerId      string `protobuf:"bytes,9,opt,name=from_player_id,json=fromPlayerId,proto3" json:"from_player_id"`
+	HasBeenRead       bool   `protobuf:"varint,10,opt,name=has_been_read,json=hasBeenRead,proto3" json:"has_been_read"`
 }
 
 func (x *OakMailItem) Reset() {
@@ -605,9 +605,9 @@ type GearSoldByFriendData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	GearSerialNumber          string `protobuf:"bytes,1,opt,name=gear_serial_number,json=gearSerialNumber,proto3" json:"gear_serial_number,omitempty"`
-	PlayerClassIdentifierHash int32  `protobuf:"varint,2,opt,name=player_class_identifier_hash,json=playerClassIdentifierHash,proto3" json:"player_class_identifier_hash,omitempty"`
-	FriendNetId               string `protobuf:"bytes,3,opt,name=friend_net_id,json=friendNetId,proto3" json:"friend_net_id,omitempty"`
+	GearSerialNumber          string `protobuf:"bytes,1,opt,name=gear_serial_number,json=gearSerialNumber,proto3" json:"gear_serial_number"`
+	PlayerClassIdentifierHash int32  `protobuf:"varint,2,opt,name=player_class_identifier_hash,json=playerClassIdentifierHash,proto3" json:"player_class_identifier_hash"`
+	FriendNetId               string `protobuf:"bytes,3,opt,name=friend_net_id,json=friendNetId,proto3" json:"friend_net_id"`
 }
 
 func (x *GearSoldByFriendData) Reset() {
@@ -668,8 +668,8 @@ type OakCustomizationSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	IsNew                  bool   `protobuf:"varint,1,opt,name=is_new,json=isNew,proto3" json:"is_new,omitempty"`
-	CustomizationAssetPath string `protobuf:"bytes,2,opt,name=customization_asset_path,json=customizationAssetPath,proto3" json:"customization_asset_path,omitempty"`
+	IsNew                  bool   `protobuf:"varint,1,opt,name=is_new,json=isNew,proto3" json:"is_new"`
+	CustomizationAssetPath string `protobuf:"bytes,2,opt,name=customization_asset_path,json=customizationAssetPath,proto3" json:"customization_asset_path"`
 }
 
 func (x *OakCustomizationSaveGameData) Reset() {
@@ -723,8 +723,8 @@ type OakInventoryCustomizationPartInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CustomizationPartHash uint32 `protobuf:"varint,1,opt,name=customization_part_hash,json=customizationPartHash,proto3" json:"customization_part_hash,omitempty"`
-	IsNew                 bool   `protobuf:"varint,2,opt,name=is_new,json=isNew,proto3" json:"is_new,omitempty"`
+	CustomizationPartHash uint32 `protobuf:"varint,1,opt,name=customization_part_hash,json=customizationPartHash,proto3" json:"customization_part_hash"`
+	IsNew                 bool   `protobuf:"varint,2,opt,name=is_new,json=isNew,proto3" json:"is_new"`
 }
 
 func (x *OakInventoryCustomizationPartInfo) Reset() {
@@ -778,8 +778,8 @@ type GuardianRankRewardSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	NumTokens      int32  `protobuf:"varint,1,opt,name=num_tokens,json=numTokens,proto3" json:"num_tokens,omitempty"`
-	RewardDataPath string `protobuf:"bytes,2,opt,name=reward_data_path,json=rewardDataPath,proto3" json:"reward_data_path,omitempty"`
+	NumTokens      int32  `protobuf:"varint,1,opt,name=num_tokens,json=numTokens,proto3" json:"num_tokens"`
+	RewardDataPath string `protobuf:"bytes,2,opt,name=reward_data_path,json=rewardDataPath,proto3" json:"reward_data_path"`
 }
 
 func (x *GuardianRankRewardSaveGameData) Reset() {
@@ -833,12 +833,12 @@ type GuardianRankProfileData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AvailableTokens          int32                             `protobuf:"varint,1,opt,name=available_tokens,json=availableTokens,proto3" json:"available_tokens,omitempty"`
-	RankRewards              []*GuardianRankRewardSaveGameData `protobuf:"bytes,2,rep,name=rank_rewards,json=rankRewards,proto3" json:"rank_rewards,omitempty"`
-	GuardianRank             int32                             `protobuf:"varint,3,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank,omitempty"`
-	GuardianExperience       int32                             `protobuf:"varint,4,opt,name=guardian_experience,json=guardianExperience,proto3" json:"guardian_experience,omitempty"`
-	GuardianRewardRandomSeed int32                             `protobuf:"varint,5,opt,name=guardian_reward_random_seed,json=guardianRewardRandomSeed,proto3" json:"guardian_reward_random_seed,omitempty"`
-	NewGuardianExperience    int64                             `protobuf:"varint,6,opt,name=new_guardian_experience,json=newGuardianExperience,proto3" json:"new_guardian_experience,omitempty"`
+	AvailableTokens          int32                             `protobuf:"varint,1,opt,name=available_tokens,json=availableTokens,proto3" json:"available_tokens"`
+	RankRewards              []*GuardianRankRewardSaveGameData `protobuf:"bytes,2,rep,name=rank_rewards,json=rankRewards,proto3" json:"rank_rewards"`
+	GuardianRank             int32                             `protobuf:"varint,3,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank"`
+	GuardianExperience       int32                             `protobuf:"varint,4,opt,name=guardian_experience,json=guardianExperience,proto3" json:"guardian_experience"`
+	GuardianRewardRandomSeed int32                             `protobuf:"varint,5,opt,name=guardian_reward_random_seed,json=guardianRewardRandomSeed,proto3" json:"guardian_reward_random_seed"`
+	NewGuardianExperience    int64                             `protobuf:"varint,6,opt,name=new_guardian_experience,json=newGuardianExperience,proto3" json:"new_guardian_experience"`
 }
 
 func (x *GuardianRankProfileData) Reset() {
@@ -920,8 +920,8 @@ type CrewQuartersDecorationItemSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	IsNew                   bool   `protobuf:"varint,1,opt,name=is_new,json=isNew,proto3" json:"is_new,omitempty"`
-	DecorationItemAssetPath string `protobuf:"bytes,2,opt,name=decoration_item_asset_path,json=decorationItemAssetPath,proto3" json:"decoration_item_asset_path,omitempty"`
+	IsNew                   bool   `protobuf:"varint,1,opt,name=is_new,json=isNew,proto3" json:"is_new"`
+	DecorationItemAssetPath string `protobuf:"bytes,2,opt,name=decoration_item_asset_path,json=decorationItemAssetPath,proto3" json:"decoration_item_asset_path"`
 }
 
 func (x *CrewQuartersDecorationItemSaveGameData) Reset() {
@@ -975,8 +975,8 @@ type CrewQuartersRoomItemSaveGameData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	IsNew             bool   `protobuf:"varint,1,opt,name=is_new,json=isNew,proto3" json:"is_new,omitempty"`
-	RoomItemAssetPath string `protobuf:"bytes,2,opt,name=room_item_asset_path,json=roomItemAssetPath,proto3" json:"room_item_asset_path,omitempty"`
+	IsNew             bool   `protobuf:"varint,1,opt,name=is_new,json=isNew,proto3" json:"is_new"`
+	RoomItemAssetPath string `protobuf:"bytes,2,opt,name=room_item_asset_path,json=roomItemAssetPath,proto3" json:"room_item_asset_path"`
 }
 
 func (x *CrewQuartersRoomItemSaveGameData) Reset() {
@@ -1030,9 +1030,9 @@ type RecentlyMetPlayer struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ShiftPlayerId        string `protobuf:"bytes,1,opt,name=shift_player_id,json=shiftPlayerId,proto3" json:"shift_player_id,omitempty"`
-	FirstPartyPlayerId   string `protobuf:"bytes,2,opt,name=first_party_player_id,json=firstPartyPlayerId,proto3" json:"first_party_player_id,omitempty"`
-	ShowShiftPlayerEntry bool   `protobuf:"varint,3,opt,name=show_shift_player_entry,json=showShiftPlayerEntry,proto3" json:"show_shift_player_entry,omitempty"`
+	ShiftPlayerId        string `protobuf:"bytes,1,opt,name=shift_player_id,json=shiftPlayerId,proto3" json:"shift_player_id"`
+	FirstPartyPlayerId   string `protobuf:"bytes,2,opt,name=first_party_player_id,json=firstPartyPlayerId,proto3" json:"first_party_player_id"`
+	ShowShiftPlayerEntry bool   `protobuf:"varint,3,opt,name=show_shift_player_entry,json=showShiftPlayerEntry,proto3" json:"show_shift_player_entry"`
 }
 
 func (x *RecentlyMetPlayer) Reset() {
@@ -1093,204 +1093,204 @@ type Profile struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	EnableAimAssist                             bool                                      `protobuf:"varint,1,opt,name=enable_aim_assist,json=enableAimAssist,proto3" json:"enable_aim_assist,omitempty"`
-	GamepadInvertLook                           bool                                      `protobuf:"varint,2,opt,name=gamepad_invert_look,json=gamepadInvertLook,proto3" json:"gamepad_invert_look,omitempty"`
-	GamepadInvertTurn                           bool                                      `protobuf:"varint,3,opt,name=gamepad_invert_turn,json=gamepadInvertTurn,proto3" json:"gamepad_invert_turn,omitempty"`
-	GamepadInvertMove                           bool                                      `protobuf:"varint,4,opt,name=gamepad_invert_move,json=gamepadInvertMove,proto3" json:"gamepad_invert_move,omitempty"`
-	GamepadInvertStrafe                         bool                                      `protobuf:"varint,5,opt,name=gamepad_invert_strafe,json=gamepadInvertStrafe,proto3" json:"gamepad_invert_strafe,omitempty"`
-	EnableVibration                             bool                                      `protobuf:"varint,6,opt,name=enable_vibration,json=enableVibration,proto3" json:"enable_vibration,omitempty"`
-	InvertMousePitch                            bool                                      `protobuf:"varint,7,opt,name=invert_mouse_pitch,json=invertMousePitch,proto3" json:"invert_mouse_pitch,omitempty"`
-	EnableMouseSmoothing                        bool                                      `protobuf:"varint,8,opt,name=enable_mouse_smoothing,json=enableMouseSmoothing,proto3" json:"enable_mouse_smoothing,omitempty"`
-	MouseScale                                  float32                                   `protobuf:"fixed32,9,opt,name=mouse_scale,json=mouseScale,proto3" json:"mouse_scale,omitempty"`
-	ShowDamageNumbers                           bool                                      `protobuf:"varint,10,opt,name=show_damage_numbers,json=showDamageNumbers,proto3" json:"show_damage_numbers,omitempty"`
-	ShowDamageNumberIcons                       bool                                      `protobuf:"varint,11,opt,name=show_damage_number_icons,json=showDamageNumberIcons,proto3" json:"show_damage_number_icons,omitempty"`
-	EnableTrainingMessages                      bool                                      `protobuf:"varint,12,opt,name=enable_training_messages,json=enableTrainingMessages,proto3" json:"enable_training_messages,omitempty"`
-	ShowTextChat                                bool                                      `protobuf:"varint,13,opt,name=show_text_chat,json=showTextChat,proto3" json:"show_text_chat,omitempty"`
-	CenterCrosshair                             bool                                      `protobuf:"varint,14,opt,name=center_crosshair,json=centerCrosshair,proto3" json:"center_crosshair,omitempty"`
-	ToggleSprint                                bool                                      `protobuf:"varint,15,opt,name=toggle_sprint,json=toggleSprint,proto3" json:"toggle_sprint,omitempty"`
-	ToggleCrouch                                bool                                      `protobuf:"varint,16,opt,name=toggle_crouch,json=toggleCrouch,proto3" json:"toggle_crouch,omitempty"`
-	CensorContent                               bool                                      `protobuf:"varint,17,opt,name=censor_content,json=censorContent,proto3" json:"censor_content,omitempty"`
-	MusicVolume                                 float32                                   `protobuf:"fixed32,18,opt,name=music_volume,json=musicVolume,proto3" json:"music_volume,omitempty"`
-	SoundEffectsVolume                          float32                                   `protobuf:"fixed32,19,opt,name=sound_effects_volume,json=soundEffectsVolume,proto3" json:"sound_effects_volume,omitempty"`
-	VoVolume                                    float32                                   `protobuf:"fixed32,20,opt,name=vo_volume,json=voVolume,proto3" json:"vo_volume,omitempty"`
-	VoiceVolume                                 float32                                   `protobuf:"fixed32,21,opt,name=voice_volume,json=voiceVolume,proto3" json:"voice_volume,omitempty"`
-	EnableOptionalVo                            bool                                      `protobuf:"varint,22,opt,name=enable_optional_vo,json=enableOptionalVo,proto3" json:"enable_optional_vo,omitempty"`
-	PushToTalk                                  bool                                      `protobuf:"varint,23,opt,name=push_to_talk,json=pushToTalk,proto3" json:"push_to_talk,omitempty"`
-	EnableControllerAudio                       bool                                      `protobuf:"varint,24,opt,name=enable_controller_audio,json=enableControllerAudio,proto3" json:"enable_controller_audio,omitempty"`
-	SpeakerAngleFront                           float32                                   `protobuf:"fixed32,25,opt,name=speaker_angle_front,json=speakerAngleFront,proto3" json:"speaker_angle_front,omitempty"`
-	SpeakerAngleSide                            float32                                   `protobuf:"fixed32,26,opt,name=speaker_angle_side,json=speakerAngleSide,proto3" json:"speaker_angle_side,omitempty"`
-	SpeakerAngleBack                            float32                                   `protobuf:"fixed32,27,opt,name=speaker_angle_back,json=speakerAngleBack,proto3" json:"speaker_angle_back,omitempty"`
-	SpeakerSetup                                uint32                                    `protobuf:"varint,28,opt,name=speaker_setup,json=speakerSetup,proto3" json:"speaker_setup,omitempty"`
-	MuteAudioOnFocusLoss                        bool                                      `protobuf:"varint,29,opt,name=mute_audio_on_focus_loss,json=muteAudioOnFocusLoss,proto3" json:"mute_audio_on_focus_loss,omitempty"`
-	HideStrictNatHelpDialog                     bool                                      `protobuf:"varint,34,opt,name=hide_strict_nat_help_dialog,json=hideStrictNatHelpDialog,proto3" json:"hide_strict_nat_help_dialog,omitempty"`
-	PlayerInputBindings                         *PlayerInputBindings                      `protobuf:"bytes,35,opt,name=player_input_bindings,json=playerInputBindings,proto3" json:"player_input_bindings,omitempty"`
-	NewsHashes                                  []uint32                                  `protobuf:"varint,36,rep,packed,name=news_hashes,json=newsHashes,proto3" json:"news_hashes,omitempty"`
-	LastUsedSavegameId                          uint32                                    `protobuf:"varint,37,opt,name=last_used_savegame_id,json=lastUsedSavegameId,proto3" json:"last_used_savegame_id,omitempty"`
-	GamepadHipSensitivityLevel                  int32                                     `protobuf:"varint,38,opt,name=gamepad_hip_sensitivity_level,json=gamepadHipSensitivityLevel,proto3" json:"gamepad_hip_sensitivity_level,omitempty"`
-	GamepadZoomedSensitivityLevel               int32                                     `protobuf:"varint,39,opt,name=gamepad_zoomed_sensitivity_level,json=gamepadZoomedSensitivityLevel,proto3" json:"gamepad_zoomed_sensitivity_level,omitempty"`
-	GamepadVehicleSensitivityLevel              int32                                     `protobuf:"varint,40,opt,name=gamepad_vehicle_sensitivity_level,json=gamepadVehicleSensitivityLevel,proto3" json:"gamepad_vehicle_sensitivity_level,omitempty"`
-	GamepadMovementDeadZoneX                    float32                                   `protobuf:"fixed32,41,opt,name=gamepad_movement_dead_zone_x,json=gamepadMovementDeadZoneX,proto3" json:"gamepad_movement_dead_zone_x,omitempty"`
-	GamepadMovementDeadZoneY                    float32                                   `protobuf:"fixed32,42,opt,name=gamepad_movement_dead_zone_y,json=gamepadMovementDeadZoneY,proto3" json:"gamepad_movement_dead_zone_y,omitempty"`
-	GamepadLookDeadZoneInnerX                   float32                                   `protobuf:"fixed32,43,opt,name=gamepad_look_dead_zone_inner_x,json=gamepadLookDeadZoneInnerX,proto3" json:"gamepad_look_dead_zone_inner_x,omitempty"`
-	GamepadLookDeadZoneOuterX                   float32                                   `protobuf:"fixed32,44,opt,name=gamepad_look_dead_zone_outer_x,json=gamepadLookDeadZoneOuterX,proto3" json:"gamepad_look_dead_zone_outer_x,omitempty"`
-	GamepadLookDeadZoneInnerY                   float32                                   `protobuf:"fixed32,45,opt,name=gamepad_look_dead_zone_inner_y,json=gamepadLookDeadZoneInnerY,proto3" json:"gamepad_look_dead_zone_inner_y,omitempty"`
-	GamepadLookDeadZoneOuterY                   float32                                   `protobuf:"fixed32,46,opt,name=gamepad_look_dead_zone_outer_y,json=gamepadLookDeadZoneOuterY,proto3" json:"gamepad_look_dead_zone_outer_y,omitempty"`
-	GamepadVehicleMovementDeadZoneX             float32                                   `protobuf:"fixed32,47,opt,name=gamepad_vehicle_movement_dead_zone_x,json=gamepadVehicleMovementDeadZoneX,proto3" json:"gamepad_vehicle_movement_dead_zone_x,omitempty"`
-	GamepadVehicleMovementDeadZoneY             float32                                   `protobuf:"fixed32,48,opt,name=gamepad_vehicle_movement_dead_zone_y,json=gamepadVehicleMovementDeadZoneY,proto3" json:"gamepad_vehicle_movement_dead_zone_y,omitempty"`
-	GamepadVehicleLookDeadZoneInnerX            float32                                   `protobuf:"fixed32,49,opt,name=gamepad_vehicle_look_dead_zone_inner_x,json=gamepadVehicleLookDeadZoneInnerX,proto3" json:"gamepad_vehicle_look_dead_zone_inner_x,omitempty"`
-	GamepadVehicleLookDeadZoneOuterX            float32                                   `protobuf:"fixed32,50,opt,name=gamepad_vehicle_look_dead_zone_outer_x,json=gamepadVehicleLookDeadZoneOuterX,proto3" json:"gamepad_vehicle_look_dead_zone_outer_x,omitempty"`
-	GamepadVehicleLookDeadZoneInnerY            float32                                   `protobuf:"fixed32,51,opt,name=gamepad_vehicle_look_dead_zone_inner_y,json=gamepadVehicleLookDeadZoneInnerY,proto3" json:"gamepad_vehicle_look_dead_zone_inner_y,omitempty"`
-	GamepadVehicleLookDeadZoneOuterY            float32                                   `protobuf:"fixed32,52,opt,name=gamepad_vehicle_look_dead_zone_outer_y,json=gamepadVehicleLookDeadZoneOuterY,proto3" json:"gamepad_vehicle_look_dead_zone_outer_y,omitempty"`
-	GamepadLeftDeadZoneInner                    float32                                   `protobuf:"fixed32,53,opt,name=gamepad_left_dead_zone_inner,json=gamepadLeftDeadZoneInner,proto3" json:"gamepad_left_dead_zone_inner,omitempty"`
-	GamepadLeftDeadZoneOuter                    float32                                   `protobuf:"fixed32,54,opt,name=gamepad_left_dead_zone_outer,json=gamepadLeftDeadZoneOuter,proto3" json:"gamepad_left_dead_zone_outer,omitempty"`
-	GamepadRightDeadZoneInner                   float32                                   `protobuf:"fixed32,55,opt,name=gamepad_right_dead_zone_inner,json=gamepadRightDeadZoneInner,proto3" json:"gamepad_right_dead_zone_inner,omitempty"`
-	GamepadRightDeadZoneOuter                   float32                                   `protobuf:"fixed32,56,opt,name=gamepad_right_dead_zone_outer,json=gamepadRightDeadZoneOuter,proto3" json:"gamepad_right_dead_zone_outer,omitempty"`
-	GamepadLookAxialDeadZoneScale               float32                                   `protobuf:"fixed32,57,opt,name=gamepad_look_axial_dead_zone_scale,json=gamepadLookAxialDeadZoneScale,proto3" json:"gamepad_look_axial_dead_zone_scale,omitempty"`
-	GamepadMoveAxialDeadZoneScale               float32                                   `protobuf:"fixed32,58,opt,name=gamepad_move_axial_dead_zone_scale,json=gamepadMoveAxialDeadZoneScale,proto3" json:"gamepad_move_axial_dead_zone_scale,omitempty"`
-	GamepadUseAdvancedHipAimSettings            bool                                      `protobuf:"varint,59,opt,name=gamepad_use_advanced_hip_aim_settings,json=gamepadUseAdvancedHipAimSettings,proto3" json:"gamepad_use_advanced_hip_aim_settings,omitempty"`
-	GamepadUseAdvancedZoomedAimSettings         bool                                      `protobuf:"varint,60,opt,name=gamepad_use_advanced_zoomed_aim_settings,json=gamepadUseAdvancedZoomedAimSettings,proto3" json:"gamepad_use_advanced_zoomed_aim_settings,omitempty"`
-	GamepadUseAdvancedVehicleAimSettings        bool                                      `protobuf:"varint,61,opt,name=gamepad_use_advanced_vehicle_aim_settings,json=gamepadUseAdvancedVehicleAimSettings,proto3" json:"gamepad_use_advanced_vehicle_aim_settings,omitempty"`
-	GamepadHipYawRate                           float32                                   `protobuf:"fixed32,62,opt,name=gamepad_hip_yaw_rate,json=gamepadHipYawRate,proto3" json:"gamepad_hip_yaw_rate,omitempty"`
-	GamepadHipPitchRate                         float32                                   `protobuf:"fixed32,63,opt,name=gamepad_hip_pitch_rate,json=gamepadHipPitchRate,proto3" json:"gamepad_hip_pitch_rate,omitempty"`
-	GamepadHipExtraYaw                          float32                                   `protobuf:"fixed32,64,opt,name=gamepad_hip_extra_yaw,json=gamepadHipExtraYaw,proto3" json:"gamepad_hip_extra_yaw,omitempty"`
-	GamepadHipExtraPitch                        float32                                   `protobuf:"fixed32,65,opt,name=gamepad_hip_extra_pitch,json=gamepadHipExtraPitch,proto3" json:"gamepad_hip_extra_pitch,omitempty"`
-	GamepadHipRampUpTime                        float32                                   `protobuf:"fixed32,66,opt,name=gamepad_hip_ramp_up_time,json=gamepadHipRampUpTime,proto3" json:"gamepad_hip_ramp_up_time,omitempty"`
-	GamepadHipRampUpDelay                       float32                                   `protobuf:"fixed32,67,opt,name=gamepad_hip_ramp_up_delay,json=gamepadHipRampUpDelay,proto3" json:"gamepad_hip_ramp_up_delay,omitempty"`
-	GamepadZoomedYawRate                        float32                                   `protobuf:"fixed32,68,opt,name=gamepad_zoomed_yaw_rate,json=gamepadZoomedYawRate,proto3" json:"gamepad_zoomed_yaw_rate,omitempty"`
-	GamepadZoomedPitchRate                      float32                                   `protobuf:"fixed32,69,opt,name=gamepad_zoomed_pitch_rate,json=gamepadZoomedPitchRate,proto3" json:"gamepad_zoomed_pitch_rate,omitempty"`
-	GamepadZoomedExtraYaw                       float32                                   `protobuf:"fixed32,70,opt,name=gamepad_zoomed_extra_yaw,json=gamepadZoomedExtraYaw,proto3" json:"gamepad_zoomed_extra_yaw,omitempty"`
-	GamepadZoomedExtraPitch                     float32                                   `protobuf:"fixed32,71,opt,name=gamepad_zoomed_extra_pitch,json=gamepadZoomedExtraPitch,proto3" json:"gamepad_zoomed_extra_pitch,omitempty"`
-	GamepadZoomedRampUpTime                     float32                                   `protobuf:"fixed32,72,opt,name=gamepad_zoomed_ramp_up_time,json=gamepadZoomedRampUpTime,proto3" json:"gamepad_zoomed_ramp_up_time,omitempty"`
-	GamepadZoomedRampUpDelay                    float32                                   `protobuf:"fixed32,73,opt,name=gamepad_zoomed_ramp_up_delay,json=gamepadZoomedRampUpDelay,proto3" json:"gamepad_zoomed_ramp_up_delay,omitempty"`
-	GamepadVehicleYawRate                       float32                                   `protobuf:"fixed32,74,opt,name=gamepad_vehicle_yaw_rate,json=gamepadVehicleYawRate,proto3" json:"gamepad_vehicle_yaw_rate,omitempty"`
-	GamepadVehiclePitchRate                     float32                                   `protobuf:"fixed32,75,opt,name=gamepad_vehicle_pitch_rate,json=gamepadVehiclePitchRate,proto3" json:"gamepad_vehicle_pitch_rate,omitempty"`
-	GamepadVehicleExtraYaw                      float32                                   `protobuf:"fixed32,76,opt,name=gamepad_vehicle_extra_yaw,json=gamepadVehicleExtraYaw,proto3" json:"gamepad_vehicle_extra_yaw,omitempty"`
-	GamepadVehicleExtraPitch                    float32                                   `protobuf:"fixed32,77,opt,name=gamepad_vehicle_extra_pitch,json=gamepadVehicleExtraPitch,proto3" json:"gamepad_vehicle_extra_pitch,omitempty"`
-	GamepadVehicleRampUpTime                    float32                                   `protobuf:"fixed32,78,opt,name=gamepad_vehicle_ramp_up_time,json=gamepadVehicleRampUpTime,proto3" json:"gamepad_vehicle_ramp_up_time,omitempty"`
-	GamepadVehicleRampUpDelay                   float32                                   `protobuf:"fixed32,79,opt,name=gamepad_vehicle_ramp_up_delay,json=gamepadVehicleRampUpDelay,proto3" json:"gamepad_vehicle_ramp_up_delay,omitempty"`
-	IronsightAimAssist                          bool                                      `protobuf:"varint,80,opt,name=ironsight_aim_assist,json=ironsightAimAssist,proto3" json:"ironsight_aim_assist,omitempty"`
-	WalkingJoystickScheme                       uint32                                    `protobuf:"varint,81,opt,name=walking_joystick_scheme,json=walkingJoystickScheme,proto3" json:"walking_joystick_scheme,omitempty"`
-	DrivingJoystickScheme                       uint32                                    `protobuf:"varint,82,opt,name=driving_joystick_scheme,json=drivingJoystickScheme,proto3" json:"driving_joystick_scheme,omitempty"`
-	MouseAdsScale                               float32                                   `protobuf:"fixed32,83,opt,name=mouse_ads_scale,json=mouseAdsScale,proto3" json:"mouse_ads_scale,omitempty"`
-	MouseVehicleScale                           float32                                   `protobuf:"fixed32,84,opt,name=mouse_vehicle_scale,json=mouseVehicleScale,proto3" json:"mouse_vehicle_scale,omitempty"`
-	MouseIronsightAimAssist                     bool                                      `protobuf:"varint,85,opt,name=mouse_ironsight_aim_assist,json=mouseIronsightAimAssist,proto3" json:"mouse_ironsight_aim_assist,omitempty"`
-	VehicleInputMode                            uint32                                    `protobuf:"varint,86,opt,name=vehicle_input_mode,json=vehicleInputMode,proto3" json:"vehicle_input_mode,omitempty"`
-	WeaponAimToggle                             bool                                      `protobuf:"varint,87,opt,name=weapon_aim_toggle,json=weaponAimToggle,proto3" json:"weapon_aim_toggle,omitempty"`
-	MantleRequiresButton                        bool                                      `protobuf:"varint,88,opt,name=mantle_requires_button,json=mantleRequiresButton,proto3" json:"mantle_requires_button,omitempty"`
-	FixedMinimapRotation                        bool                                      `protobuf:"varint,89,opt,name=fixed_minimap_rotation,json=fixedMinimapRotation,proto3" json:"fixed_minimap_rotation,omitempty"`
-	MapInvertPitch                              bool                                      `protobuf:"varint,90,opt,name=map_invert_pitch,json=mapInvertPitch,proto3" json:"map_invert_pitch,omitempty"`
-	MapInvertYaw                                bool                                      `protobuf:"varint,91,opt,name=map_invert_yaw,json=mapInvertYaw,proto3" json:"map_invert_yaw,omitempty"`
-	Difficulty                                  uint32                                    `protobuf:"varint,92,opt,name=difficulty,proto3" json:"difficulty,omitempty"`
-	SwapDualWieldControls                       bool                                      `protobuf:"varint,93,opt,name=swap_dual_wield_controls,json=swapDualWieldControls,proto3" json:"swap_dual_wield_controls,omitempty"`
-	BaseFov                                     float32                                   `protobuf:"fixed32,94,opt,name=base_fov,json=baseFov,proto3" json:"base_fov,omitempty"`
-	CrosshairNeutralColorFrame                  uint32                                    `protobuf:"varint,95,opt,name=crosshair_neutral_color_frame,json=crosshairNeutralColorFrame,proto3" json:"crosshair_neutral_color_frame,omitempty"`
-	CrosshairEnemyColorFrame                    uint32                                    `protobuf:"varint,96,opt,name=crosshair_enemy_color_frame,json=crosshairEnemyColorFrame,proto3" json:"crosshair_enemy_color_frame,omitempty"`
-	CrosshairAllyColorFrame                     uint32                                    `protobuf:"varint,97,opt,name=crosshair_ally_color_frame,json=crosshairAllyColorFrame,proto3" json:"crosshair_ally_color_frame,omitempty"`
-	EnableSubtitles                             bool                                      `protobuf:"varint,98,opt,name=enable_subtitles,json=enableSubtitles,proto3" json:"enable_subtitles,omitempty"`
-	EnableClosedCaptions                        bool                                      `protobuf:"varint,99,opt,name=enable_closed_captions,json=enableClosedCaptions,proto3" json:"enable_closed_captions,omitempty"`
-	LastStatusMenuPage                          string                                    `protobuf:"bytes,100,opt,name=last_status_menu_page,json=lastStatusMenuPage,proto3" json:"last_status_menu_page,omitempty"`
-	InventoryScreenLastFilter                   []*OakProfileLastInventoryFilterInfo      `protobuf:"bytes,101,rep,name=inventory_screen_last_filter,json=inventoryScreenLastFilter,proto3" json:"inventory_screen_last_filter,omitempty"`
-	TutorialInfo                                *OakProfileMenuTutorialInfo               `protobuf:"bytes,102,opt,name=tutorial_info,json=tutorialInfo,proto3" json:"tutorial_info,omitempty"`
-	DefaultNetworkType                          uint32                                    `protobuf:"varint,103,opt,name=default_network_type,json=defaultNetworkType,proto3" json:"default_network_type,omitempty"`
-	DefaultInviteType                           uint32                                    `protobuf:"varint,104,opt,name=default_invite_type,json=defaultInviteType,proto3" json:"default_invite_type,omitempty"`
-	MatchmakingRegion                           string                                    `protobuf:"bytes,105,opt,name=matchmaking_region,json=matchmakingRegion,proto3" json:"matchmaking_region,omitempty"`
-	StreamingService                            uint32                                    `protobuf:"varint,106,opt,name=streaming_service,json=streamingService,proto3" json:"streaming_service,omitempty"`
-	MaxCachedFriendEvents                       int32                                     `protobuf:"varint,107,opt,name=max_cached_friend_events,json=maxCachedFriendEvents,proto3" json:"max_cached_friend_events,omitempty"`
-	MaxCachedFriendStatuses                     int32                                     `protobuf:"varint,108,opt,name=max_cached_friend_statuses,json=maxCachedFriendStatuses,proto3" json:"max_cached_friend_statuses,omitempty"`
-	FriendEvents                                []string                                  `protobuf:"bytes,109,rep,name=friend_events,json=friendEvents,proto3" json:"friend_events,omitempty"`
-	FriendStatuses                              []string                                  `protobuf:"bytes,110,rep,name=friend_statuses,json=friendStatuses,proto3" json:"friend_statuses,omitempty"`
-	LastWhisperFetchEventsTime                  int64                                     `protobuf:"varint,111,opt,name=last_whisper_fetch_events_time,json=lastWhisperFetchEventsTime,proto3" json:"last_whisper_fetch_events_time,omitempty"`
-	LastWhisperFetchStatusesTime                int64                                     `protobuf:"varint,112,opt,name=last_whisper_fetch_statuses_time,json=lastWhisperFetchStatusesTime,proto3" json:"last_whisper_fetch_statuses_time,omitempty"`
-	DesiredCrossplayState                       uint32                                    `protobuf:"varint,113,opt,name=desired_crossplay_state,json=desiredCrossplayState,proto3" json:"desired_crossplay_state,omitempty"`
-	FriendEncounters                            []*Profile_FriendEncountersEntry          `protobuf:"bytes,133,rep,name=friend_encounters,json=friendEncounters,proto3" json:"friend_encounters,omitempty"`
-	MaxFriendEncounterSize                      int32                                     `protobuf:"varint,134,opt,name=max_friend_encounter_size,json=maxFriendEncounterSize,proto3" json:"max_friend_encounter_size,omitempty"`
-	ProfileStatsData                            []*GameStatSaveGameData                   `protobuf:"bytes,135,rep,name=profile_stats_data,json=profileStatsData,proto3" json:"profile_stats_data,omitempty"`
-	BankInventoryCategoryList                   []*InventoryCategorySaveData              `protobuf:"bytes,136,rep,name=bank_inventory_category_list,json=bankInventoryCategoryList,proto3" json:"bank_inventory_category_list,omitempty"`
-	BankInventoryList                           [][]byte                                  `protobuf:"bytes,137,rep,name=bank_inventory_list,json=bankInventoryList,proto3" json:"bank_inventory_list,omitempty"`
-	LostLootInventoryList                       [][]byte                                  `protobuf:"bytes,138,rep,name=lost_loot_inventory_list,json=lostLootInventoryList,proto3" json:"lost_loot_inventory_list,omitempty"`
-	NpcMailItems                                []*OakMailItem                            `protobuf:"bytes,139,rep,name=npc_mail_items,json=npcMailItems,proto3" json:"npc_mail_items,omitempty"`
-	MailGuids                                   []string                                  `protobuf:"bytes,140,rep,name=mail_guids,json=mailGuids,proto3" json:"mail_guids,omitempty"`
-	UnreadMailGuids                             []string                                  `protobuf:"bytes,141,rep,name=unread_mail_guids,json=unreadMailGuids,proto3" json:"unread_mail_guids,omitempty"`
-	GearSoldByFriends                           []*GearSoldByFriendData                   `protobuf:"bytes,142,rep,name=gear_sold_by_friends,json=gearSoldByFriends,proto3" json:"gear_sold_by_friends,omitempty"`
-	ProfileSduList                              []*OakSDUSaveGameData                     `protobuf:"bytes,143,rep,name=profile_sdu_list,json=profileSduList,proto3" json:"profile_sdu_list,omitempty"`
-	UnlockedCustomizations                      []*OakCustomizationSaveGameData           `protobuf:"bytes,144,rep,name=unlocked_customizations,json=unlockedCustomizations,proto3" json:"unlocked_customizations,omitempty"`
-	UnlockedInventoryCustomizationParts         []*OakInventoryCustomizationPartInfo      `protobuf:"bytes,145,rep,name=unlocked_inventory_customization_parts,json=unlockedInventoryCustomizationParts,proto3" json:"unlocked_inventory_customization_parts,omitempty"`
-	GuardianRank                                *GuardianRankProfileData                  `protobuf:"bytes,146,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank,omitempty"`
-	UnlockedCrewQuartersDecorations             []*CrewQuartersDecorationItemSaveGameData `protobuf:"bytes,147,rep,name=unlocked_crew_quarters_decorations,json=unlockedCrewQuartersDecorations,proto3" json:"unlocked_crew_quarters_decorations,omitempty"`
-	UnlockedCrewQuartersRooms                   []*CrewQuartersRoomItemSaveGameData       `protobuf:"bytes,148,rep,name=unlocked_crew_quarters_rooms,json=unlockedCrewQuartersRooms,proto3" json:"unlocked_crew_quarters_rooms,omitempty"`
-	EnableMouseAcceleration                     bool                                      `protobuf:"varint,150,opt,name=enable_mouse_acceleration,json=enableMouseAcceleration,proto3" json:"enable_mouse_acceleration,omitempty"`
-	EnableGamepadInput                          bool                                      `protobuf:"varint,151,opt,name=enable_gamepad_input,json=enableGamepadInput,proto3" json:"enable_gamepad_input,omitempty"`
-	UseClassicGamepadInput                      bool                                      `protobuf:"varint,152,opt,name=use_classic_gamepad_input,json=useClassicGamepadInput,proto3" json:"use_classic_gamepad_input,omitempty"`
-	MasterVolume                                float32                                   `protobuf:"fixed32,153,opt,name=master_volume,json=masterVolume,proto3" json:"master_volume,omitempty"`
-	MonitorDisplayType                          uint32                                    `protobuf:"varint,154,opt,name=monitor_display_type,json=monitorDisplayType,proto3" json:"monitor_display_type,omitempty"`
-	GraphicsMode                                uint32                                    `protobuf:"varint,155,opt,name=graphics_mode,json=graphicsMode,proto3" json:"graphics_mode,omitempty"`
-	FrameRateLimit                              uint32                                    `protobuf:"varint,156,opt,name=frame_rate_limit,json=frameRateLimit,proto3" json:"frame_rate_limit,omitempty"`
-	BaseVehicleFov                              float32                                   `protobuf:"fixed32,157,opt,name=base_vehicle_fov,json=baseVehicleFov,proto3" json:"base_vehicle_fov,omitempty"`
-	GraphicsQuality                             uint32                                    `protobuf:"varint,158,opt,name=graphics_quality,json=graphicsQuality,proto3" json:"graphics_quality,omitempty"`
-	AnisotropicFiltering                        uint32                                    `protobuf:"varint,159,opt,name=anisotropic_filtering,json=anisotropicFiltering,proto3" json:"anisotropic_filtering,omitempty"`
-	ShadowQuality                               uint32                                    `protobuf:"varint,160,opt,name=shadow_quality,json=shadowQuality,proto3" json:"shadow_quality,omitempty"`
-	DisplayPerformanceStats                     uint32                                    `protobuf:"varint,161,opt,name=display_performance_stats,json=displayPerformanceStats,proto3" json:"display_performance_stats,omitempty"`
-	TextureDetail                               uint32                                    `protobuf:"varint,162,opt,name=texture_detail,json=textureDetail,proto3" json:"texture_detail,omitempty"`
-	DrawDistance                                uint32                                    `protobuf:"varint,163,opt,name=draw_distance,json=drawDistance,proto3" json:"draw_distance,omitempty"`
-	Clutter                                     uint32                                    `protobuf:"varint,164,opt,name=clutter,proto3" json:"clutter,omitempty"`
-	Tessellation                                uint32                                    `protobuf:"varint,165,opt,name=tessellation,proto3" json:"tessellation,omitempty"`
-	Foliage                                     uint32                                    `protobuf:"varint,166,opt,name=foliage,proto3" json:"foliage,omitempty"`
-	FoliageShadows                              bool                                      `protobuf:"varint,167,opt,name=foliage_shadows,json=foliageShadows,proto3" json:"foliage_shadows,omitempty"`
-	PlanarReflections                           bool                                      `protobuf:"varint,168,opt,name=planar_reflections,json=planarReflections,proto3" json:"planar_reflections,omitempty"`
-	VolumetricFog                               uint32                                    `protobuf:"varint,169,opt,name=volumetric_fog,json=volumetricFog,proto3" json:"volumetric_fog,omitempty"`
-	ScreenSpaceReflections                      uint32                                    `protobuf:"varint,170,opt,name=screen_space_reflections,json=screenSpaceReflections,proto3" json:"screen_space_reflections,omitempty"`
-	CharacterTextureDetail                      uint32                                    `protobuf:"varint,171,opt,name=character_texture_detail,json=characterTextureDetail,proto3" json:"character_texture_detail,omitempty"`
-	CharacterDetail                             uint32                                    `protobuf:"varint,172,opt,name=character_detail,json=characterDetail,proto3" json:"character_detail,omitempty"`
-	AmbientOcclusionQuality                     uint32                                    `protobuf:"varint,173,opt,name=ambient_occlusion_quality,json=ambientOcclusionQuality,proto3" json:"ambient_occlusion_quality,omitempty"`
-	ObjectMotionBlur                            bool                                      `protobuf:"varint,174,opt,name=object_motion_blur,json=objectMotionBlur,proto3" json:"object_motion_blur,omitempty"`
-	LensFlare                                   bool                                      `protobuf:"varint,175,opt,name=lens_flare,json=lensFlare,proto3" json:"lens_flare,omitempty"`
-	CombatNumberLongFormat                      bool                                      `protobuf:"varint,176,opt,name=combat_number_long_format,json=combatNumberLongFormat,proto3" json:"combat_number_long_format,omitempty"`
-	ShowMinimapLegendaries                      bool                                      `protobuf:"varint,177,opt,name=show_minimap_legendaries,json=showMinimapLegendaries,proto3" json:"show_minimap_legendaries,omitempty"`
-	UsePlayerCallouts                           bool                                      `protobuf:"varint,178,opt,name=use_player_callouts,json=usePlayerCallouts,proto3" json:"use_player_callouts,omitempty"`
-	FriendEventNotificationLifetime             uint32                                    `protobuf:"varint,179,opt,name=friend_event_notification_lifetime,json=friendEventNotificationLifetime,proto3" json:"friend_event_notification_lifetime,omitempty"`
-	FriendEventNotificationFrequency            uint32                                    `protobuf:"varint,180,opt,name=friend_event_notification_frequency,json=friendEventNotificationFrequency,proto3" json:"friend_event_notification_frequency,omitempty"`
-	TradeRequestReceptionType                   uint32                                    `protobuf:"varint,181,opt,name=trade_request_reception_type,json=tradeRequestReceptionType,proto3" json:"trade_request_reception_type,omitempty"`
-	HeadBobScale                                float32                                   `protobuf:"fixed32,182,opt,name=head_bob_scale,json=headBobScale,proto3" json:"head_bob_scale,omitempty"`
-	HasSeenFirstBoot                            bool                                      `protobuf:"varint,184,opt,name=has_seen_first_boot,json=hasSeenFirstBoot,proto3" json:"has_seen_first_boot,omitempty"`
-	SubsCcSize                                  float32                                   `protobuf:"fixed32,189,opt,name=subs_cc_size,json=subsCcSize,proto3" json:"subs_cc_size,omitempty"`
-	CcSubsBackgroundOpacity                     float32                                   `protobuf:"fixed32,190,opt,name=cc_subs_background_opacity,json=ccSubsBackgroundOpacity,proto3" json:"cc_subs_background_opacity,omitempty"`
-	WalkingButtonScheme                         uint32                                    `protobuf:"varint,191,opt,name=walking_button_scheme,json=walkingButtonScheme,proto3" json:"walking_button_scheme,omitempty"`
-	DrivingButtonScheme                         uint32                                    `protobuf:"varint,192,opt,name=driving_button_scheme,json=drivingButtonScheme,proto3" json:"driving_button_scheme,omitempty"`
-	GlyphMode                                   uint32                                    `protobuf:"varint,193,opt,name=glyph_mode,json=glyphMode,proto3" json:"glyph_mode,omitempty"`
-	Use_MPH                                     bool                                      `protobuf:"varint,194,opt,name=use_MPH,json=useMPH,proto3" json:"use_MPH,omitempty"`
-	RegisteredDownloadableEntitlements          []*RegisteredDownloadableEntitlements     `protobuf:"bytes,195,rep,name=registered_downloadable_entitlements,json=registeredDownloadableEntitlements,proto3" json:"registered_downloadable_entitlements,omitempty"`
-	SeenNewsItems                               []string                                  `protobuf:"bytes,196,rep,name=seen_news_items,json=seenNewsItems,proto3" json:"seen_news_items,omitempty"`
-	AutoCenteringEnabled                        bool                                      `protobuf:"varint,197,opt,name=auto_centering_enabled,json=autoCenteringEnabled,proto3" json:"auto_centering_enabled,omitempty"`
-	IncreasedChanceForSubscribers               bool                                      `protobuf:"varint,198,opt,name=increased_chance_for_subscribers,json=increasedChanceForSubscribers,proto3" json:"increased_chance_for_subscribers,omitempty"`
-	RareChestEventEnabled                       bool                                      `protobuf:"varint,199,opt,name=rare_chest_event_enabled,json=rareChestEventEnabled,proto3" json:"rare_chest_event_enabled,omitempty"`
-	BadassEventEnabled                          bool                                      `protobuf:"varint,200,opt,name=badass_event_enabled,json=badassEventEnabled,proto3" json:"badass_event_enabled,omitempty"`
-	PinataEventEnabled                          bool                                      `protobuf:"varint,201,opt,name=pinata_event_enabled,json=pinataEventEnabled,proto3" json:"pinata_event_enabled,omitempty"`
-	MinTimeBetweenBadassEvents                  int32                                     `protobuf:"varint,202,opt,name=min_time_between_badass_events,json=minTimeBetweenBadassEvents,proto3" json:"min_time_between_badass_events,omitempty"`
-	HudScaleMultiplier                          float32                                   `protobuf:"fixed32,203,opt,name=hud_scale_multiplier,json=hudScaleMultiplier,proto3" json:"hud_scale_multiplier,omitempty"`
-	DisableSpatialAudio                         bool                                      `protobuf:"varint,204,opt,name=disable_spatial_audio,json=disableSpatialAudio,proto3" json:"disable_spatial_audio,omitempty"`
-	TotalPlaytimeSeconds                        int32                                     `protobuf:"varint,205,opt,name=total_playtime_seconds,json=totalPlaytimeSeconds,proto3" json:"total_playtime_seconds,omitempty"`
-	MoxxisDrinkEventEnabled                     bool                                      `protobuf:"varint,206,opt,name=moxxis_drink_event_enabled,json=moxxisDrinkEventEnabled,proto3" json:"moxxis_drink_event_enabled,omitempty"`
-	MoxxisDrinkEventBitsProductId               int32                                     `protobuf:"varint,207,opt,name=moxxis_drink_event_bits_product_id,json=moxxisDrinkEventBitsProductId,proto3" json:"moxxis_drink_event_bits_product_id,omitempty"`
-	ChallengeData                               []*ChallengeSaveGameData                  `protobuf:"bytes,208,rep,name=challenge_data,json=challengeData,proto3" json:"challenge_data,omitempty"`
-	CitizenScienceLevelProgression              []int32                                   `protobuf:"varint,209,rep,packed,name=CitizenScienceLevelProgression,proto3" json:"CitizenScienceLevelProgression,omitempty"`
-	DefaultDeadZoneInnerUpdated                 bool                                      `protobuf:"varint,210,opt,name=default_dead_zone_inner_updated,json=defaultDeadZoneInnerUpdated,proto3" json:"default_dead_zone_inner_updated,omitempty"`
-	DisableEventContent                         bool                                      `protobuf:"varint,211,opt,name=disable_event_content,json=disableEventContent,proto3" json:"disable_event_content,omitempty"`
-	DesiredFriendSyncState                      uint32                                    `protobuf:"varint,212,opt,name=desired_friend_sync_state,json=desiredFriendSyncState,proto3" json:"desired_friend_sync_state,omitempty"`
-	NeedsShiftFirstBoot                         bool                                      `protobuf:"varint,213,opt,name=needs_shift_first_boot,json=needsShiftFirstBoot,proto3" json:"needs_shift_first_boot,omitempty"`
-	RecentlyMetPlayers                          []*RecentlyMetPlayer                      `protobuf:"bytes,214,rep,name=recently_met_players,json=recentlyMetPlayers,proto3" json:"recently_met_players,omitempty"`
-	CitizenScienceActiveBoosterIndex            int32                                     `protobuf:"varint,215,opt,name=CitizenScienceActiveBoosterIndex,proto3" json:"CitizenScienceActiveBoosterIndex,omitempty"`
-	CitizenScienceActiveBoosterRemainingTime    float32                                   `protobuf:"fixed32,216,opt,name=CitizenScienceActiveBoosterRemainingTime,proto3" json:"CitizenScienceActiveBoosterRemainingTime,omitempty"`
-	CitizenScienceActiveBoosterTotalTime        float32                                   `protobuf:"fixed32,217,opt,name=CitizenScienceActiveBoosterTotalTime,proto3" json:"CitizenScienceActiveBoosterTotalTime,omitempty"`
-	StreamerPrimaryActiveBoosterIndex           int32                                     `protobuf:"varint,218,opt,name=StreamerPrimaryActiveBoosterIndex,proto3" json:"StreamerPrimaryActiveBoosterIndex,omitempty"`
-	StreamerPrimaryActiveBoosterRemainingTime   float32                                   `protobuf:"fixed32,219,opt,name=StreamerPrimaryActiveBoosterRemainingTime,proto3" json:"StreamerPrimaryActiveBoosterRemainingTime,omitempty"`
-	StreamerPrimaryActiveBoosterTotalTime       float32                                   `protobuf:"fixed32,220,opt,name=StreamerPrimaryActiveBoosterTotalTime,proto3" json:"StreamerPrimaryActiveBoosterTotalTime,omitempty"`
-	StreamerSecondaryActiveBoosterIndex         int32                                     `protobuf:"varint,221,opt,name=StreamerSecondaryActiveBoosterIndex,proto3" json:"StreamerSecondaryActiveBoosterIndex,omitempty"`
-	StreamerSecondaryActiveBoosterRemainingTime float32                                   `protobuf:"fixed32,222,opt,name=StreamerSecondaryActiveBoosterRemainingTime,proto3" json:"StreamerSecondaryActiveBoosterRemainingTime,omitempty"`
-	StreamerSecondaryActiveBoosterTotalTime     float32                                   `protobuf:"fixed32,223,opt,name=StreamerSecondaryActiveBoosterTotalTime,proto3" json:"StreamerSecondaryActiveBoosterTotalTime,omitempty"`
-	StreamerBoosterTier                         int32                                     `protobuf:"varint,224,opt,name=StreamerBoosterTier,proto3" json:"StreamerBoosterTier,omitempty"`
-	CitizenScienceCSBucksAmount                 int32                                     `protobuf:"varint,226,opt,name=CitizenScienceCSBucksAmount,proto3" json:"CitizenScienceCSBucksAmount,omitempty"`
-	BCitizenScienceHasSeenIntroVideo            bool                                      `protobuf:"varint,227,opt,name=bCitizenScienceHasSeenIntroVideo,proto3" json:"bCitizenScienceHasSeenIntroVideo,omitempty"`
-	BCitizenScienceTutorialDone                 bool                                      `protobuf:"varint,228,opt,name=bCitizenScienceTutorialDone,proto3" json:"bCitizenScienceTutorialDone,omitempty"`
+	EnableAimAssist                             bool                                      `protobuf:"varint,1,opt,name=enable_aim_assist,json=enableAimAssist,proto3" json:"enable_aim_assist"`
+	GamepadInvertLook                           bool                                      `protobuf:"varint,2,opt,name=gamepad_invert_look,json=gamepadInvertLook,proto3" json:"gamepad_invert_look"`
+	GamepadInvertTurn                           bool                                      `protobuf:"varint,3,opt,name=gamepad_invert_turn,json=gamepadInvertTurn,proto3" json:"gamepad_invert_turn"`
+	GamepadInvertMove                           bool                                      `protobuf:"varint,4,opt,name=gamepad_invert_move,json=gamepadInvertMove,proto3" json:"gamepad_invert_move"`
+	GamepadInvertStrafe                         bool                                      `protobuf:"varint,5,opt,name=gamepad_invert_strafe,json=gamepadInvertStrafe,proto3" json:"gamepad_invert_strafe"`
+	EnableVibration                             bool                                      `protobuf:"varint,6,opt,name=enable_vibration,json=enableVibration,proto3" json:"enable_vibration"`
+	InvertMousePitch                            bool                                      `protobuf:"varint,7,opt,name=invert_mouse_pitch,json=invertMousePitch,proto3" json:"invert_mouse_pitch"`
+	EnableMouseSmoothing                        bool                                      `protobuf:"varint,8,opt,name=enable_mouse_smoothing,json=enableMouseSmoothing,proto3" json:"enable_mouse_smoothing"`
+	MouseScale                                  float32                                   `protobuf:"fixed32,9,opt,name=mouse_scale,json=mouseScale,proto3" json:"mouse_scale"`
+	ShowDamageNumbers                           bool                                      `protobuf:"varint,10,opt,name=show_damage_numbers,json=showDamageNumbers,proto3" json:"show_damage_numbers"`
+	ShowDamageNumberIcons                       bool                                      `protobuf:"varint,11,opt,name=show_damage_number_icons,json=showDamageNumberIcons,proto3" json:"show_damage_number_icons"`
+	EnableTrainingMessages                      bool                                      `protobuf:"varint,12,opt,name=enable_training_messages,json=enableTrainingMessages,proto3" json:"enable_training_messages"`
+	ShowTextChat                                bool                                      `protobuf:"varint,13,opt,name=show_text_chat,json=showTextChat,proto3" json:"show_text_chat"`
+	CenterCrosshair                             bool                                      `protobuf:"varint,14,opt,name=center_crosshair,json=centerCrosshair,proto3" json:"center_crosshair"`
+	ToggleSprint                                bool                                      `protobuf:"varint,15,opt,name=toggle_sprint,json=toggleSprint,proto3" json:"toggle_sprint"`
+	ToggleCrouch                                bool                                      `protobuf:"varint,16,opt,name=toggle_crouch,json=toggleCrouch,proto3" json:"toggle_crouch"`
+	CensorContent                               bool                                      `protobuf:"varint,17,opt,name=censor_content,json=censorContent,proto3" json:"censor_content"`
+	MusicVolume                                 float32                                   `protobuf:"fixed32,18,opt,name=music_volume,json=musicVolume,proto3" json:"music_volume"`
+	SoundEffectsVolume                          float32                                   `protobuf:"fixed32,19,opt,name=sound_effects_volume,json=soundEffectsVolume,proto3" json:"sound_effects_volume"`
+	VoVolume                                    float32                                   `protobuf:"fixed32,20,opt,name=vo_volume,json=voVolume,proto3" json:"vo_volume"`
+	VoiceVolume                                 float32                                   `protobuf:"fixed32,21,opt,name=voice_volume,json=voiceVolume,proto3" json:"voice_volume"`
+	EnableOptionalVo                            bool                                      `protobuf:"varint,22,opt,name=enable_optional_vo,json=enableOptionalVo,proto3" json:"enable_optional_vo"`
+	PushToTalk                                  bool                                      `protobuf:"varint,23,opt,name=push_to_talk,json=pushToTalk,proto3" json:"push_to_talk"`
+	EnableControllerAudio                       bool                                      `protobuf:"varint,24,opt,name=enable_controller_audio,json=enableControllerAudio,proto3" json:"enable_controller_audio"`
+	SpeakerAngleFront                           float32                                   `protobuf:"fixed32,25,opt,name=speaker_angle_front,json=speakerAngleFront,proto3" json:"speaker_angle_front"`
+	SpeakerAngleSide                            float32                                   `protobuf:"fixed32,26,opt,name=speaker_angle_side,json=speakerAngleSide,proto3" json:"speaker_angle_side"`
+	SpeakerAngleBack                            float32                                   `protobuf:"fixed32,27,opt,name=speaker_angle_back,json=speakerAngleBack,proto3" json:"speaker_angle_back"`
+	SpeakerSetup                                uint32                                    `protobuf:"varint,28,opt,name=speaker_setup,json=speakerSetup,proto3" json:"speaker_setup"`
+	MuteAudioOnFocusLoss                        bool                                      `protobuf:"varint,29,opt,name=mute_audio_on_focus_loss,json=muteAudioOnFocusLoss,proto3" json:"mute_audio_on_focus_loss"`
+	HideStrictNatHelpDialog                     bool                                      `protobuf:"varint,34,opt,name=hide_strict_nat_help_dialog,json=hideStrictNatHelpDialog,proto3" json:"hide_strict_nat_help_dialog"`
+	PlayerInputBindings                         *PlayerInputBindings                      `protobuf:"bytes,35,opt,name=player_input_bindings,json=playerInputBindings,proto3" json:"player_input_bindings"`
+	NewsHashes                                  []uint32                                  `protobuf:"varint,36,rep,packed,name=news_hashes,json=newsHashes,proto3" json:"news_hashes"`
+	LastUsedSavegameId                          uint32                                    `protobuf:"varint,37,opt,name=last_used_savegame_id,json=lastUsedSavegameId,proto3" json:"last_used_savegame_id"`
+	GamepadHipSensitivityLevel                  int32                                     `protobuf:"varint,38,opt,name=gamepad_hip_sensitivity_level,json=gamepadHipSensitivityLevel,proto3" json:"gamepad_hip_sensitivity_level"`
+	GamepadZoomedSensitivityLevel               int32                                     `protobuf:"varint,39,opt,name=gamepad_zoomed_sensitivity_level,json=gamepadZoomedSensitivityLevel,proto3" json:"gamepad_zoomed_sensitivity_level"`
+	GamepadVehicleSensitivityLevel              int32                                     `protobuf:"varint,40,opt,name=gamepad_vehicle_sensitivity_level,json=gamepadVehicleSensitivityLevel,proto3" json:"gamepad_vehicle_sensitivity_level"`
+	GamepadMovementDeadZoneX                    float32                                   `protobuf:"fixed32,41,opt,name=gamepad_movement_dead_zone_x,json=gamepadMovementDeadZoneX,proto3" json:"gamepad_movement_dead_zone_x"`
+	GamepadMovementDeadZoneY                    float32                                   `protobuf:"fixed32,42,opt,name=gamepad_movement_dead_zone_y,json=gamepadMovementDeadZoneY,proto3" json:"gamepad_movement_dead_zone_y"`
+	GamepadLookDeadZoneInnerX                   float32                                   `protobuf:"fixed32,43,opt,name=gamepad_look_dead_zone_inner_x,json=gamepadLookDeadZoneInnerX,proto3" json:"gamepad_look_dead_zone_inner_x"`
+	GamepadLookDeadZoneOuterX                   float32                                   `protobuf:"fixed32,44,opt,name=gamepad_look_dead_zone_outer_x,json=gamepadLookDeadZoneOuterX,proto3" json:"gamepad_look_dead_zone_outer_x"`
+	GamepadLookDeadZoneInnerY                   float32                                   `protobuf:"fixed32,45,opt,name=gamepad_look_dead_zone_inner_y,json=gamepadLookDeadZoneInnerY,proto3" json:"gamepad_look_dead_zone_inner_y"`
+	GamepadLookDeadZoneOuterY                   float32                                   `protobuf:"fixed32,46,opt,name=gamepad_look_dead_zone_outer_y,json=gamepadLookDeadZoneOuterY,proto3" json:"gamepad_look_dead_zone_outer_y"`
+	GamepadVehicleMovementDeadZoneX             float32                                   `protobuf:"fixed32,47,opt,name=gamepad_vehicle_movement_dead_zone_x,json=gamepadVehicleMovementDeadZoneX,proto3" json:"gamepad_vehicle_movement_dead_zone_x"`
+	GamepadVehicleMovementDeadZoneY             float32                                   `protobuf:"fixed32,48,opt,name=gamepad_vehicle_movement_dead_zone_y,json=gamepadVehicleMovementDeadZoneY,proto3" json:"gamepad_vehicle_movement_dead_zone_y"`
+	GamepadVehicleLookDeadZoneInnerX            float32                                   `protobuf:"fixed32,49,opt,name=gamepad_vehicle_look_dead_zone_inner_x,json=gamepadVehicleLookDeadZoneInnerX,proto3" json:"gamepad_vehicle_look_dead_zone_inner_x"`
+	GamepadVehicleLookDeadZoneOuterX            float32                                   `protobuf:"fixed32,50,opt,name=gamepad_vehicle_look_dead_zone_outer_x,json=gamepadVehicleLookDeadZoneOuterX,proto3" json:"gamepad_vehicle_look_dead_zone_outer_x"`
+	GamepadVehicleLookDeadZoneInnerY            float32                                   `protobuf:"fixed32,51,opt,name=gamepad_vehicle_look_dead_zone_inner_y,json=gamepadVehicleLookDeadZoneInnerY,proto3" json:"gamepad_vehicle_look_dead_zone_inner_y"`
+	GamepadVehicleLookDeadZoneOuterY            float32                                   `protobuf:"fixed32,52,opt,name=gamepad_vehicle_look_dead_zone_outer_y,json=gamepadVehicleLookDeadZoneOuterY,proto3" json:"gamepad_vehicle_look_dead_zone_outer_y"`
+	GamepadLeftDeadZoneInner                    float32                                   `protobuf:"fixed32,53,opt,name=gamepad_left_dead_zone_inner,json=gamepadLeftDeadZoneInner,proto3" json:"gamepad_left_dead_zone_inner"`
+	GamepadLeftDeadZoneOuter                    float32                                   `protobuf:"fixed32,54,opt,name=gamepad_left_dead_zone_outer,json=gamepadLeftDeadZoneOuter,proto3" json:"gamepad_left_dead_zone_outer"`
+	GamepadRightDeadZoneInner                   float32                                   `protobuf:"fixed32,55,opt,name=gamepad_right_dead_zone_inner,json=gamepadRightDeadZoneInner,proto3" json:"gamepad_right_dead_zone_inner"`
+	GamepadRightDeadZoneOuter                   float32                                   `protobuf:"fixed32,56,opt,name=gamepad_right_dead_zone_outer,json=gamepadRightDeadZoneOuter,proto3" json:"gamepad_right_dead_zone_outer"`
+	GamepadLookAxialDeadZoneScale               float32                                   `protobuf:"fixed32,57,opt,name=gamepad_look_axial_dead_zone_scale,json=gamepadLookAxialDeadZoneScale,proto3" json:"gamepad_look_axial_dead_zone_scale"`
+	GamepadMoveAxialDeadZoneScale               float32                                   `protobuf:"fixed32,58,opt,name=gamepad_move_axial_dead_zone_scale,json=gamepadMoveAxialDeadZoneScale,proto3" json:"gamepad_move_axial_dead_zone_scale"`
+	GamepadUseAdvancedHipAimSettings            bool                                      `protobuf:"varint,59,opt,name=gamepad_use_advanced_hip_aim_settings,json=gamepadUseAdvancedHipAimSettings,proto3" json:"gamepad_use_advanced_hip_aim_settings"`
+	GamepadUseAdvancedZoomedAimSettings         bool                                      `protobuf:"varint,60,opt,name=gamepad_use_advanced_zoomed_aim_settings,json=gamepadUseAdvancedZoomedAimSettings,proto3" json:"gamepad_use_advanced_zoomed_aim_settings"`
+	GamepadUseAdvancedVehicleAimSettings        bool                                      `protobuf:"varint,61,opt,name=gamepad_use_advanced_vehicle_aim_settings,json=gamepadUseAdvancedVehicleAimSettings,proto3" json:"gamepad_use_advanced_vehicle_aim_settings"`
+	GamepadHipYawRate                           float32                                   `protobuf:"fixed32,62,opt,name=gamepad_hip_yaw_rate,json=gamepadHipYawRate,proto3" json:"gamepad_hip_yaw_rate"`
+	GamepadHipPitchRate                         float32                                   `protobuf:"fixed32,63,opt,name=gamepad_hip_pitch_rate,json=gamepadHipPitchRate,proto3" json:"gamepad_hip_pitch_rate"`
+	GamepadHipExtraYaw                          float32                                   `protobuf:"fixed32,64,opt,name=gamepad_hip_extra_yaw,json=gamepadHipExtraYaw,proto3" json:"gamepad_hip_extra_yaw"`
+	GamepadHipExtraPitch                        float32                                   `protobuf:"fixed32,65,opt,name=gamepad_hip_extra_pitch,json=gamepadHipExtraPitch,proto3" json:"gamepad_hip_extra_pitch"`
+	GamepadHipRampUpTime                        float32                                   `protobuf:"fixed32,66,opt,name=gamepad_hip_ramp_up_time,json=gamepadHipRampUpTime,proto3" json:"gamepad_hip_ramp_up_time"`
+	GamepadHipRampUpDelay                       float32                                   `protobuf:"fixed32,67,opt,name=gamepad_hip_ramp_up_delay,json=gamepadHipRampUpDelay,proto3" json:"gamepad_hip_ramp_up_delay"`
+	GamepadZoomedYawRate                        float32                                   `protobuf:"fixed32,68,opt,name=gamepad_zoomed_yaw_rate,json=gamepadZoomedYawRate,proto3" json:"gamepad_zoomed_yaw_rate"`
+	GamepadZoomedPitchRate                      float32                                   `protobuf:"fixed32,69,opt,name=gamepad_zoomed_pitch_rate,json=gamepadZoomedPitchRate,proto3" json:"gamepad_zoomed_pitch_rate"`
+	GamepadZoomedExtraYaw                       float32                                   `protobuf:"fixed32,70,opt,name=gamepad_zoomed_extra_yaw,json=gamepadZoomedExtraYaw,proto3" json:"gamepad_zoomed_extra_yaw"`
+	GamepadZoomedExtraPitch                     float32                                   `protobuf:"fixed32,71,opt,name=gamepad_zoomed_extra_pitch,json=gamepadZoomedExtraPitch,proto3" json:"gamepad_zoomed_extra_pitch"`
+	GamepadZoomedRampUpTime                     float32                                   `protobuf:"fixed32,72,opt,name=gamepad_zoomed_ramp_up_time,json=gamepadZoomedRampUpTime,proto3" json:"gamepad_zoomed_ramp_up_time"`
+	GamepadZoomedRampUpDelay                    float32                                   `protobuf:"fixed32,73,opt,name=gamepad_zoomed_ramp_up_delay,json=gamepadZoomedRampUpDelay,proto3" json:"gamepad_zoomed_ramp_up_delay"`
+	GamepadVehicleYawRate                       float32                                   `protobuf:"fixed32,74,opt,name=gamepad_vehicle_yaw_rate,json=gamepadVehicleYawRate,proto3" json:"gamepad_vehicle_yaw_rate"`
+	GamepadVehiclePitchRate                     float32                                   `protobuf:"fixed32,75,opt,name=gamepad_vehicle_pitch_rate,json=gamepadVehiclePitchRate,proto3" json:"gamepad_vehicle_pitch_rate"`
+	GamepadVehicleExtraYaw                      float32                                   `protobuf:"fixed32,76,opt,name=gamepad_vehicle_extra_yaw,json=gamepadVehicleExtraYaw,proto3" json:"gamepad_vehicle_extra_yaw"`
+	GamepadVehicleExtraPitch                    float32                                   `protobuf:"fixed32,77,opt,name=gamepad_vehicle_extra_pitch,json=gamepadVehicleExtraPitch,proto3" json:"gamepad_vehicle_extra_pitch"`
+	GamepadVehicleRampUpTime                    float32                                   `protobuf:"fixed32,78,opt,name=gamepad_vehicle_ramp_up_time,json=gamepadVehicleRampUpTime,proto3" json:"gamepad_vehicle_ramp_up_time"`
+	GamepadVehicleRampUpDelay                   float32                                   `protobuf:"fixed32,79,opt,name=gamepad_vehicle_ramp_up_delay,json=gamepadVehicleRampUpDelay,proto3" json:"gamepad_vehicle_ramp_up_delay"`
+	IronsightAimAssist                          bool                                      `protobuf:"varint,80,opt,name=ironsight_aim_assist,json=ironsightAimAssist,proto3" json:"ironsight_aim_assist"`
+	WalkingJoystickScheme                       uint32                                    `protobuf:"varint,81,opt,name=walking_joystick_scheme,json=walkingJoystickScheme,proto3" json:"walking_joystick_scheme"`
+	DrivingJoystickScheme                       uint32                                    `protobuf:"varint,82,opt,name=driving_joystick_scheme,json=drivingJoystickScheme,proto3" json:"driving_joystick_scheme"`
+	MouseAdsScale                               float32                                   `protobuf:"fixed32,83,opt,name=mouse_ads_scale,json=mouseAdsScale,proto3" json:"mouse_ads_scale"`
+	MouseVehicleScale                           float32                                   `protobuf:"fixed32,84,opt,name=mouse_vehicle_scale,json=mouseVehicleScale,proto3" json:"mouse_vehicle_scale"`
+	MouseIronsightAimAssist                     bool                                      `protobuf:"varint,85,opt,name=mouse_ironsight_aim_assist,json=mouseIronsightAimAssist,proto3" json:"mouse_ironsight_aim_assist"`
+	VehicleInputMode                            uint32                                    `protobuf:"varint,86,opt,name=vehicle_input_mode,json=vehicleInputMode,proto3" json:"vehicle_input_mode"`
+	WeaponAimToggle                             bool                                      `protobuf:"varint,87,opt,name=weapon_aim_toggle,json=weaponAimToggle,proto3" json:"weapon_aim_toggle"`
+	MantleRequiresButton                        bool                                      `protobuf:"varint,88,opt,name=mantle_requires_button,json=mantleRequiresButton,proto3" json:"mantle_requires_button"`
+	FixedMinimapRotation                        bool                                      `protobuf:"varint,89,opt,name=fixed_minimap_rotation,json=fixedMinimapRotation,proto3" json:"fixed_minimap_rotation"`
+	MapInvertPitch                              bool                                      `protobuf:"varint,90,opt,name=map_invert_pitch,json=mapInvertPitch,proto3" json:"map_invert_pitch"`
+	MapInvertYaw                                bool                                      `protobuf:"varint,91,opt,name=map_invert_yaw,json=mapInvertYaw,proto3" json:"map_invert_yaw"`
+	Difficulty                                  uint32                                    `protobuf:"varint,92,opt,name=difficulty,proto3" json:"difficulty"`
+	SwapDualWieldControls                       bool                                      `protobuf:"varint,93,opt,name=swap_dual_wield_controls,json=swapDualWieldControls,proto3" json:"swap_dual_wield_controls"`
+	BaseFov                                     float32                                   `protobuf:"fixed32,94,opt,name=base_fov,json=baseFov,proto3" json:"base_fov"`
+	CrosshairNeutralColorFrame                  uint32                                    `protobuf:"varint,95,opt,name=crosshair_neutral_color_frame,json=crosshairNeutralColorFrame,proto3" json:"crosshair_neutral_color_frame"`
+	CrosshairEnemyColorFrame                    uint32                                    `protobuf:"varint,96,opt,name=crosshair_enemy_color_frame,json=crosshairEnemyColorFrame,proto3" json:"crosshair_enemy_color_frame"`
+	CrosshairAllyColorFrame                     uint32                                    `protobuf:"varint,97,opt,name=crosshair_ally_color_frame,json=crosshairAllyColorFrame,proto3" json:"crosshair_ally_color_frame"`
+	EnableSubtitles                             bool                                      `protobuf:"varint,98,opt,name=enable_subtitles,json=enableSubtitles,proto3" json:"enable_subtitles"`
+	EnableClosedCaptions                        bool                                      `protobuf:"varint,99,opt,name=enable_closed_captions,json=enableClosedCaptions,proto3" json:"enable_closed_captions"`
+	LastStatusMenuPage                          string                                    `protobuf:"bytes,100,opt,name=last_status_menu_page,json=lastStatusMenuPage,proto3" json:"last_status_menu_page"`
+	InventoryScreenLastFilter                   []*OakProfileLastInventoryFilterInfo      `protobuf:"bytes,101,rep,name=inventory_screen_last_filter,json=inventoryScreenLastFilter,proto3" json:"inventory_screen_last_filter"`
+	TutorialInfo                                *OakProfileMenuTutorialInfo               `protobuf:"bytes,102,opt,name=tutorial_info,json=tutorialInfo,proto3" json:"tutorial_info"`
+	DefaultNetworkType                          uint32                                    `protobuf:"varint,103,opt,name=default_network_type,json=defaultNetworkType,proto3" json:"default_network_type"`
+	DefaultInviteType                           uint32                                    `protobuf:"varint,104,opt,name=default_invite_type,json=defaultInviteType,proto3" json:"default_invite_type"`
+	MatchmakingRegion                           string                                    `protobuf:"bytes,105,opt,name=matchmaking_region,json=matchmakingRegion,proto3" json:"matchmaking_region"`
+	StreamingService                            uint32                                    `protobuf:"varint,106,opt,name=streaming_service,json=streamingService,proto3" json:"streaming_service"`
+	MaxCachedFriendEvents                       int32                                     `protobuf:"varint,107,opt,name=max_cached_friend_events,json=maxCachedFriendEvents,proto3" json:"max_cached_friend_events"`
+	MaxCachedFriendStatuses                     int32                                     `protobuf:"varint,108,opt,name=max_cached_friend_statuses,json=maxCachedFriendStatuses,proto3" json:"max_cached_friend_statuses"`
+	FriendEvents                                []string                                  `protobuf:"bytes,109,rep,name=friend_events,json=friendEvents,proto3" json:"friend_events"`
+	FriendStatuses                              []string                                  `protobuf:"bytes,110,rep,name=friend_statuses,json=friendStatuses,proto3" json:"friend_statuses"`
+	LastWhisperFetchEventsTime                  int64                                     `protobuf:"varint,111,opt,name=last_whisper_fetch_events_time,json=lastWhisperFetchEventsTime,proto3" json:"last_whisper_fetch_events_time"`
+	LastWhisperFetchStatusesTime                int64                                     `protobuf:"varint,112,opt,name=last_whisper_fetch_statuses_time,json=lastWhisperFetchStatusesTime,proto3" json:"last_whisper_fetch_statuses_time"`
+	DesiredCrossplayState                       uint32                                    `protobuf:"varint,113,opt,name=desired_crossplay_state,json=desiredCrossplayState,proto3" json:"desired_crossplay_state"`
+	FriendEncounters                            []*Profile_FriendEncountersEntry          `protobuf:"bytes,133,rep,name=friend_encounters,json=friendEncounters,proto3" json:"friend_encounters"`
+	MaxFriendEncounterSize                      int32                                     `protobuf:"varint,134,opt,name=max_friend_encounter_size,json=maxFriendEncounterSize,proto3" json:"max_friend_encounter_size"`
+	ProfileStatsData                            []*GameStatSaveGameData                   `protobuf:"bytes,135,rep,name=profile_stats_data,json=profileStatsData,proto3" json:"profile_stats_data"`
+	BankInventoryCategoryList                   []*InventoryCategorySaveData              `protobuf:"bytes,136,rep,name=bank_inventory_category_list,json=bankInventoryCategoryList,proto3" json:"bank_inventory_category_list"`
+	BankInventoryList                           [][]byte                                  `protobuf:"bytes,137,rep,name=bank_inventory_list,json=bankInventoryList,proto3" json:"bank_inventory_list"`
+	LostLootInventoryList                       [][]byte                                  `protobuf:"bytes,138,rep,name=lost_loot_inventory_list,json=lostLootInventoryList,proto3" json:"lost_loot_inventory_list"`
+	NpcMailItems                                []*OakMailItem                            `protobuf:"bytes,139,rep,name=npc_mail_items,json=npcMailItems,proto3" json:"npc_mail_items"`
+	MailGuids                                   []string                                  `protobuf:"bytes,140,rep,name=mail_guids,json=mailGuids,proto3" json:"mail_guids"`
+	UnreadMailGuids                             []string                                  `protobuf:"bytes,141,rep,name=unread_mail_guids,json=unreadMailGuids,proto3" json:"unread_mail_guids"`
+	GearSoldByFriends                           []*GearSoldByFriendData                   `protobuf:"bytes,142,rep,name=gear_sold_by_friends,json=gearSoldByFriends,proto3" json:"gear_sold_by_friends"`
+	ProfileSduList                              []*OakSDUSaveGameData                     `protobuf:"bytes,143,rep,name=profile_sdu_list,json=profileSduList,proto3" json:"profile_sdu_list"`
+	UnlockedCustomizations                      []*OakCustomizationSaveGameData           `protobuf:"bytes,144,rep,name=unlocked_customizations,json=unlockedCustomizations,proto3" json:"unlocked_customizations"`
+	UnlockedInventoryCustomizationParts         []*OakInventoryCustomizationPartInfo      `protobuf:"bytes,145,rep,name=unlocked_inventory_customization_parts,json=unlockedInventoryCustomizationParts,proto3" json:"unlocked_inventory_customization_parts"`
+	GuardianRank                                *GuardianRankProfileData                  `protobuf:"bytes,146,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank"`
+	UnlockedCrewQuartersDecorations             []*CrewQuartersDecorationItemSaveGameData `protobuf:"bytes,147,rep,name=unlocked_crew_quarters_decorations,json=unlockedCrewQuartersDecorations,proto3" json:"unlocked_crew_quarters_decorations"`
+	UnlockedCrewQuartersRooms                   []*CrewQuartersRoomItemSaveGameData       `protobuf:"bytes,148,rep,name=unlocked_crew_quarters_rooms,json=unlockedCrewQuartersRooms,proto3" json:"unlocked_crew_quarters_rooms"`
+	EnableMouseAcceleration                     bool                                      `protobuf:"varint,150,opt,name=enable_mouse_acceleration,json=enableMouseAcceleration,proto3" json:"enable_mouse_acceleration"`
+	EnableGamepadInput                          bool                                      `protobuf:"varint,151,opt,name=enable_gamepad_input,json=enableGamepadInput,proto3" json:"enable_gamepad_input"`
+	UseClassicGamepadInput                      bool                                      `protobuf:"varint,152,opt,name=use_classic_gamepad_input,json=useClassicGamepadInput,proto3" json:"use_classic_gamepad_input"`
+	MasterVolume                                float32                                   `protobuf:"fixed32,153,opt,name=master_volume,json=masterVolume,proto3" json:"master_volume"`
+	MonitorDisplayType                          uint32                                    `protobuf:"varint,154,opt,name=monitor_display_type,json=monitorDisplayType,proto3" json:"monitor_display_type"`
+	GraphicsMode                                uint32                                    `protobuf:"varint,155,opt,name=graphics_mode,json=graphicsMode,proto3" json:"graphics_mode"`
+	FrameRateLimit                              uint32                                    `protobuf:"varint,156,opt,name=frame_rate_limit,json=frameRateLimit,proto3" json:"frame_rate_limit"`
+	BaseVehicleFov                              float32                                   `protobuf:"fixed32,157,opt,name=base_vehicle_fov,json=baseVehicleFov,proto3" json:"base_vehicle_fov"`
+	GraphicsQuality                             uint32                                    `protobuf:"varint,158,opt,name=graphics_quality,json=graphicsQuality,proto3" json:"graphics_quality"`
+	AnisotropicFiltering                        uint32                                    `protobuf:"varint,159,opt,name=anisotropic_filtering,json=anisotropicFiltering,proto3" json:"anisotropic_filtering"`
+	ShadowQuality                               uint32                                    `protobuf:"varint,160,opt,name=shadow_quality,json=shadowQuality,proto3" json:"shadow_quality"`
+	DisplayPerformanceStats                     uint32                                    `protobuf:"varint,161,opt,name=display_performance_stats,json=displayPerformanceStats,proto3" json:"display_performance_stats"`
+	TextureDetail                               uint32                                    `protobuf:"varint,162,opt,name=texture_detail,json=textureDetail,proto3" json:"texture_detail"`
+	DrawDistance                                uint32                                    `protobuf:"varint,163,opt,name=draw_distance,json=drawDistance,proto3" json:"draw_distance"`
+	Clutter                                     uint32                                    `protobuf:"varint,164,opt,name=clutter,proto3" json:"clutter"`
+	Tessellation                                uint32                                    `protobuf:"varint,165,opt,name=tessellation,proto3" json:"tessellation"`
+	Foliage                                     uint32                                    `protobuf:"varint,166,opt,name=foliage,proto3" json:"foliage"`
+	FoliageShadows                              bool                                      `protobuf:"varint,167,opt,name=foliage_shadows,json=foliageShadows,proto3" json:"foliage_shadows"`
+	PlanarReflections                           bool                                      `protobuf:"varint,168,opt,name=planar_reflections,json=planarReflections,proto3" json:"planar_reflections"`
+	VolumetricFog                               uint32                                    `protobuf:"varint,169,opt,name=volumetric_fog,json=volumetricFog,proto3" json:"volumetric_fog"`
+	ScreenSpaceReflections                      uint32                                    `protobuf:"varint,170,opt,name=screen_space_reflections,json=screenSpaceReflections,proto3" json:"screen_space_reflections"`
+	CharacterTextureDetail                      uint32                                    `protobuf:"varint,171,opt,name=character_texture_detail,json=characterTextureDetail,proto3" json:"character_texture_detail"`
+	CharacterDetail                             uint32                                    `protobuf:"varint,172,opt,name=character_detail,json=characterDetail,proto3" json:"character_detail"`
+	AmbientOcclusionQuality                     uint32                                    `protobuf:"varint,173,opt,name=ambient_occlusion_quality,json=ambientOcclusionQuality,proto3" json:"ambient_occlusion_quality"`
+	ObjectMotionBlur                            bool                                      `protobuf:"varint,174,opt,name=object_motion_blur,json=objectMotionBlur,proto3" json:"object_motion_blur"`
+	LensFlare                                   bool                                      `protobuf:"varint,175,opt,name=lens_flare,json=lensFlare,proto3" json:"lens_flare"`
+	CombatNumberLongFormat                      bool                                      `protobuf:"varint,176,opt,name=combat_number_long_format,json=combatNumberLongFormat,proto3" json:"combat_number_long_format"`
+	ShowMinimapLegendaries                      bool                                      `protobuf:"varint,177,opt,name=show_minimap_legendaries,json=showMinimapLegendaries,proto3" json:"show_minimap_legendaries"`
+	UsePlayerCallouts                           bool                                      `protobuf:"varint,178,opt,name=use_player_callouts,json=usePlayerCallouts,proto3" json:"use_player_callouts"`
+	FriendEventNotificationLifetime             uint32                                    `protobuf:"varint,179,opt,name=friend_event_notification_lifetime,json=friendEventNotificationLifetime,proto3" json:"friend_event_notification_lifetime"`
+	FriendEventNotificationFrequency            uint32                                    `protobuf:"varint,180,opt,name=friend_event_notification_frequency,json=friendEventNotificationFrequency,proto3" json:"friend_event_notification_frequency"`
+	TradeRequestReceptionType                   uint32                                    `protobuf:"varint,181,opt,name=trade_request_reception_type,json=tradeRequestReceptionType,proto3" json:"trade_request_reception_type"`
+	HeadBobScale                                float32                                   `protobuf:"fixed32,182,opt,name=head_bob_scale,json=headBobScale,proto3" json:"head_bob_scale"`
+	HasSeenFirstBoot                            bool                                      `protobuf:"varint,184,opt,name=has_seen_first_boot,json=hasSeenFirstBoot,proto3" json:"has_seen_first_boot"`
+	SubsCcSize                                  float32                                   `protobuf:"fixed32,189,opt,name=subs_cc_size,json=subsCcSize,proto3" json:"subs_cc_size"`
+	CcSubsBackgroundOpacity                     float32                                   `protobuf:"fixed32,190,opt,name=cc_subs_background_opacity,json=ccSubsBackgroundOpacity,proto3" json:"cc_subs_background_opacity"`
+	WalkingButtonScheme                         uint32                                    `protobuf:"varint,191,opt,name=walking_button_scheme,json=walkingButtonScheme,proto3" json:"walking_button_scheme"`
+	DrivingButtonScheme                         uint32                                    `protobuf:"varint,192,opt,name=driving_button_scheme,json=drivingButtonScheme,proto3" json:"driving_button_scheme"`
+	GlyphMode                                   uint32                                    `protobuf:"varint,193,opt,name=glyph_mode,json=glyphMode,proto3" json:"glyph_mode"`
+	Use_MPH                                     bool                                      `protobuf:"varint,194,opt,name=use_MPH,json=useMPH,proto3" json:"use_MPH"`
+	RegisteredDownloadableEntitlements          []*RegisteredDownloadableEntitlements     `protobuf:"bytes,195,rep,name=registered_downloadable_entitlements,json=registeredDownloadableEntitlements,proto3" json:"registered_downloadable_entitlements"`
+	SeenNewsItems                               []string                                  `protobuf:"bytes,196,rep,name=seen_news_items,json=seenNewsItems,proto3" json:"seen_news_items"`
+	AutoCenteringEnabled                        bool                                      `protobuf:"varint,197,opt,name=auto_centering_enabled,json=autoCenteringEnabled,proto3" json:"auto_centering_enabled"`
+	IncreasedChanceForSubscribers               bool                                      `protobuf:"varint,198,opt,name=increased_chance_for_subscribers,json=increasedChanceForSubscribers,proto3" json:"increased_chance_for_subscribers"`
+	RareChestEventEnabled                       bool                                      `protobuf:"varint,199,opt,name=rare_chest_event_enabled,json=rareChestEventEnabled,proto3" json:"rare_chest_event_enabled"`
+	BadassEventEnabled                          bool                                      `protobuf:"varint,200,opt,name=badass_event_enabled,json=badassEventEnabled,proto3" json:"badass_event_enabled"`
+	PinataEventEnabled                          bool                                      `protobuf:"varint,201,opt,name=pinata_event_enabled,json=pinataEventEnabled,proto3" json:"pinata_event_enabled"`
+	MinTimeBetweenBadassEvents                  int32                                     `protobuf:"varint,202,opt,name=min_time_between_badass_events,json=minTimeBetweenBadassEvents,proto3" json:"min_time_between_badass_events"`
+	HudScaleMultiplier                          float32                                   `protobuf:"fixed32,203,opt,name=hud_scale_multiplier,json=hudScaleMultiplier,proto3" json:"hud_scale_multiplier"`
+	DisableSpatialAudio                         bool                                      `protobuf:"varint,204,opt,name=disable_spatial_audio,json=disableSpatialAudio,proto3" json:"disable_spatial_audio"`
+	TotalPlaytimeSeconds                        int32                                     `protobuf:"varint,205,opt,name=total_playtime_seconds,json=totalPlaytimeSeconds,proto3" json:"total_playtime_seconds"`
+	MoxxisDrinkEventEnabled                     bool                                      `protobuf:"varint,206,opt,name=moxxis_drink_event_enabled,json=moxxisDrinkEventEnabled,proto3" json:"moxxis_drink_event_enabled"`
+	MoxxisDrinkEventBitsProductId               int32                                     `protobuf:"varint,207,opt,name=moxxis_drink_event_bits_product_id,json=moxxisDrinkEventBitsProductId,proto3" json:"moxxis_drink_event_bits_product_id"`
+	ChallengeData                               []*ChallengeSaveGameData                  `protobuf:"bytes,208,rep,name=challenge_data,json=challengeData,proto3" json:"challenge_data"`
+	CitizenScienceLevelProgression              []int32                                   `protobuf:"varint,209,rep,packed,name=CitizenScienceLevelProgression,proto3" json:"CitizenScienceLevelProgression"`
+	DefaultDeadZoneInnerUpdated                 bool                                      `protobuf:"varint,210,opt,name=default_dead_zone_inner_updated,json=defaultDeadZoneInnerUpdated,proto3" json:"default_dead_zone_inner_updated"`
+	DisableEventContent                         bool                                      `protobuf:"varint,211,opt,name=disable_event_content,json=disableEventContent,proto3" json:"disable_event_content"`
+	DesiredFriendSyncState                      uint32                                    `protobuf:"varint,212,opt,name=desired_friend_sync_state,json=desiredFriendSyncState,proto3" json:"desired_friend_sync_state"`
+	NeedsShiftFirstBoot                         bool                                      `protobuf:"varint,213,opt,name=needs_shift_first_boot,json=needsShiftFirstBoot,proto3" json:"needs_shift_first_boot"`
+	RecentlyMetPlayers                          []*RecentlyMetPlayer                      `protobuf:"bytes,214,rep,name=recently_met_players,json=recentlyMetPlayers,proto3" json:"recently_met_players"`
+	CitizenScienceActiveBoosterIndex            int32                                     `protobuf:"varint,215,opt,name=CitizenScienceActiveBoosterIndex,proto3" json:"CitizenScienceActiveBoosterIndex"`
+	CitizenScienceActiveBoosterRemainingTime    float32                                   `protobuf:"fixed32,216,opt,name=CitizenScienceActiveBoosterRemainingTime,proto3" json:"CitizenScienceActiveBoosterRemainingTime"`
+	CitizenScienceActiveBoosterTotalTime        float32                                   `protobuf:"fixed32,217,opt,name=CitizenScienceActiveBoosterTotalTime,proto3" json:"CitizenScienceActiveBoosterTotalTime"`
+	StreamerPrimaryActiveBoosterIndex           int32                                     `protobuf:"varint,218,opt,name=StreamerPrimaryActiveBoosterIndex,proto3" json:"StreamerPrimaryActiveBoosterIndex"`
+	StreamerPrimaryActiveBoosterRemainingTime   float32                                   `protobuf:"fixed32,219,opt,name=StreamerPrimaryActiveBoosterRemainingTime,proto3" json:"StreamerPrimaryActiveBoosterRemainingTime"`
+	StreamerPrimaryActiveBoosterTotalTime       float32                                   `protobuf:"fixed32,220,opt,name=StreamerPrimaryActiveBoosterTotalTime,proto3" json:"StreamerPrimaryActiveBoosterTotalTime"`
+	StreamerSecondaryActiveBoosterIndex         int32                                     `protobuf:"varint,221,opt,name=StreamerSecondaryActiveBoosterIndex,proto3" json:"StreamerSecondaryActiveBoosterIndex"`
+	StreamerSecondaryActiveBoosterRemainingTime float32                                   `protobuf:"fixed32,222,opt,name=StreamerSecondaryActiveBoosterRemainingTime,proto3" json:"StreamerSecondaryActiveBoosterRemainingTime"`
+	StreamerSecondaryActiveBoosterTotalTime     float32                                   `protobuf:"fixed32,223,opt,name=StreamerSecondaryActiveBoosterTotalTime,proto3" json:"StreamerSecondaryActiveBoosterTotalTime"`
+	StreamerBoosterTier                         int32                                     `protobuf:"varint,224,opt,name=StreamerBoosterTier,proto3" json:"StreamerBoosterTier"`
+	CitizenScienceCSBucksAmount                 int32                                     `protobuf:"varint,226,opt,name=CitizenScienceCSBucksAmount,proto3" json:"CitizenScienceCSBucksAmount"`
+	BCitizenScienceHasSeenIntroVideo            bool                                      `protobuf:"varint,227,opt,name=bCitizenScienceHasSeenIntroVideo,proto3" json:"bCitizenScienceHasSeenIntroVideo"`
+	BCitizenScienceTutorialDone                 bool                                      `protobuf:"varint,228,opt,name=bCitizenScienceTutorialDone,proto3" json:"bCitizenScienceTutorialDone"`
 }
 
 func (x *Profile) Reset() {
@@ -2716,8 +2716,8 @@ type Profile_FriendEncountersEntry struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Key   string                  `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
-	Value *OakFriendEncounterData `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	Key   string                  `protobuf:"bytes,1,opt,name=key,proto3" json:"key"`
+	Value *OakFriendEncounterData `protobuf:"bytes,2,opt,name=value,proto3" json:"value"`
 }
 
 func (x *Profile_FriendEncountersEntry) Reset() {
