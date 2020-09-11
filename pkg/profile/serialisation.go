@@ -8,13 +8,8 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-type Magic struct {
-	Prefix []byte
-	Xor    []byte
-}
-
 var (
-	PCMagic = Magic{
+	PCMagic = shared2.Magic{
 		Prefix: []byte{
 			0xD8, 0x04, 0xB9, 0x08, 0x5C, 0x4E, 0x2B, 0xC0,
 			0x61, 0x9F, 0x7C, 0x8D, 0x5D, 0x34, 0x00, 0x56,
@@ -29,7 +24,7 @@ var (
 		},
 	}
 
-	PS4Magic = Magic{
+	PS4Magic = shared2.Magic{
 		Prefix: []byte{
 			0xd1, 0x7b, 0xbf, 0x75, 0x4c, 0xc1, 0x80, 0x30,
 			0x37, 0x92, 0xbd, 0xd0, 0x18, 0x3e, 0x4a, 0x5f,
@@ -45,12 +40,12 @@ var (
 	}
 )
 
-func Decrypt(reader io.Reader, magic Magic) (shared2.SavFile, []byte) {
+func Decrypt(reader io.Reader, magic shared2.Magic) (shared2.SavFile, []byte) {
 	s, data := shared2.DeserializeHeader(reader)
-	return s, shared2.Decrypt(data, PCMagic.Prefix, PCMagic.Xor)
+	return s, shared2.Decrypt(data, magic.Prefix, magic.Xor)
 }
 
-func Deserialize(reader io.Reader, magic Magic) (shared2.SavFile, pb.Profile) {
+func Deserialize(reader io.Reader, magic shared2.Magic) (shared2.SavFile, pb.Profile) {
 	// deserialise header, decrypt data
 	s, data := Decrypt(reader, magic)
 
@@ -62,12 +57,12 @@ func Deserialize(reader io.Reader, magic Magic) (shared2.SavFile, pb.Profile) {
 	return s, p
 }
 
-func Serialize(writer io.Writer, s shared2.SavFile, p pb.Profile) {
+func Serialize(writer io.Writer, s shared2.SavFile, p pb.Profile, magic shared2.Magic) {
 	bs, err := proto.Marshal(&p)
 	if err != nil {
 		panic(err)
 	}
-	bs = shared2.Encrypt(bs, PCMagic.Prefix, PCMagic.Xor)
+	bs = shared2.Encrypt(bs, magic.Prefix, magic.Xor)
 	shared2.SerializeHeader(writer, s, bs)
 
 }
