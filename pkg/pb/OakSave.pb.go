@@ -2922,62 +2922,66 @@ type Character struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SaveGameId                                   uint32                                 `protobuf:"varint,1,opt,name=save_game_id,json=saveGameId,proto3" json:"save_game_id"`
-	LastSaveTimestamp                            int64                                  `protobuf:"varint,2,opt,name=last_save_timestamp,json=lastSaveTimestamp,proto3" json:"last_save_timestamp"`
-	TimePlayedSeconds                            uint32                                 `protobuf:"varint,3,opt,name=time_played_seconds,json=timePlayedSeconds,proto3" json:"time_played_seconds"`
-	PlayerClassData                              *PlayerClassSaveGameData               `protobuf:"bytes,4,opt,name=player_class_data,json=playerClassData,proto3" json:"player_class_data"`
-	ResourcePools                                []*ResourcePoolSavegameData            `protobuf:"bytes,5,rep,name=resource_pools,json=resourcePools,proto3" json:"resource_pools"`
-	SavedRegions                                 []*RegionSaveGameData                  `protobuf:"bytes,6,rep,name=saved_regions,json=savedRegions,proto3" json:"saved_regions"`
-	ExperiencePoints                             int32                                  `protobuf:"varint,7,opt,name=experience_points,json=experiencePoints,proto3" json:"experience_points"`
-	GameStatsData                                []*GameStatSaveGameData                `protobuf:"bytes,8,rep,name=game_stats_data,json=gameStatsData,proto3" json:"game_stats_data"`
-	InventoryCategoryList                        []*InventoryCategorySaveData           `protobuf:"bytes,9,rep,name=inventory_category_list,json=inventoryCategoryList,proto3" json:"inventory_category_list"`
-	InventoryItems                               []*OakInventoryItemSaveGameData        `protobuf:"bytes,10,rep,name=inventory_items,json=inventoryItems,proto3" json:"inventory_items"`
-	EquippedInventoryList                        []*EquippedInventorySaveGameData       `protobuf:"bytes,11,rep,name=equipped_inventory_list,json=equippedInventoryList,proto3" json:"equipped_inventory_list"`
-	ActiveWeaponList                             []int32                                `protobuf:"varint,12,rep,packed,name=active_weapon_list,json=activeWeaponList,proto3" json:"active_weapon_list"`
-	AbilityData                                  *OakPlayerAbilitySaveGameData          `protobuf:"bytes,13,opt,name=ability_data,json=abilityData,proto3" json:"ability_data"`
-	LastPlayThroughIndex                         int32                                  `protobuf:"varint,14,opt,name=last_play_through_index,json=lastPlayThroughIndex,proto3" json:"last_play_through_index"`
-	PlaythroughsCompleted                        int32                                  `protobuf:"varint,15,opt,name=playthroughs_completed,json=playthroughsCompleted,proto3" json:"playthroughs_completed"`
-	ShowNewPlaythroughNotification               bool                                   `protobuf:"varint,16,opt,name=show_new_playthrough_notification,json=showNewPlaythroughNotification,proto3" json:"show_new_playthrough_notification"`
-	MissionPlaythroughsData                      []*MissionPlaythroughSaveGameData      `protobuf:"bytes,17,rep,name=mission_playthroughs_data,json=missionPlaythroughsData,proto3" json:"mission_playthroughs_data"`
-	ActiveTravelStations                         []string                               `protobuf:"bytes,21,rep,name=active_travel_stations,json=activeTravelStations,proto3" json:"active_travel_stations"`
-	DiscoveryData                                *DiscoverySaveData                     `protobuf:"bytes,22,opt,name=discovery_data,json=discoveryData,proto3" json:"discovery_data"`
-	LastActiveTravelStation                      string                                 `protobuf:"bytes,23,opt,name=last_active_travel_station,json=lastActiveTravelStation,proto3" json:"last_active_travel_station"`
-	VehiclesUnlockedData                         []*VehicleUnlockedSaveGameData         `protobuf:"bytes,24,rep,name=vehicles_unlocked_data,json=vehiclesUnlockedData,proto3" json:"vehicles_unlocked_data"`
-	VehiclePartsUnlocked                         []string                               `protobuf:"bytes,25,rep,name=vehicle_parts_unlocked,json=vehiclePartsUnlocked,proto3" json:"vehicle_parts_unlocked"`
-	VehicleLoadouts                              []*OakCARMenuVehicleConfigSaveData     `protobuf:"bytes,26,rep,name=vehicle_loadouts,json=vehicleLoadouts,proto3" json:"vehicle_loadouts"`
-	VehicleLastLoadoutIndex                      int32                                  `protobuf:"varint,27,opt,name=vehicle_last_loadout_index,json=vehicleLastLoadoutIndex,proto3" json:"vehicle_last_loadout_index"`
-	ChallengeData                                []*ChallengeSaveGameData               `protobuf:"bytes,28,rep,name=challenge_data,json=challengeData,proto3" json:"challenge_data"`
-	SduList                                      []*OakSDUSaveGameData                  `protobuf:"bytes,29,rep,name=sdu_list,json=sduList,proto3" json:"sdu_list"`
-	SelectedCustomizations                       []string                               `protobuf:"bytes,30,rep,name=selected_customizations,json=selectedCustomizations,proto3" json:"selected_customizations"`
-	EquippedEmoteCustomizations                  []int32                                `protobuf:"varint,31,rep,packed,name=equipped_emote_customizations,json=equippedEmoteCustomizations,proto3" json:"equipped_emote_customizations"`
-	SelectedColorCustomizations                  []*CustomPlayerColorSaveGameData       `protobuf:"bytes,32,rep,name=selected_color_customizations,json=selectedColorCustomizations,proto3" json:"selected_color_customizations"`
-	GuardianRank                                 *GuardianRankSaveGameData              `protobuf:"bytes,33,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank"`
-	CrewQuartersRoom                             *CrewQuartersSaveData                  `protobuf:"bytes,34,opt,name=crew_quarters_room,json=crewQuartersRoom,proto3" json:"crew_quarters_room"`
-	CrewQuartersGunRack                          *CrewQuartersGunRackSaveData           `protobuf:"bytes,35,opt,name=crew_quarters_gun_rack,json=crewQuartersGunRack,proto3" json:"crew_quarters_gun_rack"`
-	UnlockedEchoLogs                             []*EchoLogSaveGameData                 `protobuf:"bytes,36,rep,name=unlocked_echo_logs,json=unlockedEchoLogs,proto3" json:"unlocked_echo_logs"`
-	HasPlayedSpecialEchoLogInsertAlready         bool                                   `protobuf:"varint,37,opt,name=has_played_special_echo_log_insert_already,json=hasPlayedSpecialEchoLogInsertAlready,proto3" json:"has_played_special_echo_log_insert_already"`
-	NicknameMappings                             []*Character_NicknameMappingsEntry     `protobuf:"bytes,38,rep,name=nickname_mappings,json=nicknameMappings,proto3" json:"nickname_mappings"`
-	LastTraveledMapId                            *MapIDData                             `protobuf:"bytes,39,opt,name=last_traveled_map_id,json=lastTraveledMapId,proto3" json:"last_traveled_map_id"`
-	ChallengeCategoryCompletionPcts              *ChallengeCategoryProgressSaveData     `protobuf:"bytes,40,opt,name=challenge_category_completion_pcts,json=challengeCategoryCompletionPcts,proto3" json:"challenge_category_completion_pcts"`
-	CharacterSlotSaveGameData                    *OakPlayerCharacterSlotSaveGameData    `protobuf:"bytes,41,opt,name=character_slot_save_game_data,json=characterSlotSaveGameData,proto3" json:"character_slot_save_game_data"`
-	UiTrackingSaveGameData                       *UITrackingSaveGameData                `protobuf:"bytes,42,opt,name=ui_tracking_save_game_data,json=uiTrackingSaveGameData,proto3" json:"ui_tracking_save_game_data"`
-	PreferredCharacterName                       string                                 `protobuf:"bytes,43,opt,name=preferred_character_name,json=preferredCharacterName,proto3" json:"preferred_character_name"`
-	NameCharacterLimit                           int32                                  `protobuf:"varint,44,opt,name=name_character_limit,json=nameCharacterLimit,proto3" json:"name_character_limit"`
-	PreferredGroupMode                           uint32                                 `protobuf:"varint,45,opt,name=preferred_group_mode,json=preferredGroupMode,proto3" json:"preferred_group_mode"`
-	TimeOfDaySaveGameData                        *TimeOfDaySaveGameData                 `protobuf:"bytes,46,opt,name=time_of_day_save_game_data,json=timeOfDaySaveGameData,proto3" json:"time_of_day_save_game_data"`
-	LevelPersistenceData                         []*LevelPersistence_Level_SaveGameData `protobuf:"bytes,47,rep,name=level_persistence_data,json=levelPersistenceData,proto3" json:"level_persistence_data"`
-	AccumulatedLevelPersistenceResetTimerSeconds uint32                                 `protobuf:"varint,48,opt,name=accumulated_level_persistence_reset_timer_seconds,json=accumulatedLevelPersistenceResetTimerSeconds,proto3" json:"accumulated_level_persistence_reset_timer_seconds"`
-	MayhemLevel                                  uint32                                 `protobuf:"varint,49,opt,name=mayhem_level,json=mayhemLevel,proto3" json:"mayhem_level"`
-	GbxZoneMapFodSaveGameData                    *GbxZoneMapFODSaveGameData             `protobuf:"bytes,50,opt,name=gbx_zone_map_fod_save_game_data,json=gbxZoneMapFodSaveGameData,proto3" json:"gbx_zone_map_fod_save_game_data"`
-	ActiveOrBlacklistedTravelStations            []*ActiveFastTravelSaveData            `protobuf:"bytes,51,rep,name=active_or_blacklisted_travel_stations,json=activeOrBlacklistedTravelStations,proto3" json:"active_or_blacklisted_travel_stations"`
-	LastActiveTravelStationForPlaythrough        []string                               `protobuf:"bytes,52,rep,name=last_active_travel_station_for_playthrough,json=lastActiveTravelStationForPlaythrough,proto3" json:"last_active_travel_station_for_playthrough"`
-	GameStateSaveDataForPlaythrough              []*GameStateSaveData                   `protobuf:"bytes,53,rep,name=game_state_save_data_for_playthrough,json=gameStateSaveDataForPlaythrough,proto3" json:"game_state_save_data_for_playthrough"`
-	RegisteredDownloadableEntitlements           []*RegisteredDownloadableEntitlements  `protobuf:"bytes,54,rep,name=registered_downloadable_entitlements,json=registeredDownloadableEntitlements,proto3" json:"registered_downloadable_entitlements"`
-	ActiveTravelStationsForPlaythrough           []*PlaythroughActiveFastTravelSaveData `protobuf:"bytes,55,rep,name=active_travel_stations_for_playthrough,json=activeTravelStationsForPlaythrough,proto3" json:"active_travel_stations_for_playthrough"`
-	SaveGameGuid                                 string                                 `protobuf:"bytes,56,opt,name=save_game_guid,json=saveGameGuid,proto3" json:"save_game_guid"`
-	GuardianRankCharacterData                    *GuardianRankCharacterSaveGameData     `protobuf:"bytes,57,opt,name=guardian_rank_character_data,json=guardianRankCharacterData,proto3" json:"guardian_rank_character_data"`
-	OptionalObjectiveRewardFixupApplied          bool                                   `protobuf:"varint,58,opt,name=optional_objective_reward_fixup_applied,json=optionalObjectiveRewardFixupApplied,proto3" json:"optional_objective_reward_fixup_applied"`
-	VehiclePartRewardsFixupApplied               bool                                   `protobuf:"varint,59,opt,name=vehicle_part_rewards_fixup_applied,json=vehiclePartRewardsFixupApplied,proto3" json:"vehicle_part_rewards_fixup_applied"`
+	SaveGameId                                   uint32                                         `protobuf:"varint,1,opt,name=save_game_id,json=saveGameId,proto3" json:"save_game_id"`
+	LastSaveTimestamp                            int64                                          `protobuf:"varint,2,opt,name=last_save_timestamp,json=lastSaveTimestamp,proto3" json:"last_save_timestamp"`
+	TimePlayedSeconds                            uint32                                         `protobuf:"varint,3,opt,name=time_played_seconds,json=timePlayedSeconds,proto3" json:"time_played_seconds"`
+	PlayerClassData                              *PlayerClassSaveGameData                       `protobuf:"bytes,4,opt,name=player_class_data,json=playerClassData,proto3" json:"player_class_data"`
+	ResourcePools                                []*ResourcePoolSavegameData                    `protobuf:"bytes,5,rep,name=resource_pools,json=resourcePools,proto3" json:"resource_pools"`
+	SavedRegions                                 []*RegionSaveGameData                          `protobuf:"bytes,6,rep,name=saved_regions,json=savedRegions,proto3" json:"saved_regions"`
+	ExperiencePoints                             int32                                          `protobuf:"varint,7,opt,name=experience_points,json=experiencePoints,proto3" json:"experience_points"`
+	GameStatsData                                []*GameStatSaveGameData                        `protobuf:"bytes,8,rep,name=game_stats_data,json=gameStatsData,proto3" json:"game_stats_data"`
+	InventoryCategoryList                        []*InventoryCategorySaveData                   `protobuf:"bytes,9,rep,name=inventory_category_list,json=inventoryCategoryList,proto3" json:"inventory_category_list"`
+	InventoryItems                               []*OakInventoryItemSaveGameData                `protobuf:"bytes,10,rep,name=inventory_items,json=inventoryItems,proto3" json:"inventory_items"`
+	EquippedInventoryList                        []*EquippedInventorySaveGameData               `protobuf:"bytes,11,rep,name=equipped_inventory_list,json=equippedInventoryList,proto3" json:"equipped_inventory_list"`
+	ActiveWeaponList                             []int32                                        `protobuf:"varint,12,rep,packed,name=active_weapon_list,json=activeWeaponList,proto3" json:"active_weapon_list"`
+	AbilityData                                  *OakPlayerAbilitySaveGameData                  `protobuf:"bytes,13,opt,name=ability_data,json=abilityData,proto3" json:"ability_data"`
+	LastPlayThroughIndex                         int32                                          `protobuf:"varint,14,opt,name=last_play_through_index,json=lastPlayThroughIndex,proto3" json:"last_play_through_index"`
+	PlaythroughsCompleted                        int32                                          `protobuf:"varint,15,opt,name=playthroughs_completed,json=playthroughsCompleted,proto3" json:"playthroughs_completed"`
+	ShowNewPlaythroughNotification               bool                                           `protobuf:"varint,16,opt,name=show_new_playthrough_notification,json=showNewPlaythroughNotification,proto3" json:"show_new_playthrough_notification"`
+	MissionPlaythroughsData                      []*MissionPlaythroughSaveGameData              `protobuf:"bytes,17,rep,name=mission_playthroughs_data,json=missionPlaythroughsData,proto3" json:"mission_playthroughs_data"`
+	ActiveTravelStations                         []string                                       `protobuf:"bytes,21,rep,name=active_travel_stations,json=activeTravelStations,proto3" json:"active_travel_stations"`
+	DiscoveryData                                *DiscoverySaveData                             `protobuf:"bytes,22,opt,name=discovery_data,json=discoveryData,proto3" json:"discovery_data"`
+	LastActiveTravelStation                      string                                         `protobuf:"bytes,23,opt,name=last_active_travel_station,json=lastActiveTravelStation,proto3" json:"last_active_travel_station"`
+	VehiclesUnlockedData                         []*VehicleUnlockedSaveGameData                 `protobuf:"bytes,24,rep,name=vehicles_unlocked_data,json=vehiclesUnlockedData,proto3" json:"vehicles_unlocked_data"`
+	VehiclePartsUnlocked                         []string                                       `protobuf:"bytes,25,rep,name=vehicle_parts_unlocked,json=vehiclePartsUnlocked,proto3" json:"vehicle_parts_unlocked"`
+	VehicleLoadouts                              []*OakCARMenuVehicleConfigSaveData             `protobuf:"bytes,26,rep,name=vehicle_loadouts,json=vehicleLoadouts,proto3" json:"vehicle_loadouts"`
+	VehicleLastLoadoutIndex                      int32                                          `protobuf:"varint,27,opt,name=vehicle_last_loadout_index,json=vehicleLastLoadoutIndex,proto3" json:"vehicle_last_loadout_index"`
+	ChallengeData                                []*ChallengeSaveGameData                       `protobuf:"bytes,28,rep,name=challenge_data,json=challengeData,proto3" json:"challenge_data"`
+	SduList                                      []*OakSDUSaveGameData                          `protobuf:"bytes,29,rep,name=sdu_list,json=sduList,proto3" json:"sdu_list"`
+	SelectedCustomizations                       []string                                       `protobuf:"bytes,30,rep,name=selected_customizations,json=selectedCustomizations,proto3" json:"selected_customizations"`
+	EquippedEmoteCustomizations                  []int32                                        `protobuf:"varint,31,rep,packed,name=equipped_emote_customizations,json=equippedEmoteCustomizations,proto3" json:"equipped_emote_customizations"`
+	SelectedColorCustomizations                  []*CustomPlayerColorSaveGameData               `protobuf:"bytes,32,rep,name=selected_color_customizations,json=selectedColorCustomizations,proto3" json:"selected_color_customizations"`
+	GuardianRank                                 *GuardianRankSaveGameData                      `protobuf:"bytes,33,opt,name=guardian_rank,json=guardianRank,proto3" json:"guardian_rank"`
+	CrewQuartersRoom                             *CrewQuartersSaveData                          `protobuf:"bytes,34,opt,name=crew_quarters_room,json=crewQuartersRoom,proto3" json:"crew_quarters_room"`
+	CrewQuartersGunRack                          *CrewQuartersGunRackSaveData                   `protobuf:"bytes,35,opt,name=crew_quarters_gun_rack,json=crewQuartersGunRack,proto3" json:"crew_quarters_gun_rack"`
+	UnlockedEchoLogs                             []*EchoLogSaveGameData                         `protobuf:"bytes,36,rep,name=unlocked_echo_logs,json=unlockedEchoLogs,proto3" json:"unlocked_echo_logs"`
+	HasPlayedSpecialEchoLogInsertAlready         bool                                           `protobuf:"varint,37,opt,name=has_played_special_echo_log_insert_already,json=hasPlayedSpecialEchoLogInsertAlready,proto3" json:"has_played_special_echo_log_insert_already"`
+	NicknameMappings                             []*Character_NicknameMappingsEntry             `protobuf:"bytes,38,rep,name=nickname_mappings,json=nicknameMappings,proto3" json:"nickname_mappings"`
+	LastTraveledMapId                            *MapIDData                                     `protobuf:"bytes,39,opt,name=last_traveled_map_id,json=lastTraveledMapId,proto3" json:"last_traveled_map_id"`
+	ChallengeCategoryCompletionPcts              *ChallengeCategoryProgressSaveData             `protobuf:"bytes,40,opt,name=challenge_category_completion_pcts,json=challengeCategoryCompletionPcts,proto3" json:"challenge_category_completion_pcts"`
+	CharacterSlotSaveGameData                    *OakPlayerCharacterSlotSaveGameData            `protobuf:"bytes,41,opt,name=character_slot_save_game_data,json=characterSlotSaveGameData,proto3" json:"character_slot_save_game_data"`
+	UiTrackingSaveGameData                       *UITrackingSaveGameData                        `protobuf:"bytes,42,opt,name=ui_tracking_save_game_data,json=uiTrackingSaveGameData,proto3" json:"ui_tracking_save_game_data"`
+	PreferredCharacterName                       string                                         `protobuf:"bytes,43,opt,name=preferred_character_name,json=preferredCharacterName,proto3" json:"preferred_character_name"`
+	NameCharacterLimit                           int32                                          `protobuf:"varint,44,opt,name=name_character_limit,json=nameCharacterLimit,proto3" json:"name_character_limit"`
+	PreferredGroupMode                           uint32                                         `protobuf:"varint,45,opt,name=preferred_group_mode,json=preferredGroupMode,proto3" json:"preferred_group_mode"`
+	TimeOfDaySaveGameData                        *TimeOfDaySaveGameData                         `protobuf:"bytes,46,opt,name=time_of_day_save_game_data,json=timeOfDaySaveGameData,proto3" json:"time_of_day_save_game_data"`
+	LevelPersistenceData                         []*LevelPersistence_Level_SaveGameData         `protobuf:"bytes,47,rep,name=level_persistence_data,json=levelPersistenceData,proto3" json:"level_persistence_data"`
+	AccumulatedLevelPersistenceResetTimerSeconds uint32                                         `protobuf:"varint,48,opt,name=accumulated_level_persistence_reset_timer_seconds,json=accumulatedLevelPersistenceResetTimerSeconds,proto3" json:"accumulated_level_persistence_reset_timer_seconds"`
+	MayhemLevel                                  uint32                                         `protobuf:"varint,49,opt,name=mayhem_level,json=mayhemLevel,proto3" json:"mayhem_level"`
+	GbxZoneMapFodSaveGameData                    *GbxZoneMapFODSaveGameData                     `protobuf:"bytes,50,opt,name=gbx_zone_map_fod_save_game_data,json=gbxZoneMapFodSaveGameData,proto3" json:"gbx_zone_map_fod_save_game_data"`
+	ActiveOrBlacklistedTravelStations            []*ActiveFastTravelSaveData                    `protobuf:"bytes,51,rep,name=active_or_blacklisted_travel_stations,json=activeOrBlacklistedTravelStations,proto3" json:"active_or_blacklisted_travel_stations"`
+	LastActiveTravelStationForPlaythrough        []string                                       `protobuf:"bytes,52,rep,name=last_active_travel_station_for_playthrough,json=lastActiveTravelStationForPlaythrough,proto3" json:"last_active_travel_station_for_playthrough"`
+	GameStateSaveDataForPlaythrough              []*GameStateSaveData                           `protobuf:"bytes,53,rep,name=game_state_save_data_for_playthrough,json=gameStateSaveDataForPlaythrough,proto3" json:"game_state_save_data_for_playthrough"`
+	RegisteredDownloadableEntitlements           []*RegisteredDownloadableEntitlements          `protobuf:"bytes,54,rep,name=registered_downloadable_entitlements,json=registeredDownloadableEntitlements,proto3" json:"registered_downloadable_entitlements"`
+	ActiveTravelStationsForPlaythrough           []*PlaythroughActiveFastTravelSaveData         `protobuf:"bytes,55,rep,name=active_travel_stations_for_playthrough,json=activeTravelStationsForPlaythrough,proto3" json:"active_travel_stations_for_playthrough"`
+	SaveGameGuid                                 string                                         `protobuf:"bytes,56,opt,name=save_game_guid,json=saveGameGuid,proto3" json:"save_game_guid"`
+	GuardianRankCharacterData                    *GuardianRankCharacterSaveGameData             `protobuf:"bytes,57,opt,name=guardian_rank_character_data,json=guardianRankCharacterData,proto3" json:"guardian_rank_character_data"`
+	OptionalObjectiveRewardFixupApplied          bool                                           `protobuf:"varint,58,opt,name=optional_objective_reward_fixup_applied,json=optionalObjectiveRewardFixupApplied,proto3" json:"optional_objective_reward_fixup_applied"`
+	VehiclePartRewardsFixupApplied               bool                                           `protobuf:"varint,59,opt,name=vehicle_part_rewards_fixup_applied,json=vehiclePartRewardsFixupApplied,proto3" json:"vehicle_part_rewards_fixup_applied"`
+	LastActiveLeague                             uint32                                         `protobuf:"varint,60,opt,name=last_active_league,json=lastActiveLeague,proto3" json:"last_active_league"`
+	LastActiveLeagueInstance                     uint32                                         `protobuf:"varint,61,opt,name=last_active_league_instance,json=lastActiveLeagueInstance,proto3" json:"last_active_league_instance"`
+	ActiveLeagueInstanceForEvent                 []*Character_ActiveLeagueInstanceForEventEntry `protobuf:"bytes,62,rep,name=active_league_instance_for_event,json=activeLeagueInstanceForEvent,proto3" json:"active_league_instance_for_event"`
+	LevelledSaveVehiclePartRewardsFixupApplied   bool                                           `protobuf:"varint,63,opt,name=levelled_save_vehicle_part_rewards_fixup_applied,json=levelledSaveVehiclePartRewardsFixupApplied,proto3" json:"levelled_save_vehicle_part_rewards_fixup_applied"`
 }
 
 func (x *Character) Reset() {
@@ -3404,6 +3408,34 @@ func (x *Character) GetVehiclePartRewardsFixupApplied() bool {
 	return false
 }
 
+func (x *Character) GetLastActiveLeague() uint32 {
+	if x != nil {
+		return x.LastActiveLeague
+	}
+	return 0
+}
+
+func (x *Character) GetLastActiveLeagueInstance() uint32 {
+	if x != nil {
+		return x.LastActiveLeagueInstance
+	}
+	return 0
+}
+
+func (x *Character) GetActiveLeagueInstanceForEvent() []*Character_ActiveLeagueInstanceForEventEntry {
+	if x != nil {
+		return x.ActiveLeagueInstanceForEvent
+	}
+	return nil
+}
+
+func (x *Character) GetLevelledSaveVehiclePartRewardsFixupApplied() bool {
+	if x != nil {
+		return x.LevelledSaveVehiclePartRewardsFixupApplied
+	}
+	return false
+}
+
 type Character_NicknameMappingsEntry struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3457,6 +3489,61 @@ func (x *Character_NicknameMappingsEntry) GetValue() string {
 		return x.Value
 	}
 	return ""
+}
+
+type Character_ActiveLeagueInstanceForEventEntry struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Key   uint32 `protobuf:"varint,1,opt,name=key,proto3" json:"key"`
+	Value uint32 `protobuf:"varint,2,opt,name=value,proto3" json:"value"`
+}
+
+func (x *Character_ActiveLeagueInstanceForEventEntry) Reset() {
+	*x = Character_ActiveLeagueInstanceForEventEntry{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_OakSave_proto_msgTypes[45]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Character_ActiveLeagueInstanceForEventEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Character_ActiveLeagueInstanceForEventEntry) ProtoMessage() {}
+
+func (x *Character_ActiveLeagueInstanceForEventEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_OakSave_proto_msgTypes[45]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Character_ActiveLeagueInstanceForEventEntry.ProtoReflect.Descriptor instead.
+func (*Character_ActiveLeagueInstanceForEventEntry) Descriptor() ([]byte, []int) {
+	return file_OakSave_proto_rawDescGZIP(), []int{43, 1}
+}
+
+func (x *Character_ActiveLeagueInstanceForEventEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *Character_ActiveLeagueInstanceForEventEntry) GetValue() uint32 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
 }
 
 var File_OakSave_proto protoreflect.FileDescriptor
@@ -4002,7 +4089,7 @@ var file_OakSave_proto_rawDesc = []byte{
 	0x03, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x4f, 0x61, 0x6b, 0x53, 0x61, 0x76, 0x65, 0x2e, 0x47, 0x62,
 	0x78, 0x5a, 0x6f, 0x6e, 0x65, 0x4d, 0x61, 0x70, 0x46, 0x4f, 0x44, 0x53, 0x61, 0x76, 0x65, 0x64,
 	0x4c, 0x65, 0x76, 0x65, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x52, 0x09, 0x6c, 0x65, 0x76, 0x65, 0x6c,
-	0x44, 0x61, 0x74, 0x61, 0x22, 0xba, 0x22, 0x0a, 0x09, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74,
+	0x44, 0x61, 0x74, 0x61, 0x22, 0xd8, 0x25, 0x0a, 0x09, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74,
 	0x65, 0x72, 0x12, 0x20, 0x0a, 0x0c, 0x73, 0x61, 0x76, 0x65, 0x5f, 0x67, 0x61, 0x6d, 0x65, 0x5f,
 	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0a, 0x73, 0x61, 0x76, 0x65, 0x47, 0x61,
 	0x6d, 0x65, 0x49, 0x64, 0x12, 0x2e, 0x0a, 0x13, 0x6c, 0x61, 0x73, 0x74, 0x5f, 0x73, 0x61, 0x76,
@@ -4274,14 +4361,37 @@ var file_OakSave_proto_rawDesc = []byte{
 	0x75, 0x70, 0x5f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x65, 0x64, 0x18, 0x3b, 0x20, 0x01, 0x28, 0x08,
 	0x52, 0x1e, 0x76, 0x65, 0x68, 0x69, 0x63, 0x6c, 0x65, 0x50, 0x61, 0x72, 0x74, 0x52, 0x65, 0x77,
 	0x61, 0x72, 0x64, 0x73, 0x46, 0x69, 0x78, 0x75, 0x70, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x65, 0x64,
-	0x1a, 0x3f, 0x0a, 0x15, 0x4e, 0x69, 0x63, 0x6b, 0x6e, 0x61, 0x6d, 0x65, 0x4d, 0x61, 0x70, 0x70,
-	0x69, 0x6e, 0x67, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76,
-	0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75,
-	0x65, 0x42, 0x29, 0x5a, 0x27, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
-	0x63, 0x66, 0x69, 0x32, 0x30, 0x31, 0x37, 0x2f, 0x62, 0x6c, 0x33, 0x2d, 0x73, 0x61, 0x76, 0x65,
-	0x2d, 0x63, 0x6f, 0x72, 0x65, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x12, 0x2c, 0x0a, 0x12, 0x6c, 0x61, 0x73, 0x74, 0x5f, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x5f,
+	0x6c, 0x65, 0x61, 0x67, 0x75, 0x65, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x10, 0x6c, 0x61,
+	0x73, 0x74, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x4c, 0x65, 0x61, 0x67, 0x75, 0x65, 0x12, 0x3d,
+	0x0a, 0x1b, 0x6c, 0x61, 0x73, 0x74, 0x5f, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x5f, 0x6c, 0x65,
+	0x61, 0x67, 0x75, 0x65, 0x5f, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x18, 0x3d, 0x20,
+	0x01, 0x28, 0x0d, 0x52, 0x18, 0x6c, 0x61, 0x73, 0x74, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x4c,
+	0x65, 0x61, 0x67, 0x75, 0x65, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x12, 0x7c, 0x0a,
+	0x20, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x5f, 0x6c, 0x65, 0x61, 0x67, 0x75, 0x65, 0x5f, 0x69,
+	0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x5f, 0x66, 0x6f, 0x72, 0x5f, 0x65, 0x76, 0x65, 0x6e,
+	0x74, 0x18, 0x3e, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x34, 0x2e, 0x4f, 0x61, 0x6b, 0x53, 0x61, 0x76,
+	0x65, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x2e, 0x41, 0x63, 0x74, 0x69,
+	0x76, 0x65, 0x4c, 0x65, 0x61, 0x67, 0x75, 0x65, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65,
+	0x46, 0x6f, 0x72, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x1c, 0x61,
+	0x63, 0x74, 0x69, 0x76, 0x65, 0x4c, 0x65, 0x61, 0x67, 0x75, 0x65, 0x49, 0x6e, 0x73, 0x74, 0x61,
+	0x6e, 0x63, 0x65, 0x46, 0x6f, 0x72, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x12, 0x64, 0x0a, 0x30, 0x6c,
+	0x65, 0x76, 0x65, 0x6c, 0x6c, 0x65, 0x64, 0x5f, 0x73, 0x61, 0x76, 0x65, 0x5f, 0x76, 0x65, 0x68,
+	0x69, 0x63, 0x6c, 0x65, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x5f, 0x72, 0x65, 0x77, 0x61, 0x72, 0x64,
+	0x73, 0x5f, 0x66, 0x69, 0x78, 0x75, 0x70, 0x5f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x65, 0x64, 0x18,
+	0x3f, 0x20, 0x01, 0x28, 0x08, 0x52, 0x2a, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x6c, 0x65, 0x64, 0x53,
+	0x61, 0x76, 0x65, 0x56, 0x65, 0x68, 0x69, 0x63, 0x6c, 0x65, 0x50, 0x61, 0x72, 0x74, 0x52, 0x65,
+	0x77, 0x61, 0x72, 0x64, 0x73, 0x46, 0x69, 0x78, 0x75, 0x70, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x65,
+	0x64, 0x1a, 0x3f, 0x0a, 0x15, 0x4e, 0x69, 0x63, 0x6b, 0x6e, 0x61, 0x6d, 0x65, 0x4d, 0x61, 0x70,
+	0x70, 0x69, 0x6e, 0x67, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65,
+	0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05,
+	0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c,
+	0x75, 0x65, 0x1a, 0x4b, 0x0a, 0x21, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x4c, 0x65, 0x61, 0x67,
+	0x75, 0x65, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x46, 0x6f, 0x72, 0x45, 0x76, 0x65,
+	0x6e, 0x74, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c,
+	0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -4297,7 +4407,7 @@ func file_OakSave_proto_rawDescGZIP() []byte {
 }
 
 var file_OakSave_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_OakSave_proto_msgTypes = make([]protoimpl.MessageInfo, 45)
+var file_OakSave_proto_msgTypes = make([]protoimpl.MessageInfo, 46)
 var file_OakSave_proto_goTypes = []interface{}{
 	(MissionStatusPlayerSaveGameData_MissionState)(0),        // 0: OakSave.MissionStatusPlayerSaveGameData.MissionState
 	(*PlayerClassSaveGameData)(nil),                          // 1: OakSave.PlayerClassSaveGameData
@@ -4345,12 +4455,13 @@ var file_OakSave_proto_goTypes = []interface{}{
 	(*GbxZoneMapFODSaveGameData)(nil),                        // 43: OakSave.GbxZoneMapFODSaveGameData
 	(*Character)(nil),                                        // 44: OakSave.Character
 	(*Character_NicknameMappingsEntry)(nil),                  // 45: OakSave.Character.NicknameMappingsEntry
-	(*Vec3)(nil),                                             // 46: OakSave.Vec3
-	(*GameStatSaveGameData)(nil),                             // 47: OakSave.GameStatSaveGameData
-	(*InventoryCategorySaveData)(nil),                        // 48: OakSave.InventoryCategorySaveData
-	(*ChallengeSaveGameData)(nil),                            // 49: OakSave.ChallengeSaveGameData
-	(*OakSDUSaveGameData)(nil),                               // 50: OakSave.OakSDUSaveGameData
-	(*RegisteredDownloadableEntitlements)(nil),               // 51: OakSave.RegisteredDownloadableEntitlements
+	(*Character_ActiveLeagueInstanceForEventEntry)(nil),      // 46: OakSave.Character.ActiveLeagueInstanceForEventEntry
+	(*Vec3)(nil),                               // 47: OakSave.Vec3
+	(*GameStatSaveGameData)(nil),               // 48: OakSave.GameStatSaveGameData
+	(*InventoryCategorySaveData)(nil),          // 49: OakSave.InventoryCategorySaveData
+	(*ChallengeSaveGameData)(nil),              // 50: OakSave.ChallengeSaveGameData
+	(*OakSDUSaveGameData)(nil),                 // 51: OakSave.OakSDUSaveGameData
+	(*RegisteredDownloadableEntitlements)(nil), // 52: OakSave.RegisteredDownloadableEntitlements
 }
 var file_OakSave_proto_depIdxs = []int32{
 	4,  // 0: OakSave.OakInventoryItemSaveGameData.development_save_data:type_name -> OakSave.InventoryBalanceStateInitializationData
@@ -4363,8 +4474,8 @@ var file_OakSave_proto_depIdxs = []int32{
 	14, // 7: OakSave.PlaythroughActiveFastTravelSaveData.active_travel_stations:type_name -> OakSave.ActiveFastTravelSaveData
 	16, // 8: OakSave.DiscoveredLevelInfo.discovered_area_info:type_name -> OakSave.DiscoveredAreaInfo
 	17, // 9: OakSave.DiscoverySaveData.discovered_level_info:type_name -> OakSave.DiscoveredLevelInfo
-	46, // 10: OakSave.CustomPlayerColorSaveGameData.applied_color:type_name -> OakSave.Vec3
-	46, // 11: OakSave.CustomPlayerColorSaveGameData.split_color:type_name -> OakSave.Vec3
+	47, // 10: OakSave.CustomPlayerColorSaveGameData.applied_color:type_name -> OakSave.Vec3
+	47, // 11: OakSave.CustomPlayerColorSaveGameData.split_color:type_name -> OakSave.Vec3
 	24, // 12: OakSave.GuardianRankCharacterSaveGameData.rank_rewards:type_name -> OakSave.GuardianRankRewardCharacterSaveGameData
 	25, // 13: OakSave.GuardianRankCharacterSaveGameData.rank_perks:type_name -> OakSave.GuardianRankPerkCharacterSaveGameData
 	27, // 14: OakSave.CrewQuartersSaveData.decorations:type_name -> OakSave.CrewQuartersDecorationSaveData
@@ -4378,8 +4489,8 @@ var file_OakSave_proto_depIdxs = []int32{
 	1,  // 22: OakSave.Character.player_class_data:type_name -> OakSave.PlayerClassSaveGameData
 	2,  // 23: OakSave.Character.resource_pools:type_name -> OakSave.ResourcePoolSavegameData
 	3,  // 24: OakSave.Character.saved_regions:type_name -> OakSave.RegionSaveGameData
-	47, // 25: OakSave.Character.game_stats_data:type_name -> OakSave.GameStatSaveGameData
-	48, // 26: OakSave.Character.inventory_category_list:type_name -> OakSave.InventoryCategorySaveData
+	48, // 25: OakSave.Character.game_stats_data:type_name -> OakSave.GameStatSaveGameData
+	49, // 26: OakSave.Character.inventory_category_list:type_name -> OakSave.InventoryCategorySaveData
 	5,  // 27: OakSave.Character.inventory_items:type_name -> OakSave.OakInventoryItemSaveGameData
 	6,  // 28: OakSave.Character.equipped_inventory_list:type_name -> OakSave.EquippedInventorySaveGameData
 	11, // 29: OakSave.Character.ability_data:type_name -> OakSave.OakPlayerAbilitySaveGameData
@@ -4387,8 +4498,8 @@ var file_OakSave_proto_depIdxs = []int32{
 	19, // 31: OakSave.Character.discovery_data:type_name -> OakSave.DiscoverySaveData
 	20, // 32: OakSave.Character.vehicles_unlocked_data:type_name -> OakSave.VehicleUnlockedSaveGameData
 	21, // 33: OakSave.Character.vehicle_loadouts:type_name -> OakSave.OakCARMenuVehicleConfigSaveData
-	49, // 34: OakSave.Character.challenge_data:type_name -> OakSave.ChallengeSaveGameData
-	50, // 35: OakSave.Character.sdu_list:type_name -> OakSave.OakSDUSaveGameData
+	50, // 34: OakSave.Character.challenge_data:type_name -> OakSave.ChallengeSaveGameData
+	51, // 35: OakSave.Character.sdu_list:type_name -> OakSave.OakSDUSaveGameData
 	22, // 36: OakSave.Character.selected_color_customizations:type_name -> OakSave.CustomPlayerColorSaveGameData
 	23, // 37: OakSave.Character.guardian_rank:type_name -> OakSave.GuardianRankSaveGameData
 	28, // 38: OakSave.Character.crew_quarters_room:type_name -> OakSave.CrewQuartersSaveData
@@ -4404,14 +4515,15 @@ var file_OakSave_proto_depIdxs = []int32{
 	43, // 48: OakSave.Character.gbx_zone_map_fod_save_game_data:type_name -> OakSave.GbxZoneMapFODSaveGameData
 	14, // 49: OakSave.Character.active_or_blacklisted_travel_stations:type_name -> OakSave.ActiveFastTravelSaveData
 	33, // 50: OakSave.Character.game_state_save_data_for_playthrough:type_name -> OakSave.GameStateSaveData
-	51, // 51: OakSave.Character.registered_downloadable_entitlements:type_name -> OakSave.RegisteredDownloadableEntitlements
+	52, // 51: OakSave.Character.registered_downloadable_entitlements:type_name -> OakSave.RegisteredDownloadableEntitlements
 	15, // 52: OakSave.Character.active_travel_stations_for_playthrough:type_name -> OakSave.PlaythroughActiveFastTravelSaveData
 	26, // 53: OakSave.Character.guardian_rank_character_data:type_name -> OakSave.GuardianRankCharacterSaveGameData
-	54, // [54:54] is the sub-list for method output_type
-	54, // [54:54] is the sub-list for method input_type
-	54, // [54:54] is the sub-list for extension type_name
-	54, // [54:54] is the sub-list for extension extendee
-	0,  // [0:54] is the sub-list for field type_name
+	46, // 54: OakSave.Character.active_league_instance_for_event:type_name -> OakSave.Character.ActiveLeagueInstanceForEventEntry
+	55, // [55:55] is the sub-list for method output_type
+	55, // [55:55] is the sub-list for method input_type
+	55, // [55:55] is the sub-list for extension type_name
+	55, // [55:55] is the sub-list for extension extendee
+	0,  // [0:55] is the sub-list for field type_name
 }
 
 func init() { file_OakSave_proto_init() }
@@ -4961,6 +5073,18 @@ func file_OakSave_proto_init() {
 				return nil
 			}
 		}
+		file_OakSave_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Character_ActiveLeagueInstanceForEventEntry); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -4968,7 +5092,7 @@ func file_OakSave_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_OakSave_proto_rawDesc,
 			NumEnums:      1,
-			NumMessages:   45,
+			NumMessages:   46,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
