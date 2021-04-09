@@ -3,7 +3,9 @@ package item
 import (
 	"encoding/base64"
 	"encoding/hex"
+	"fmt"
 	"log"
+	"reflect"
 	"testing"
 )
 
@@ -43,7 +45,7 @@ var checks = []string{
 	"AwAAAADEyIA37wgBk1sap5fBcYmAShxYzBACAAAAAACkAQA=",
 	// v4 serials
 	"BKZ2z3UD2T0rpSE7deWBs4XmRkf8qUZ6rLgIC0adv9qk0yYeYeY=",
-	// "BOk5kBr6GvVQjoRaByNoBBeOF2BJgiGGd/9ui90SQNIEDVsqleI=",
+	"BOk5kBr6GvVQjoRaByNoBBeOF2BJgiGGd/9ui90SQNIEDVsqleI=",
 	"BPlxBUiTWKvpoM5qL5HMO+XOeeNFAxu2P4aYHLgMzJLeorpGeX3wN32fZ8D6eoRE4m/KhJLa4adfWM2xolApJnZUzT1SK3UCpJwj1L1YtmR2Rh9kvM2c8XtnxECSYga0",
 	"AwAAAACgzIA+8zyBEmwa54FUxlCkbcXYwEEIAAAAAABgxgAA",
 	"AwAAAADP2YC+8ZQAETwQGoRKBQSCogsAAAA=",
@@ -119,14 +121,15 @@ func TestSerialize(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			bs, err = Serialize(item, seed)
+			bs2, err := Serialize(item, seed)
 			if err != nil {
 				t.Fatal(err)
 			}
-			result = base64.StdEncoding.EncodeToString(bs)
+			result = base64.StdEncoding.EncodeToString(bs2)
 			history[i] = result
-			i2, err := Deserialize(bs)
+			i2, err := Deserialize(bs2)
 			if err != nil {
+				fmt.Println(reflect.DeepEqual(bs, bs2))
 				t.Fatalf("error in deserialise pass 2 (%d, %d): %v", ci, i, err)
 			}
 			if item.Level != i2.Level || item.Version != i2.Version {

@@ -91,6 +91,7 @@ Deserialize decrypts and deserializes a serial number into an item.
 This requires a valid database to be set.
 */
 func Deserialize(data []byte) (i Item, err error) {
+	data = makeCopy(data)
 	i.raw = make([]byte, len(data))
 	copy(i.raw, data)
 	i.SerialVersion = data[0]
@@ -143,6 +144,12 @@ func Deserialize(data []byte) (i Item, err error) {
 	}
 
 	return
+}
+
+func makeCopy(data []byte) []byte {
+	tmp := make([]byte, len(data))
+	copy(tmp, data)
+	return tmp
 }
 
 /*
