@@ -117,8 +117,9 @@ func TestSerialize(t *testing.T) {
 		var result = check
 		var history = make([]string, 10)
 		var item Item
-		var err error
+		var last string
 		for i := 0; i < 10; i++ {
+			last = result
 			bs, err := base64.StdEncoding.DecodeString(result)
 			if err != nil {
 				t.Fatal(err)
@@ -144,32 +145,34 @@ func TestSerialize(t *testing.T) {
 			if item.Level != i2.Level || item.Version != i2.Version {
 				t.Fatal("component mismatch in re-serialized item")
 			}
-		}
-		if result != check {
-			log.Println(err)
-			log.Println(check)
-			log.Println(result)
-			bs1, _ := base64.StdEncoding.DecodeString(check)
-			bs2, _ := base64.StdEncoding.DecodeString(result)
-			log.Println(hex.EncodeToString(bs1))
-			log.Println(hex.EncodeToString(bs2))
-			dec1, _ := DecryptSerial(bs1)
-			dec2, _ := DecryptSerial(bs2)
-			bs1, _ = base64.StdEncoding.DecodeString(check)
-			bs2, _ = base64.StdEncoding.DecodeString(result)
-			log.Println(hex.EncodeToString(dec1))
-			log.Println(hex.EncodeToString(dec2))
-			i1, _ := Deserialize(bs1)
-			i2, _ := Deserialize(bs2)
-			log.Println(i1.Version)
-			log.Println(i2.Version)
-			t.Fatal("invalid serial")
+			if result != last {
+				log.Printf("item mismatch in iteration %d: %s\n", i, result)
+				if i > 0 {
+					log.Println(err)
+					log.Println(check)
+					log.Println(result)
+					bs1, _ := base64.StdEncoding.DecodeString(check)
+					bs2, _ := base64.StdEncoding.DecodeString(result)
+					log.Println(hex.EncodeToString(bs1))
+					log.Println(hex.EncodeToString(bs2))
+					dec1, _ := DecryptSerial(bs1)
+					dec2, _ := DecryptSerial(bs2)
+					bs1, _ = base64.StdEncoding.DecodeString(check)
+					bs2, _ = base64.StdEncoding.DecodeString(result)
+					log.Println(hex.EncodeToString(dec1))
+					log.Println(hex.EncodeToString(dec2))
+					i1, _ := Deserialize(bs1)
+					i2, _ := Deserialize(bs2)
+					log.Println(i1.Version)
+					log.Println(i2.Version)
+					t.Fatal("invalid serial")
+				}
+			}
 		}
 	}
 }
 
 func TestAddPart(t *testing.T) {
-	debug = true
 	code := "AwAAAADuCYA3RhkBkWMalJ8AEtSYWC1gJmYIAQAAAAAAyhgA"
 	part := "/Game/Gear/Weapons/Pistols/Vladof/_Shared/_Design/Parts/Barrels/Barrel_01/Part_PS_VLA_Barrel_01_B.Part_PS_VLA_Barrel_01_B"
 	bs, err := base64.StdEncoding.DecodeString(code)
@@ -201,7 +204,6 @@ func TestAddPart(t *testing.T) {
 }
 
 func TestAddAnointment(t *testing.T) {
-	debug = true
 	code := "AwAAAADuCYA3RhkBkWMalJ8AEtSYWC1gJmYIAQAAAAAAyhgA"
 	anointment := "/Game/Gear/Weapons/_Shared/_Design/EndGameParts/Character/Operative/CloneSwapDamage/GPart_CloneSwap_WeaponDamage.GPart_CloneSwap_WeaponDamage"
 	bs, err := base64.StdEncoding.DecodeString(code)
