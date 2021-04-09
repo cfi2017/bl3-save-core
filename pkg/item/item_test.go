@@ -8,6 +8,7 @@ import (
 )
 
 var checks = []string{
+	// v3 serials
 	"A6cRHH+sfCuWGEZz2Lc5FWDbSfcQLmbaOV6SzgYP",
 	"AwAAAADFtIC3/mrBkEsaj5NM0xGVIBFDCAAAAAAAMAYA",
 	"AwAAAABLZ4A3RhkBkWMalJ8AEtSYWC1gJWYIAQAAAAAAyhgA",
@@ -20,10 +21,6 @@ var checks = []string{
 	"AwAAAAByhIC3A/pBkWMGBYLB+IDMbhnFMWYIAQAAAAAAzoAA",
 	"AwAAAACr6IC37xABkWsIqFPqeE0YjJJYUxUxhAAAAAAAAGQMAA==",
 	"AwAAAAB1WoC3t9hAkysShLxMKkMLAA==",
-	// "AwAAAACaOoA3VJMAkSsQUhYFGGMLAA==",
-	// "AwAAAADkl4A3VJMAkSsQUhYFGEMLAA==",
-	// "AwAAAAAZzYA3VJMAkSsQUhYFGAMLAA==",
-	// "AwAAAACd1YA3VJMAkSsQUhYFGKMLAA==",
 	"AwAAAAC754A3ElwAmCtYUlWPjAAAAA==",
 	"AwAAAADBk4A3ElwAmCtYUlWxjgAAAA==",
 	"AwAAAABM+oC33IBBkWMEA0LBZlmkGKfELb4IAQAAAAAAzoAA",
@@ -44,44 +41,34 @@ var checks = []string{
 	"AwAAAACIAIC3t9hAkysShLxMKgMLAA==",
 	"AwAAAADjeIA3VJMAkSsQUhYFGIMLAA==",
 	"AwAAAADEyIA37wgBk1sap5fBcYmAShxYzBACAAAAAACkAQA=",
-	// potentially corrupt items
-	//"AwAAAAAZDYC3/mrBkEsaj5NM0xGVIBFDCAAAAAAAMA==",
-	//"AwAAAAA0qYA3RhkBkWMalJ8AEtSYWC1gJWYIAQAAAAAAyg==",
-	//"AwAAAABknYA3RhkBkWMalJ8AEtSYWC1gJmYIAQAAAAAAyg==",
-	//"AwAAAACrOoA3RhkBkWMalJ8AEtSYWC0gJmYIAQAAAAAAyg==",
-	//"AwAAAADHT4A3rVMBk2tkjwhEwkRYO5cMpwkIAQAAAAAAyA==",
-	//"AwAAAAAicYC3syBDllvs4u4gGyP7LLHEEkssMQ==",
-	//"AwAAAAAXDIC31oBBkWMEBcKAJnqQTAdOLWIIAQAAAAAAyA==",
-	//"AwAAAAD+8YC36JCAkTsKGoSgBASiIg==",
-	//"AwAAAADDxoC3t9hAkysShLxMKmM=",
-	//"AwAAAAAxn4C3A/pBkWMGBYLB+IDMbhnFMWYIAQAAAAAAzg==",
-	//"AwAAAACAxIC37xABkWsIqFPqeE0YjJJYUxUxhAAAAAAAAGQ=",
-	//"AwAAAADYYIC3t9hAkysShLxMKkM=",
-	//"AwAAAAA/dIA34pIAkSsQUgAFBGM=",
-	//"AwAAAAAk0oA34pIAkSsQUgAFBEM=",
-	//"AwAAAAATnoA34pIAkSsQUgAFBAM=",
-	//"AwAAAABmoIA34pIAkSsQUgAFBKM=",
-	//"AwAAAACSJoA3ElwAmCtYUlWPjAA=",
-	//"AwAAAAAk/YA3ElwAmCtYUlWxjgA=",
-	//"AwAAAAB00IC33IBBkWMEA0LBZlmkGKfELb4IAQAAAAAAzg==",
-	//"AwAAAACIjYC3syBDllvs4u4gDG3MtcQVE0tsRQ==",
-	//"AwAAAACIjYC3syBDllvs4u4gDG3MtcQVE0tsRQ==",
-	//"AwAAAACIBYC3syBDllvs4u6gz2zcdcUVS0ysRA==",
-	//"AwAAAADCYoA3pNNBkXMIKNMJSiplJhFOghEFhAAAAAAAAGU=",
-	//"AwAAAACsaIA3p+vCkHsiOIpkJRQgNB8QyRCcxAwhAAAAAABAGQ==",
-	//"AwAAAACEUoA3wNBBkWMIJxRMBMrEIJyELGIIAQAAAAAAyg==",
-	//"AwAAAABLQIC3pGNBk2MaDghSkel4SJFSMnQIAQAAAAAAyg==",
-	//"AwAAAABzIoA38QgBk0sap9jjQvFwZDFDCAAAAAAAQA==",
-	//"AwAAAABf1YC3DUGBkGMGuXk40BtJSotjghAAAAAAAGA=",
-	//"AwAAAAAljoC3NmvBkEsaD4dOwwlNchFDCAAAAAAAUA==",
-	//"AwAAAABQjoA31ECBkFOGteE+ViSvNkwIAQAAAAAA0g==",
-	//"AwAAAAAqpYA3a1IBk3MeMkhEkisIJhZQhqOLGUIAAAAAAIAz",
-	//"AwAAAABDxoC3ZINBkXMEA0KBl9EoUowTAtQDhAAAAAAAAGM=",
-	//"AwAAAADQCIC3y+qAEmCaB3LONQrZ6stiihAAAAAAAGA=",
-	//"AwAAAAB4aIC3z5lBk1saN8zHFMEJCKlMzBACAAAAAACQ",
-	//"AwAAAADvLIC3t9hAkysShLxMKgM=",
-	//"AwAAAAB9BoA34pIAkSsQUgAFBIM=",
-	//"AwAAAAAfmYA37wgBk1sap5fBcYmAShxYzBACAAAAAACk",
+	// v4 serials
+	"BKZ2z3UD2T0rpSE7deWBs4XmRkf8qUZ6rLgIC0adv9qk0yYeYeY=",
+	// "BOk5kBr6GvVQjoRaByNoBBeOF2BJgiGGd/9ui90SQNIEDVsqleI=",
+	"BPlxBUiTWKvpoM5qL5HMO+XOeeNFAxu2P4aYHLgMzJLeorpGeX3wN32fZ8D6eoRE4m/KhJLa4adfWM2xolApJnZUzT1SK3UCpJwj1L1YtmR2Rh9kvM2c8XtnxECSYga0",
+	"AwAAAACgzIA+8zyBEmwa54FUxlCkbcXYwEEIAAAAAABgxgAA",
+	"AwAAAADP2YC+8ZQAETwQGoRKBQSCogsAAAA=",
+	"AwAAAACgzIA+8zyBEmwa54FUxlCkbcXYwEEIAAAAAABgxgAA",
+	"AwAAAADvcYA+AS1DFly2svqfzwxE9uqss74aawAAAA==",
+	"AwAAAABYdYA+JfUBE4waDwckoWAsMszOyUSCVZoRiRAAAAAAAAANCAA=",
+	"AwAAAAC6zIC+91yAEkRY4DpGLJiPJ1sAAAAA",
+	"AwAAAADlL4C+8oxCEWQajyZjkfKQXCiKM3IQAgAAAAAAmAEBAA==",
+	"AwAAAABSL4A+KWVBE3waD4jjSlAYLB2QiILCxhVCAAAAAAAAMwYAAA==",
+	"AwAAAAByXYA+BGVAFlzQ0rqKyvgrdWuut+6aawAAAA==",
+	"AwAAAACIEIC+/dzAEzQmgvhLM2BCCwAAAA==",
+	"AwAAAABCpIC+9fQBE1waSSRjo/SEWphlnCEEAAAAAABIAwIA",
+	"AwAAAAAyO4C+9jQBEVwaDogPYwp9NpFg8CAEAAAAAAAgYwAA",
+	"AwAAAABu6IA+KiUBEnxojZoD8jASFpvQKfNBxhlCAAAAAACAYxAAAA==",
+	"AwAAAADP2YC+8ZQAETwQGoRKBQSCogsAAAA=",
+	"AwAAAAB44IC+BDVDFlzq8nqg/rzk9euvvw4bbAAAAA==",
+	"AwAAAAAwO4A+wlwAGBRY0AIAAAA=",
+	"AwAAAACMYIA+8txAEzwShPRJX01wggIAAAA=",
+	"AwAAAACQJYA+/DQBEWwaDsiDsMCQRMANRRgDCAEAAAAAAMwYAAA=",
+	"AwAAAABmO4A+9pTAEDwGGoRMT1F7ggYAAAA=",
+	"AwAAAACEPoA+9pTAEDwGGoRMBQR6QgsAAAA=",
+	"AwAAAACWzIA+ACVDFlzskvog9jbblOqqq656agAAAA==",
+	"AwAAAACso4A+JN3AEzQmgvw/M2BiCwAAAA==",
+	"AwAAAABp8IA+91wAGCxY3LKyJQgAAAA=",
+	"AwAAAADC3YC+/JSBEHwckMijKpiYQBuP6mWlxBNCAAAAAACANCAAAA==",
 }
 
 func TestDecryptSerial(t *testing.T) {
@@ -113,7 +100,7 @@ func TestDeserialize(t *testing.T) {
 }
 
 func TestSerialize(t *testing.T) {
-	for _, check := range checks {
+	for ci, check := range checks {
 		var result = check
 		var history = make([]string, 10)
 		var item Item
@@ -140,7 +127,7 @@ func TestSerialize(t *testing.T) {
 			history[i] = result
 			i2, err := Deserialize(bs)
 			if err != nil {
-				t.Fatal(err)
+				t.Fatalf("error in deserialise pass 2 (%d, %d): %v", ci, i, err)
 			}
 			if item.Level != i2.Level || item.Version != i2.Version {
 				t.Fatal("component mismatch in re-serialized item")

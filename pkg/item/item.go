@@ -24,14 +24,16 @@ type Item struct {
 	Version           uint64                           `json:"version"`
 	Wrapper           *pb.OakInventoryItemSaveGameData `json:"wrapper"`
 	SkipIntrospection bool                             `json:"skipIntrospection"`
+	raw               []byte                           `json:"-"`
+	SerialVersion     uint8                            `json:"serialVersion"`
 }
 
 func DecryptSerial(data []byte) ([]byte, error) {
 	if len(data) < 5 {
 		return nil, errors.New("invalid serial length")
 	}
-	if data[0] != 0x03 {
-		return nil, errors.New("invalid serial")
+	if 0x03 > data[0] || data[0] > 0x04 {
+		return nil, errors.New("invalid serial version")
 	}
 	seed := int32(binary.BigEndian.Uint32(data[1:])) // next four bytes of serial are bogo seed
 	decrypted := item.BogoDecrypt(seed, data[5:])
@@ -47,20 +49,29 @@ func DecryptSerial(data []byte) ([]byte, error) {
 	return decrypted[2:], nil
 }
 
-func EncryptSerial(data []byte, seed int32) ([]byte, error) {
-	prefix := []byte{0x03}
+func EncryptSerial(data []byte, seed int32, version uint8) ([]byte, error) {
+	prefix := []byte{version}
+
+	// seed to bytes
 	seedBytes := make([]byte, 4)
 	binary.BigEndian.PutUint32(seedBytes, uint32(seed))
+
+	// prefix + seed + 0xFFFF (checksum blank) + data
 	prefix = append(prefix, seedBytes...)
 	prefix = append(prefix, 0xFF, 0xFF)
 	data = append(prefix, data...)
+
+	// calculate checksum
 	crc := crc32.ChecksumIEEE(data)
 	checksum := ((crc >> 16) ^ crc) & 0xFFFF
 	sumBytes := make([]byte, 2)
 	binary.BigEndian.PutUint16(sumBytes, uint16(checksum))
+
+	// set checksum bytes
 	data[5], data[6] = sumBytes[0], sumBytes[1] // set crc
 
-	return append(append([]byte{0x03}, seedBytes...), item.BogoEncrypt(seed, data[5:])...), nil
+	// return prefix + seed + encrypted data
+	return append(append([]byte{version}, seedBytes...), item.BogoEncrypt(seed, data[5:])...), nil
 
 }
 
@@ -80,6 +91,9 @@ Deserialize decrypts and deserializes a serial number into an item.
 This requires a valid database to be set.
 */
 func Deserialize(data []byte) (i Item, err error) {
+	i.raw = make([]byte, len(data))
+	copy(i.raw, data)
+	i.SerialVersion = data[0]
 	data, err = DecryptSerial(data)
 	if err != nil {
 		return
@@ -88,7 +102,7 @@ func Deserialize(data []byte) (i Item, err error) {
 	r := item.NewReader(data)
 	num := item.ReadNBits(r, 8)
 	if num != 128 {
-		err = errors.New("value should be 128")
+		err = errors.New(fmt.Sprintf("value should be %d, is %d", 128, num))
 		return
 	}
 
@@ -227,6 +241,6 @@ func Serialize(i Item, seed int32) ([]byte, error) {
 		return nil, err
 	}
 
-	return EncryptSerial(w.GetBytes(), seed)
+	return EncryptSerial(w.GetBytes(), seed, i.SerialVersion)
 
 }
