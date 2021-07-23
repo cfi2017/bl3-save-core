@@ -44,16 +44,16 @@ func Decrypt(reader io.Reader, platform string) (shared2.SavFile, []byte) {
 	return s, shared2.Decrypt(data, platforms[platform].Prefix, platforms[platform].Xor)
 }
 
-func Deserialize(reader io.Reader, platform string) (shared2.SavFile, pb.Profile) {
+func Deserialize(reader io.Reader, platform string) (shared2.SavFile, pb.Profile, error) {
 	// deserialise header, decrypt data
 	s, data := Decrypt(reader, platform)
 
 	p := pb.Profile{}
 	if err := proto.Unmarshal(data, &p); err != nil {
-		panic("couldn't unmarshal protobuf data")
+		return s, p, err
 	}
 
-	return s, p
+	return s, p, nil
 }
 
 func Serialize(writer io.Writer, s shared2.SavFile, p pb.Profile, platform string) {
