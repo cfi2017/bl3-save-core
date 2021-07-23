@@ -7,7 +7,7 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	DefaultAssetLoader = StaticFileAssetLoader{
+	DefaultAssetLoader = &StaticFileAssetLoader{
 		Pwd:  p,
 		once: sync.Once{},
 	}
