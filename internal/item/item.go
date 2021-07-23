@@ -26,9 +26,11 @@ func BogoDecrypt(seed int32, data []byte) []byte {
 	return append(data[len(data)-steps:], data[:len(data)-steps]...)
 }
 
+/*
+xor xors the given data with the given seed
+*/
 func xor(seed int32, data []byte) []byte {
 	x := uint64(seed>>5) & 0xFFFFFFFF
-	// target 4248340707
 	for i := range data {
 		x = (x * 0x10A860C1) % 0xFFFFFFFB
 		data[i] = byte((uint64(data[i]) ^ x) & 0xFF)

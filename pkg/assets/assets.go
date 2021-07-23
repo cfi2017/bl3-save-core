@@ -3,7 +3,6 @@ package assets
 import (
 	"encoding/json"
 	"io/ioutil"
-	"os"
 	"sync"
 )
 
@@ -20,17 +19,6 @@ func GetDB() PartsDatabase {
 
 func GetBtik() map[string]string {
 	return DefaultAssetLoader.GetBtik()
-}
-
-func init() {
-	p, err := os.Getwd()
-	if err != nil {
-		panic(err)
-	}
-	DefaultAssetLoader = StaticFileAssetLoader{
-		Pwd:  p,
-		once: sync.Once{},
-	}
 }
 
 type StaticFileAssetLoader struct {
