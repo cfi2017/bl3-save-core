@@ -5,6 +5,11 @@ import (
 	"io"
 )
 
+type Magic struct {
+	Prefix []byte
+	Xor    []byte
+}
+
 func DeserializeHeader(reader io.Reader) (SavFile, []byte) {
 	r := bufio.NewReader(reader)
 	s := SavFile{}

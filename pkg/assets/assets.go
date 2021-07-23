@@ -28,7 +28,7 @@ type StaticFileAssetLoader struct {
 	db   PartsDatabase
 }
 
-func (s StaticFileAssetLoader) GetDB() PartsDatabase {
+func (s *StaticFileAssetLoader) GetDB() PartsDatabase {
 	err := s.Load()
 	if err != nil {
 		panic(err)
@@ -36,7 +36,7 @@ func (s StaticFileAssetLoader) GetDB() PartsDatabase {
 	return s.db
 }
 
-func (s StaticFileAssetLoader) Load() error {
+func (s *StaticFileAssetLoader) Load() error {
 	var err error
 	s.once.Do(func() {
 		s.btik, err = LoadPartMap("balance_to_inv_key.json")
@@ -48,7 +48,7 @@ func (s StaticFileAssetLoader) Load() error {
 	return err
 }
 
-func (s StaticFileAssetLoader) GetBtik() map[string]string {
+func (s *StaticFileAssetLoader) GetBtik() map[string]string {
 	err := s.Load()
 	if err != nil {
 		panic(err)
