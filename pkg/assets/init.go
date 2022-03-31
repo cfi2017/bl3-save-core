@@ -1,6 +1,10 @@
 // +build !js
-
 package assets
+
+import (
+	"os"
+	"sync"
+)
 
 func init() {
 	p, err := os.Getwd()
